@@ -202,8 +202,8 @@ export const Home = () => {
       <ShowreelModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
       {/* Section 2: Vision */}
-      <section className="py-32 px-6 md:px-[60px] bg-bg border-b border-border">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4">
+      <section className="py-32 bg-bg border-b border-border">
+        <div className="max-w-7xl mx-auto px-6 md:px-[60px] grid grid-cols-1 md:grid-cols-4">
           <div className="hidden md:block"></div>
           <div className="md:col-span-2 text-center relative">
             <FadeIn delay={0.1}>
@@ -236,8 +236,8 @@ export const Home = () => {
       </section>
 
       {/* Section 3: Results (Bento Box) */}
-      <section id="results" className="py-32 px-6 md:px-[60px] bg-black text-white border-b border-white/10">
-        <div className="max-w-7xl mx-auto">
+      <section id="results" className="py-32 bg-black text-white border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-6 md:px-[60px]">
           <div className="mb-16">
             <FadeIn delay={0.1}>
               <p className="section-label mb-4 !text-red-600 uppercase opacity-100">{t.home.results.label}</p>
@@ -268,8 +268,8 @@ export const Home = () => {
       </section>
 
       {/* Section 2.5: Services Tiles */}
-      <section id="our-services" className="py-20 md:py-28 px-6 md:px-[60px] bg-bg border-b border-border">
-        <div className="max-w-7xl mx-auto">
+      <section id="our-services" className="py-20 md:py-28 bg-bg border-b border-border">
+        <div className="max-w-7xl mx-auto px-6 md:px-[60px]">
           <div className="mb-16">
             <FadeIn delay={0.1}>
               <p className="section-label mb-3 uppercase opacity-100">{t.home.servicesTiles?.label || 'OUR SERVICES'}</p>
@@ -350,8 +350,8 @@ export const Home = () => {
 
 
       {/* NULAABS Banner Section */}
-      <section className="py-32 px-6 md:px-[60px] bg-black text-white border-y border-white/10 overflow-hidden">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-32 bg-black text-white border-y border-white/10 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 md:px-[60px]">
           <div className="text-left mb-16">
             <FadeIn delay={0.1}>
               <span className="text-[10px] font-bold text-white/50 tracking-[0.3em] uppercase block mb-3">
@@ -433,8 +433,8 @@ export const Home = () => {
       </section>
 
       {/* Section 3.5: Quote */}
-      <section className="py-24 md:py-32 px-6 md:px-[60px] bg-white text-black border-b border-border">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-24 md:py-32 bg-white text-black border-b border-border">
+        <div className="max-w-7xl mx-auto px-6 md:px-[60px]">
           <FadeIn delay={0.1}>
             <h2 className="text-2xl md:text-4xl font-display font-bold tracking-tighter leading-[1.2] max-w-3xl whitespace-pre-line">
               {t.home.quote}
@@ -446,8 +446,8 @@ export const Home = () => {
 
 
       {/* Section 5.5: Bento Infographic */}
-      <section className="bg-black text-white py-24 px-6 md:px-[60px] border-b border-white/10">
-        <div className="max-w-7xl mx-auto">
+      <section className="bg-black text-white py-24 border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-6 md:px-[60px]">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="md:col-span-1 p-6 border border-white/10 flex flex-col justify-center items-start overflow-hidden">
             <motion.div 
@@ -549,8 +549,8 @@ export const Home = () => {
 
 
       {/* Section: Contact Form */}
-      <section id="contact-form" className="py-32 px-6 md:px-[60px] bg-black text-white">
-        <div className="max-w-7xl mx-auto">
+      <section id="contact-form" className="py-32 bg-black text-white">
+        <div className="max-w-7xl mx-auto px-6 md:px-[60px]">
           <FadeIn>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
               <div>

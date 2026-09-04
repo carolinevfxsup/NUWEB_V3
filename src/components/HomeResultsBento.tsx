@@ -26,7 +26,7 @@ export const HomeResultsBento = () => {
   };
 
   return (
-    <div className="relative max-w-5xl mx-auto">
+    <div className="relative w-full">
       {/* Carousel Grid */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-2 items-center transition-opacity duration-500">
         {currentProjects.map((project, idx) => {

@@ -46,7 +46,7 @@ export const Header = () => {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-white py-3 transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-6 md:px-[60px] flex justify-between items-center">
           <Link to={getLanguagePath('/')} className="flex items-center gap-2 group">
             <img 
               src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/logo-black.png" 

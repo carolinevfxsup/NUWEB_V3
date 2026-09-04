@@ -8,8 +8,8 @@ export const Footer = () => {
   const isPt = language === 'pt';
   
   return (
-    <footer className="bg-red-600 text-white py-16 px-8 border-t border-black">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+    <footer className="bg-red-600 text-white py-16 border-t border-black">
+      <div className="max-w-7xl mx-auto px-6 md:px-[60px] grid grid-cols-1 md:grid-cols-4 gap-12">
         {/* Left Column */}
         <div className="space-y-8 md:col-span-1">
           <h2 className="text-2xl font-bold">SUBSCRIBE TO STAY IN TOUCH.</h2>
