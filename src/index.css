@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-poppins: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Fira Code", ui-monospace, SFMono-Regular, monospace;
+
+  --color-bg: #FFFFFF;
+  --color-text: #000000;
+  --color-neutral: #F9F9F9;
+  --color-border: #EEEEEE;
+  --color-primary: #DC2626;
+
+  --color-charcoal: #121212;
+  --color-electric-blue: #0070F3;
+  --color-slate-gray: #707070;
+  --color-violet-accent: #8B5CF6;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bg text-text font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-text tracking-tighter;
+  }
+}
+
+@layer utilities {
+  .hero-headline {
+    @apply font-display text-6xl md:text-8xl leading-[0.9] tracking-tighter;
+  }
+  .section-label {
+    @apply font-sans text-xs uppercase tracking-widest text-text/60;
+  }
+  .fine-line-border {
+    @apply border border-border;
+  }
+  .bento-grid {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-4;
+  }
+  .bento-item {
+    @apply p-6 border border-border bg-neutral rounded-md;
+  }
+  .bento-item-large {
+    @apply md:col-span-2 md:row-span-2;
+  }
+}

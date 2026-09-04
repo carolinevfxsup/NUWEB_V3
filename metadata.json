@@ -1,0 +1,6 @@
+{
+  "name": "NuWeb_V7_CM_V3",
+  "description": "A high-end creative scale lab for brand owners, featuring the Strategic DNA Scan and HILT-standard visual pipelines.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
