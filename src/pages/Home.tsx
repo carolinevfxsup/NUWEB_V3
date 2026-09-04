@@ -215,7 +215,7 @@ export const Home = () => {
               </div>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tighter leading-[0.85] mb-12 uppercase mt-12 md:mt-0">
+              <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter leading-[0.85] mb-12 uppercase mt-12 md:mt-0">
                 {t.home.vision.title.replace('.', '')}<span className="text-red-600">.</span>
               </h2>
             </FadeIn>
@@ -236,14 +236,14 @@ export const Home = () => {
       </section>
 
       {/* Section 3: Results (Bento Box) */}
-      <section id="results" className="py-32 bg-black text-white border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6">
+      <section id="results" className="py-32 px-6 md:px-[60px] bg-black text-white border-b border-white/10">
+        <div className="max-w-7xl mx-auto">
           <div className="mb-16">
             <FadeIn delay={0.1}>
               <p className="section-label mb-4 !text-red-600 uppercase opacity-100">{t.home.results.label}</p>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter leading-[0.8] uppercase text-white">{t.home.results.title}<span className="text-red-600">.</span></h2>
+              <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter leading-[0.85] uppercase text-white">{t.home.results.title}<span className="text-red-600">.</span></h2>
             </FadeIn>
           </div>
           
@@ -269,13 +269,13 @@ export const Home = () => {
 
       {/* Section 2.5: Services Tiles */}
       <section id="our-services" className="py-20 md:py-28 px-6 md:px-[60px] bg-bg border-b border-border">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="mb-16">
             <FadeIn delay={0.1}>
               <p className="section-label mb-3 uppercase opacity-100">{t.home.servicesTiles?.label || 'OUR SERVICES'}</p>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tighter leading-[0.85] uppercase text-text">
+              <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter leading-[0.85] uppercase text-text">
                 {(t.home.servicesTiles?.title || 'SERVICES')}<span className="text-red-600">.</span>
               </h2>
             </FadeIn>
@@ -350,8 +350,8 @@ export const Home = () => {
 
 
       {/* NULAABS Banner Section */}
-      <section className="py-32 bg-black text-white border-y border-white/10 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-32 px-6 md:px-[60px] bg-black text-white border-y border-white/10 overflow-hidden">
+        <div className="max-w-7xl mx-auto">
           <div className="text-left mb-16">
             <FadeIn delay={0.1}>
               <span className="text-[10px] font-bold text-white/50 tracking-[0.3em] uppercase block mb-3">
@@ -359,13 +359,13 @@ export const Home = () => {
               </span>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter leading-[0.8] uppercase text-white">
+              <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter leading-[0.85] uppercase text-white">
                 NULAABS<span className="text-[#DC2626]">.</span>
               </h2>
             </FadeIn>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-2 max-w-5xl mx-auto items-center mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-2 w-full items-center mb-16">
             {/* Left Column: Product Synthesis Image */}
             <FadeIn delay={0.3} className="md:col-span-4 w-full">
               <div className="relative bg-white/5 aspect-[3/4] max-h-[420px] md:max-h-[480px] overflow-hidden mx-auto w-full">
@@ -433,8 +433,8 @@ export const Home = () => {
       </section>
 
       {/* Section 3.5: Quote */}
-      <section className="py-24 md:py-32 px-6 md:px-[120px] bg-white text-black border-b border-border">
-        <div className="max-w-7xl">
+      <section className="py-24 md:py-32 px-6 md:px-[60px] bg-white text-black border-b border-border">
+        <div className="max-w-7xl mx-auto">
           <FadeIn delay={0.1}>
             <h2 className="text-2xl md:text-4xl font-display font-bold tracking-tighter leading-[1.2] max-w-3xl whitespace-pre-line">
               {t.home.quote}
@@ -446,8 +446,9 @@ export const Home = () => {
 
 
       {/* Section 5.5: Bento Infographic */}
-      <section className="bg-black text-white py-24 px-6 md:px-[60px]">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
+      <section className="bg-black text-white py-24 px-6 md:px-[60px] border-b border-white/10">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="md:col-span-1 p-6 border border-white/10 flex flex-col justify-center items-start overflow-hidden">
             <motion.div 
               className="flex flex-col gap-2 text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter text-white"
@@ -507,7 +508,8 @@ export const Home = () => {
             <p className="text-2xl md:text-4xl font-display font-bold tracking-tighter leading-[1.2] text-white/70 max-w-3xl">{t.home.stats.quote}</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
 
 
@@ -547,12 +549,12 @@ export const Home = () => {
 
 
       {/* Section: Contact Form */}
-      <section id="contact-form" className="py-32 bg-black text-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section id="contact-form" className="py-32 px-6 md:px-[60px] bg-black text-white">
+        <div className="max-w-7xl mx-auto">
           <FadeIn>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
               <div>
-                <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter mb-12 leading-[0.8] !text-white">
+                <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter mb-12 leading-[0.85] !text-white">
                   {t.home.contact.title}<span className="text-red-600">.</span>
                 </h2>
                 <p className="text-2xl md:text-3xl font-display font-bold uppercase mb-12">{t.home.contact.subtitle}</p>
