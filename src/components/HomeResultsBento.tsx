@@ -9,8 +9,8 @@ export const HomeResultsBento = () => {
   const { getLanguagePath } = useLanguage();
   const [currentPage, setCurrentPage] = useState(0);
 
-  const totalPages = 2; // 2 sets of 3 tiles = 6 tiles total
   const itemsPerPage = 3;
+  const totalPages = Math.ceil(showcases.length / itemsPerPage);
 
   const currentProjects = showcases.slice(
     currentPage * itemsPerPage,

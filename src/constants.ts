@@ -60,4 +60,11 @@ export const showcases = [
     slug: '/showcase/franks-australia',
     videoSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/Beach_Franks1.mp4',
   },
+  {
+    title: 'Quinta Do Pinto — Concept Film',
+    subtitle: 'Tradition, Made Contemporary',
+    imageSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/QDP-FILM/Saved_frame_from_WINE_CM(2)_2K_202609070948.jpeg',
+    slug: '/showcase/quinta-do-pinto-concept-film',
+    videoSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/QDP-FILM/WINE_CM(2).mp4',
+  },
 ];

@@ -374,9 +374,9 @@ export const QuintaDoPinto = () => {
             thumbnail: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/2Artboard%205-100.jpg' 
           }}
           nextProject={{ 
-            title: t.saltLily.heroTitle, 
-            slug: getLanguagePath('/showcase/salt-lily'), 
-            thumbnail: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/necklace_and_hoops.png' 
+            title: t.quintaConceptFilm.heroTitle, 
+            slug: getLanguagePath('/showcase/quinta-do-pinto-concept-film'), 
+            thumbnail: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/QDP-FILM/Saved_frame_from_WINE_CM(2)_2K_202609070948.jpeg' 
           }}
         />
       </main>

@@ -18,6 +18,7 @@ import { SaltLily } from './pages/showcase/SaltLily';
 import { FranksAustralia } from './pages/showcase/FranksAustralia';
 import { FranksWebAdSS27 } from './pages/showcase/FranksWebAdSS27';
 import { QuintaDoPinto } from './pages/showcase/QuintaDoPinto';
+import { QuintaDoPintoConceptFilm } from './pages/showcase/QuintaDoPintoConceptFilm';
 import { OPalmeiral } from './pages/showcase/OPalmeiral';
 import { GoogleIO } from './pages/showcase/GoogleIO';
 import { Onboarding } from './pages/Onboarding';
@@ -84,6 +85,8 @@ export default function App() {
               <Route path="/pt/showcase/franks-australia" element={<FranksAustralia />} />
               <Route path="/showcase/quinta-do-pinto" element={<QuintaDoPinto />} />
               <Route path="/pt/showcase/quinta-do-pinto" element={<QuintaDoPinto />} />
+              <Route path="/showcase/quinta-do-pinto-concept-film" element={<QuintaDoPintoConceptFilm />} />
+              <Route path="/pt/showcase/quinta-do-pinto-concept-film" element={<QuintaDoPintoConceptFilm />} />
               <Route path="/showcase/o-palmeiral" element={<OPalmeiral />} />
               <Route path="/pt/showcase/o-palmeiral" element={<OPalmeiral />} />
               <Route path="/googleio" element={<GoogleIO />} />
