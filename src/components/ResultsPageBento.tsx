@@ -6,15 +6,9 @@ import { LazyVideo } from './LazyVideo';
 export const ResultsPageBento = () => {
   const { getLanguagePath } = useLanguage();
 
-  // Quinta do Pinto concept film pinned to the top; everything else
-  // keeps the order it already has in constants.ts.
-  const conceptFilm = showcases.find((s) => s.slug === '/showcase/quinta-do-pinto-concept-film');
-  const rest = showcases.filter((s) => s.slug !== '/showcase/quinta-do-pinto-concept-film');
-  const orderedShowcases = conceptFilm ? [conceptFilm, ...rest] : showcases;
-
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-      {orderedShowcases.map((project) => (
+      {showcases.map((project) => (
         <Link key={project.slug} to={getLanguagePath(project.slug)} className="group block">
           <div className="relative aspect-[4/5] overflow-hidden bg-black/5 rounded-md">
             {project.videoSrc ? (

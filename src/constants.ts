@@ -1,5 +1,3 @@
-import nosHeroImg from './assets/images/nos_ai_hero_1789386135103.jpg';
-
 export const getAssetUrl = (path: string) => {
   console.log('getAssetUrl path:', path);
   if (!path) return '';
@@ -43,6 +41,20 @@ export const showcases = [
     videoSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/salt-lily-zoom.mp4',
   },
   {
+    title: 'Quinta Do Pinto — Concept Film',
+    subtitle: 'Tradition, Made Contemporary',
+    imageSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/QDP-FILM/Saved_frame_from_WINE_CM(2)_2K_202609070948.jpeg',
+    slug: '/showcase/quinta-do-pinto-concept-film',
+    videoSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/QDP-FILM/WINE_CM_16_9_FULL.mp4',
+    mobileVideoSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/QDP-FILM/WINE_9_16_Full.mp4',
+  },
+  {
+    title: 'Google I/O 2026',
+    subtitle: 'TPU Film / VFX Comp',
+    imageSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/GOOGLE_IO/IO.gif',
+    slug: '/googleio',
+  },
+  {
     title: 'Franks Web AD SS27',
     subtitle: 'Web AD SS27',
     imageSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/2Artboard%205-100.jpg',
@@ -62,12 +74,6 @@ export const showcases = [
     slug: '/showcase/o-palmeiral',
   },
   {
-    title: 'Google I/O 2026',
-    subtitle: 'TPU Film / VFX Comp',
-    imageSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/GOOGLE_IO/IO.gif',
-    slug: '/googleio',
-  },
-  {
     title: 'Franks Australia',
     subtitle: 'From pattern to production',
     imageSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/2Artboard%205-100.jpg',
@@ -75,17 +81,9 @@ export const showcases = [
     videoSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/Beach_Franks1.mp4',
   },
   {
-    title: 'Quinta Do Pinto — Concept Film',
-    subtitle: 'Tradition, Made Contemporary',
-    imageSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/QDP-FILM/Saved_frame_from_WINE_CM(2)_2K_202609070948.jpeg',
-    slug: '/showcase/quinta-do-pinto-concept-film',
-    videoSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/QDP-FILM/WINE_CM_16_9_FULL.mp4',
-    mobileVideoSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/QDP-FILM/WINE_9_16_Full.mp4',
-  },
-  {
     title: 'NOS AI Summer Campaign',
     subtitle: 'Human-AI Collaboration',
-    imageSrc: nosHeroImg,
+    imageSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/NOS/Header/youtube-thumbnail-o_t0w0LUUuY-maxresdefault.jpg',
     slug: '/showcase/nos-ai-campaign',
   },
 ];
