@@ -8,7 +8,8 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ExternalLink } from 'lucide-react';
 
-const FILM_URL = 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/QDP-FILM/WINE_CM(2).mp4';
+const DESKTOP_FILM_URL = 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/QDP-FILM/WINE_CM_16_9_FULL.mp4';
+const MOBILE_FILM_URL = 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/QDP-FILM/WINE_9_16_Full.mp4';
 
 // Real uploaded filenames, exact — confirmed against the live Supabase bucket listing.
 const ASSETS = {
@@ -43,7 +44,8 @@ export const QuintaDoPintoConceptFilm = () => {
           title={t.quintaConceptFilm.heroTitle}
           subtitle={t.quintaConceptFilm.heroSubtitle}
           description={t.quintaConceptFilm.heroDescription}
-          videoSrc="QDP-FILM/WINE_CM(2).mp4"
+          videoSrc={DESKTOP_FILM_URL}
+          mobileVideoSrc={MOBILE_FILM_URL}
           caseStudyNumber="Quinta do Pinto"
           sector={t.quintaConceptFilm.sector}
           deliverables={t.quintaConceptFilm.deliverables}
@@ -51,7 +53,7 @@ export const QuintaDoPintoConceptFilm = () => {
           titleClassName="text-4xl sm:text-5xl md:text-[clamp(2.5rem,7vw,110px)]"
         />
 
-        {/* Section 01: The Film — full 16:9 player, controls */}
+        {/* Section 01: The Film — full 16:9 player for desktop, 9:16 player for mobile, with controls */}
         <section className="py-24 md:py-40 bg-black text-white">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div {...fadeInUp} className="mb-16 text-center max-w-2xl mx-auto">
@@ -66,15 +68,37 @@ export const QuintaDoPintoConceptFilm = () => {
               </p>
             </motion.div>
 
+            {/* Desktop 16:9 Player */}
             <motion.div
               initial={{ opacity: 0, scale: 0.97 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="aspect-video w-full overflow-hidden rounded-md border border-white/10"
+              className="hidden md:block aspect-video w-full overflow-hidden rounded-md border border-white/10"
             >
               <LazyVideo
-                src={FILM_URL}
+                src={DESKTOP_FILM_URL}
+                poster={getAssetUrl(ASSETS.poster)}
+                className="w-full h-full object-cover rounded-md"
+                showControls
+                controlsColor="red-600"
+                autoPlay={false}
+                muted={false}
+                loop={false}
+                playsInline
+              />
+            </motion.div>
+
+            {/* Mobile 9:16 Player */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.97 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="block md:hidden max-w-sm mx-auto aspect-[9/16] w-full overflow-hidden rounded-md border border-white/10"
+            >
+              <LazyVideo
+                src={MOBILE_FILM_URL}
                 poster={getAssetUrl(ASSETS.poster)}
                 className="w-full h-full object-cover rounded-md"
                 showControls

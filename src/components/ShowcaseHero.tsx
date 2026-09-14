@@ -9,6 +9,7 @@ interface ShowcaseHeroProps {
   description: string;
   imageSrc?: string;
   videoSrc?: string;
+  mobileVideoSrc?: string;
   caseStudyNumber: string;
   sector: string;
   deliverables: string;
@@ -28,6 +29,7 @@ export const ShowcaseHero = ({
   description,
   imageSrc = '',
   videoSrc,
+  mobileVideoSrc,
   caseStudyNumber,
   sector,
   deliverables,
@@ -43,15 +45,38 @@ export const ShowcaseHero = ({
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-black pt-20 pb-12 md:pb-24">
       <div className="absolute inset-0 z-0">
         {videoSrc ? (
-          <video
-            src={getAssetUrl(videoSrc)}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover opacity-35 rounded-none"
-            style={{ objectPosition: imagePosition }}
-          />
+          mobileVideoSrc ? (
+            <>
+              <video
+                src={getAssetUrl(videoSrc)}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="hidden md:block w-full h-full object-cover opacity-35 rounded-none"
+                style={{ objectPosition: imagePosition }}
+              />
+              <video
+                src={getAssetUrl(mobileVideoSrc)}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="block md:hidden w-full h-full object-cover opacity-35 rounded-none"
+                style={{ objectPosition: imagePosition }}
+              />
+            </>
+          ) : (
+            <video
+              src={getAssetUrl(videoSrc)}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover opacity-35 rounded-none"
+              style={{ objectPosition: imagePosition }}
+            />
+          )
         ) : (
           imageSrc && (
             <img 

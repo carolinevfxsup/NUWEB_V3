@@ -39,14 +39,35 @@ export const HomeResultsBento = () => {
               className="group relative md:col-span-4 bg-white/5 aspect-[3/4] max-h-[420px] md:max-h-[480px] overflow-hidden block mx-auto w-full"
             >
               {project.videoSrc ? (
-                <LazyVideo 
-                  src={project.videoSrc} 
-                  className="w-full h-full object-cover block transition-transform duration-700 group-hover:scale-105" 
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline
-                />
+                project.mobileVideoSrc ? (
+                  <>
+                    <LazyVideo 
+                      src={project.videoSrc} 
+                      className="hidden md:block w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                      autoPlay 
+                      loop 
+                      muted 
+                      playsInline
+                    />
+                    <LazyVideo 
+                      src={project.mobileVideoSrc} 
+                      className="block md:hidden w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                      autoPlay 
+                      loop 
+                      muted 
+                      playsInline
+                    />
+                  </>
+                ) : (
+                  <LazyVideo 
+                    src={project.videoSrc} 
+                    className="w-full h-full object-cover block transition-transform duration-700 group-hover:scale-105" 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline
+                  />
+                )
               ) : (
                 <img 
                   src={getAssetUrl(project.imageSrc)} 

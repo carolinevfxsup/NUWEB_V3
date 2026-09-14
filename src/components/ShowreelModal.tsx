@@ -7,7 +7,23 @@ interface ShowreelModalProps {
   videoUrl?: string;
 }
 
-export const ShowreelModal = ({ isOpen, onClose, videoUrl = "https://www.youtube.com/embed/jrrKEKi5fBc?autoplay=1" }: ShowreelModalProps) => {
+const formatVideoUrl = (url: string) => {
+  if (!url) return '';
+  if (url.includes('youtu.be/')) {
+    const videoId = url.split('youtu.be/')[1]?.split('?')[0];
+    return `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+  }
+  if (url.includes('youtube.com/watch')) {
+    const match = url.match(/[?&]v=([^&]+)/);
+    const videoId = match ? match[1] : '';
+    return `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+  }
+  return url;
+};
+
+export const ShowreelModal = ({ isOpen, onClose, videoUrl = "https://www.youtube.com/embed/ODjDJbBSkM0?autoplay=1" }: ShowreelModalProps) => {
+  const resolvedUrl = formatVideoUrl(videoUrl);
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -31,10 +47,10 @@ export const ShowreelModal = ({ isOpen, onClose, videoUrl = "https://www.youtube
             >
               <X size={32} />
             </button>
-            {videoUrl.includes('.mp4') ? (
+            {resolvedUrl.includes('.mp4') ? (
               <video
                 className="w-full h-full object-contain"
-                src={videoUrl}
+                src={resolvedUrl}
                 controls
                 autoPlay
                 playsInline
@@ -42,7 +58,7 @@ export const ShowreelModal = ({ isOpen, onClose, videoUrl = "https://www.youtube
             ) : (
               <iframe
                 className="w-full h-full"
-                src={videoUrl}
+                src={resolvedUrl}
                 title="Video"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

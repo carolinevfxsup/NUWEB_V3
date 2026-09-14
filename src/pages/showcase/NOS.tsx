@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Header } from '../../components/Header';
 import { ProjectNavigation } from '../../components/ProjectNavigation';
 import { ShowcaseHero } from '../../components/ShowcaseHero';
@@ -39,6 +39,39 @@ export const NOS = () => {
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   const [activeEpisode, setActiveEpisode] = useState(1);
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const audioUrl = "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/NOS/Audio/INTRO_PEDRO_FINAL.wav";
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+    };
+  }, []);
+
+  const toggleAudio = () => {
+    if (!audioRef.current) {
+      audioRef.current = new Audio(audioUrl);
+      audioRef.current.addEventListener('ended', () => {
+        setIsPlayingAudio(false);
+      });
+    }
+
+    if (isPlayingAudio) {
+      audioRef.current.pause();
+      setIsPlayingAudio(false);
+    } else {
+      audioRef.current.play()
+        .then(() => {
+          setIsPlayingAudio(true);
+        })
+        .catch(err => {
+          console.warn("Audio playback failed:", err);
+        });
+    }
+  };
 
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -277,7 +310,7 @@ export const NOS = () => {
                 className="relative"
               >
                 {/* Visual Image Carousel with arrows, dots, and fallbacks */}
-                <div className="aspect-[4/3] overflow-hidden shadow-2xl rounded-lg border border-black/5 relative group bg-neutral-100">
+                <div className="aspect-[3/4] max-w-md mx-auto overflow-hidden shadow-2xl rounded-lg border border-black/5 relative group bg-neutral-900 p-4 sm:p-6 md:p-8">
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={currentSlide}
@@ -285,18 +318,18 @@ export const NOS = () => {
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -20 }}
                       transition={{ duration: 0.4 }}
-                      className="w-full h-full"
+                      className="w-full h-full flex items-center justify-center"
                     >
                       <ImageWithFallback
                         src={carouselImages[currentSlide]}
                         fallbackSrc={nosAppUiImg}
-                        className="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-700"
+                        className="w-full h-full object-contain rounded-md group-hover:scale-102 transition-transform duration-700"
                         alt={`App UI Screenshot ${currentSlide + 1}`}
                         referrerPolicy="no-referrer"
                       />
                     </motion.div>
                   </AnimatePresence>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent pointer-events-none"></div>
 
                   {/* Left Navigation Arrow */}
                   <button
@@ -373,7 +406,7 @@ export const NOS = () => {
                 <div className="p-6 bg-white border border-neutral-200/80 rounded-md shadow-sm relative overflow-hidden">
                   <div className="flex items-center gap-6">
                     <button
-                      onClick={() => setIsPlayingAudio(!isPlayingAudio)}
+                      onClick={toggleAudio}
                       className="w-16 h-16 rounded-full bg-[#DC2626] text-white flex items-center justify-center hover:scale-105 hover:bg-red-600 transition-all active:scale-95 shadow-md shadow-[#DC2626]/20 z-10"
                     >
                       {isPlayingAudio ? <Pause className="w-6 h-6 fill-white" /> : <Play className="w-6 h-6 fill-white translate-x-0.5" />}

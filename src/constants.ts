@@ -79,7 +79,8 @@ export const showcases = [
     subtitle: 'Tradition, Made Contemporary',
     imageSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/QDP-FILM/Saved_frame_from_WINE_CM(2)_2K_202609070948.jpeg',
     slug: '/showcase/quinta-do-pinto-concept-film',
-    videoSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/QDP-FILM/WINE_CM(2).mp4',
+    videoSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/QDP-FILM/WINE_CM_16_9_FULL.mp4',
+    mobileVideoSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/QDP-FILM/WINE_9_16_Full.mp4',
   },
   {
     title: 'NOS AI Summer Campaign',

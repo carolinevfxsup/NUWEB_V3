@@ -678,7 +678,7 @@ export const translations = {
       ctaButton: 'Book a Discovery Call',
     },
     nos: {
-      heroTitle: 'Quem Conta um Conto, Acrescenta um Prompt',
+      heroTitle: 'NOS Campaign',
       heroSubtitle: 'Human-AI Collaborative Campaign',
       heroDescription: 'An interactive summer campaign for NOS, where human creativity and artificial intelligence collaborate to write and visualize surreal summer stories.',
       sector: 'Telecommunications',
@@ -1705,7 +1705,7 @@ export const translations = {
       ctaButton: 'Marcar Chamada de Descoberta',
     },
     nos: {
-      heroTitle: 'Quem Conta um Conto, Acrescenta um Prompt',
+      heroTitle: 'NOS Campaign',
       heroSubtitle: 'Campanha Colaborativa de IA',
       heroDescription: 'Uma campanha de verão interativa para a NOS, onde a criatividade humana e a inteligência artificial colaboram para escrever e visualizar histórias de verão surreais.',
       sector: 'Telecomunicações',

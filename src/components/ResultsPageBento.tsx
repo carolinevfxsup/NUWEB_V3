@@ -18,14 +18,35 @@ export const ResultsPageBento = () => {
         <Link key={project.slug} to={getLanguagePath(project.slug)} className="group block">
           <div className="relative aspect-[4/5] overflow-hidden bg-black/5 rounded-md">
             {project.videoSrc ? (
-              <LazyVideo
-                src={project.videoSrc}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                autoPlay
-                loop
-                muted
-                playsInline
-              />
+              project.mobileVideoSrc ? (
+                <>
+                  <LazyVideo
+                    src={project.videoSrc}
+                    className="hidden sm:block w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                  <LazyVideo
+                    src={project.mobileVideoSrc}
+                    className="block sm:hidden w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                </>
+              ) : (
+                <LazyVideo
+                  src={project.videoSrc}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
+              )
             ) : (
               <img
                 src={getAssetUrl(project.imageSrc || '')}
