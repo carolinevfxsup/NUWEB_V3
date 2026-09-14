@@ -16,6 +16,7 @@ const CARD_BGS = [
   ph('#2a2418', '#4a3c22', 120),
   ph('#1e2a2a', '#2f4a45', 120),
   ph('#241a1a', '#3a2828', 120),
+  ph('#1d1d2c', '#2c2c3e', 120),
 ];
 
 const SOFTWARE = ['ComfyUI', 'Blender', 'Maya', 'Higgsfield', 'NULABS', 'Nuke'];
@@ -39,11 +40,24 @@ const CARDS_EN: PillarCard[] = [
   },
   {
     n: '03',
-    title: 'High-End Hybrid VFX',
+    title: 'High-End Hybrid VFX & AI',
     line: '20 years of VFX. AI-hybrid pipeline.',
     more: 'Our flagship offering: a bespoke 4K VFX pipeline fused with AI-native tools, directed by supervisors who know what real footage behaves like.',
     imgSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/GOOGLE_IO/IO.gif',
   },
+  {
+    n: '04',
+    title: 'Traditional VFX',
+    line: '20 years of blockbusters. Hugo 3D VFX Oscar.',
+    more: 'Two decades of visual effects for Hollywood blockbuster movies, including a VFX Oscar for Hugo 3D, working at the highest level of photorealistic detail for cinema and TV.',
+    imgSrcs: [
+      'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/VFX/Screenshot%202026-09-14%20155944.png',
+      'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/VFX/VFX_03.png',
+      'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/VFX/VFX_showreel_01.png'
+    ],
+    overlayButtonText: 'watch showreel',
+    overlayVideoUrl: 'https://vimeo.com/1139981506'
+  }
 ];
 
 const CARDS_PT: PillarCard[] = [
@@ -64,11 +78,24 @@ const CARDS_PT: PillarCard[] = [
   },
   {
     n: '03',
-    title: 'VFX Híbridos de Alto Nível',
+    title: 'VFX Híbridos de Alto Nível & IA',
     line: '20 anos de VFX. Pipeline híbrido de IA.',
     more: 'A nossa oferta de topo: um pipeline VFX 4K personalizado com ferramentas de IA, dirigido por supervisores que entendem a física do vídeo real.',
     imgSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/GOOGLE_IO/IO.gif',
   },
+  {
+    n: '04',
+    title: 'VFX Tradicional',
+    line: '20 anos de blockbusters. Óscar de VFX com Hugo 3D.',
+    more: 'Duas décadas de efeitos visuais para grandes produções cinematográficas de Hollywood, incluindo um Óscar de VFX com o filme Hugo 3D, trabalhando ao mais alto nível de detalhe fotorrealista para cinema e televisão de prestígio.',
+    imgSrcs: [
+      'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/VFX/Screenshot%202026-09-14%20155944.png',
+      'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/VFX/VFX_03.png',
+      'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/VFX/VFX_showreel_01.png'
+    ],
+    overlayButtonText: 'ver showreel',
+    overlayVideoUrl: 'https://vimeo.com/1139981506'
+  }
 ];
 
 const PORTFOLIO: PortfolioItem[] = [

@@ -9,6 +9,11 @@ interface ShowreelModalProps {
 
 const formatVideoUrl = (url: string) => {
   if (!url) return '';
+  if (url.includes('vimeo.com/')) {
+    const match = url.match(/vimeo\.com\/(\d+)/);
+    const videoId = match ? match[1] : '';
+    return `https://player.vimeo.com/video/${videoId}?autoplay=1`;
+  }
   if (url.includes('youtu.be/')) {
     const videoId = url.split('youtu.be/')[1]?.split('?')[0];
     return `https://www.youtube.com/embed/${videoId}?autoplay=1`;

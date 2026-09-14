@@ -1,4 +1,4 @@
-import { useState, type FC } from 'react';
+import { useState, useEffect, type FC } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { ShowreelModal } from '../ShowreelModal';
@@ -24,6 +24,7 @@ export interface PillarCard {
   line: string;
   more: string;
   imgSrc?: string;
+  imgSrcs?: string[];
   videoSrc?: string;
   overlayButtonText?: string;
   onOverlayClick?: () => void;
@@ -151,6 +152,15 @@ export const Hero: FC<HeroProps> = ({
 export const CardItem: FC<{ card: PillarCard; bg: string }> = ({ card, bg }) => {
   const [open, setOpen] = useState(false);
   const [showreelOpen, setShowreelOpen] = useState(false);
+  const [currentImgIndex, setCurrentImgIndex] = useState(0);
+
+  useEffect(() => {
+    if (!card.imgSrcs || card.imgSrcs.length <= 1) return;
+    const interval = setInterval(() => {
+      setCurrentImgIndex((prev) => (prev + 1) % card.imgSrcs!.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [card.imgSrcs]);
 
   return (
     <article className="bg-white flex flex-col border border-border group transition-shadow duration-300 hover:shadow-xl">
@@ -164,6 +174,20 @@ export const CardItem: FC<{ card: PillarCard; bg: string }> = ({ card, bg }) => 
             playsInline
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           />
+        ) : card.imgSrcs && card.imgSrcs.length > 0 ? (
+          <div className="relative w-full h-full">
+            {card.imgSrcs.map((src, idx) => (
+              <img
+                key={src}
+                src={src}
+                alt={`${card.title} ${idx}`}
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                  idx === currentImgIndex ? 'opacity-100' : 'opacity-0'
+                } group-hover:scale-105 transition-all duration-700`}
+                referrerPolicy="no-referrer"
+              />
+            ))}
+          </div>
         ) : card.imgSrc ? (
           <img
             src={card.imgSrc}
