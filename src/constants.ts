@@ -1,23 +1,35 @@
 export const getAssetUrl = (path: string) => {
   console.log('getAssetUrl path:', path);
   if (!path) return '';
-  if (path.startsWith('http')) return path;
   
-  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
-  // Remove 'images/' prefix if it exists
-  let finalPath = cleanPath.startsWith('images/') ? cleanPath.slice(7) : cleanPath;
+  let result = path;
   
-  const PROJECT_ID = 'muncxkojigqqaakscbjs';
-  const BUCKET = 'Src';
-  
-  // If the path already contains a hyphen and ends in .jpeg, it's likely a direct filename
-  if (finalPath.includes('-') && finalPath.endsWith('.jpeg')) {
-     return `https://${PROJECT_ID}.supabase.co/storage/v1/object/public/${BUCKET}/assets/${finalPath}`;
+  if (path.startsWith('http')) {
+    result = path;
+  } else {
+    const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+    // Remove 'images/' prefix if it exists
+    let finalPath = cleanPath.startsWith('images/') ? cleanPath.slice(7) : cleanPath;
+    
+    const PROJECT_ID = 'muncxkojigqqaakscbjs';
+    const BUCKET = 'Src';
+    
+    result = `https://${PROJECT_ID}.supabase.co/storage/v1/object/public/${BUCKET}/assets/${finalPath}`;
   }
 
-  // Fallback: convert slashes to hyphens and try to match the user's flat structure
-  // We keep the original path as well in case some are in folders
-  return `https://${PROJECT_ID}.supabase.co/storage/v1/object/public/${BUCKET}/assets/${finalPath}`;
+  // If it's a Supabase image URL, apply format=webp optimization
+  if (result.includes('supabase.co')) {
+    const lowerPath = result.toLowerCase();
+    const isImage = lowerPath.endsWith('.jpg') || lowerPath.endsWith('.jpeg') || lowerPath.endsWith('.png') || lowerPath.endsWith('.webp') || lowerPath.includes('.jpg') || lowerPath.includes('.jpeg') || lowerPath.includes('.png');
+    const isGif = lowerPath.endsWith('.gif');
+    const isVideo = lowerPath.endsWith('.mp4') || lowerPath.endsWith('.webm') || lowerPath.endsWith('.ogg');
+    
+    if (isImage && !isGif && !isVideo && !result.includes('format=webp')) {
+      result = `${result}${result.includes('?') ? '&' : '?'}format=webp`;
+    }
+  }
+
+  return result;
 };
 
 export const showcases = [

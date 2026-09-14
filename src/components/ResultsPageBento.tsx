@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { showcases } from '../constants';
+import { showcases, getAssetUrl } from '../constants';
 import { useLanguage } from '../contexts/LanguageContext';
 import { LazyVideo } from './LazyVideo';
 
@@ -28,7 +28,7 @@ export const ResultsPageBento = () => {
               />
             ) : (
               <img
-                src={project.imageSrc}
+                src={getAssetUrl(project.imageSrc || '')}
                 alt={project.title}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 referrerPolicy="no-referrer"

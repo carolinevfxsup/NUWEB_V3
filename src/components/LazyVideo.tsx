@@ -9,6 +9,7 @@ interface LazyVideoProps extends React.VideoHTMLAttributes<HTMLVideoElement> {
 
 export const LazyVideo = ({ src, className, showControls, controlsColor, ...props }: LazyVideoProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [hasLoaded, setHasLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const [isMuted, setIsMuted] = useState(props.muted !== false); // Default to muted unless explicitly false
   const [isPlaying, setIsPlaying] = useState(props.autoPlay !== false); // Default to playing unless explicitly false
@@ -16,12 +17,12 @@ export const LazyVideo = ({ src, className, showControls, controlsColor, ...prop
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
+        setIsInView(entry.isIntersecting);
         if (entry.isIntersecting) {
-          setIsInView(true);
-          observer.unobserve(entry.target);
+          setHasLoaded(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.05 }
     );
 
     if (videoRef.current) {
@@ -36,12 +37,19 @@ export const LazyVideo = ({ src, className, showControls, controlsColor, ...prop
   }, []);
 
   useEffect(() => {
-    if (isInView && props.autoPlay && videoRef.current) {
-      videoRef.current.play().catch(err => {
-        console.warn("Autoplay failed:", err);
-      });
+    if (!videoRef.current || !hasLoaded) return;
+
+    if (isInView && props.autoPlay) {
+      videoRef.current.play()
+        .then(() => setIsPlaying(true))
+        .catch(err => {
+          console.warn("Autoplay failed:", err);
+        });
+    } else {
+      videoRef.current.pause();
+      setIsPlaying(false);
     }
-  }, [isInView, props.autoPlay]);
+  }, [isInView, hasLoaded, props.autoPlay]);
 
   const toggleMute = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -70,13 +78,13 @@ export const LazyVideo = ({ src, className, showControls, controlsColor, ...prop
     <div className="relative w-full h-full group">
       <video
         ref={videoRef}
-        src={isInView ? src : undefined}
+        src={hasLoaded ? src : undefined}
         className={className}
         muted={isMuted}
         playsInline
         {...props}
       />
-      {showControls && isInView && (
+      {showControls && hasLoaded && (
         <>
           <div className="absolute bottom-6 right-6 z-10 flex items-center gap-3">
             <button
