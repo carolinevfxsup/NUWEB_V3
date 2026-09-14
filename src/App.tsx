@@ -26,6 +26,7 @@ const QuintaDoPinto = lazy(() => import('./pages/showcase/QuintaDoPinto').then(m
 const QuintaDoPintoConceptFilm = lazy(() => import('./pages/showcase/QuintaDoPintoConceptFilm').then(m => ({ default: m.QuintaDoPintoConceptFilm })));
 const OPalmeiral = lazy(() => import('./pages/showcase/OPalmeiral').then(m => ({ default: m.OPalmeiral })));
 const GoogleIO = lazy(() => import('./pages/showcase/GoogleIO').then(m => ({ default: m.GoogleIO })));
+const NOS = lazy(() => import('./pages/showcase/NOS').then(m => ({ default: m.NOS })));
 const Onboarding = lazy(() => import('./pages/Onboarding').then(m => ({ default: m.Onboarding })));
 const Nulaabs = lazy(() => import('./pages/Nulaabs').then(m => ({ default: m.Nulaabs })));
 
@@ -100,6 +101,8 @@ export default function App() {
                 <Route path="/pt/showcase/quinta-do-pinto-concept-film" element={<QuintaDoPintoConceptFilm />} />
                 <Route path="/showcase/o-palmeiral" element={<OPalmeiral />} />
                 <Route path="/pt/showcase/o-palmeiral" element={<OPalmeiral />} />
+                <Route path="/showcase/nos-ai-campaign" element={<NOS />} />
+                <Route path="/pt/showcase/nos-ai-campaign" element={<NOS />} />
                 <Route path="/googleio" element={<GoogleIO />} />
                 <Route path="/pt/googleio" element={<GoogleIO />} />
                 <Route path="/onboarding" element={<Onboarding />} />
