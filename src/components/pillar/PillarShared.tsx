@@ -232,6 +232,23 @@ export const CardItem: FC<{ card: PillarCard; bg: string }> = ({ card, bg }) => 
           </p>
         </div>
 
+        {card.overlayButtonText && (
+          <div className="block md:hidden mb-6">
+            <button
+              onClick={() => {
+                if (card.onOverlayClick) {
+                  card.onOverlayClick();
+                } else {
+                  setShowreelOpen(true);
+                }
+              }}
+              className="w-full text-black text-xs font-sans font-bold uppercase tracking-widest border border-black/20 rounded px-6 py-3.5 flex items-center justify-center gap-2 hover:bg-black hover:text-white transition-all duration-300 cursor-pointer"
+            >
+              {card.overlayButtonText} <ExternalLink className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        )}
+
         <div>
           <button
             onClick={() => setOpen((o) => !o)}
