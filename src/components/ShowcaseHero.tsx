@@ -10,6 +10,7 @@ interface ShowcaseHeroProps {
   imageSrc?: string;
   videoSrc?: string;
   mobileVideoSrc?: string;
+  videoPoster?: string;
   caseStudyNumber: string;
   sector: string;
   deliverables: string;
@@ -30,6 +31,7 @@ export const ShowcaseHero = ({
   imageSrc = '',
   videoSrc,
   mobileVideoSrc,
+  videoPoster,
   caseStudyNumber,
   sector,
   deliverables,
@@ -49,6 +51,7 @@ export const ShowcaseHero = ({
             <>
               <video
                 src={getAssetUrl(videoSrc)}
+                poster={videoPoster ? getAssetUrl(videoPoster) : undefined}
                 autoPlay
                 loop
                 muted
@@ -58,6 +61,7 @@ export const ShowcaseHero = ({
               />
               <video
                 src={getAssetUrl(mobileVideoSrc)}
+                poster={videoPoster ? getAssetUrl(videoPoster) : undefined}
                 autoPlay
                 loop
                 muted
@@ -69,6 +73,7 @@ export const ShowcaseHero = ({
           ) : (
             <video
               src={getAssetUrl(videoSrc)}
+              poster={videoPoster ? getAssetUrl(videoPoster) : undefined}
               autoPlay
               loop
               muted

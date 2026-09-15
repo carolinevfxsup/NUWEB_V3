@@ -7,12 +7,17 @@ interface LazyVideoProps extends React.VideoHTMLAttributes<HTMLVideoElement> {
   controlsColor?: string;
 }
 
-export const LazyVideo = ({ src, className, showControls, controlsColor, ...props }: LazyVideoProps) => {
+export const LazyVideo = ({ src, className, showControls, controlsColor, poster, ...props }: LazyVideoProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [hasLoaded, setHasLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const [isMuted, setIsMuted] = useState(props.muted !== false); // Default to muted unless explicitly false
   const [isPlaying, setIsPlaying] = useState(props.autoPlay !== false); // Default to playing unless explicitly false
+  const [videoStarted, setVideoStarted] = useState(false);
+
+  useEffect(() => {
+    setVideoStarted(false);
+  }, [src, hasLoaded]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -75,15 +80,30 @@ export const LazyVideo = ({ src, className, showControls, controlsColor, ...prop
   };
 
   return (
-    <div className="relative w-full h-full group">
+    <div className="relative w-full h-full group overflow-hidden">
       <video
         ref={videoRef}
         src={hasLoaded ? src : undefined}
         className={className}
         muted={isMuted}
         playsInline
+        onPlaying={() => setVideoStarted(true)}
+        onTimeUpdate={(e) => {
+          if (e.currentTarget.currentTime > 0) {
+            setVideoStarted(true);
+          }
+        }}
+        poster={poster}
         {...props}
       />
+      {poster && (
+        <img
+          src={poster}
+          alt="Video poster overlay"
+          className={`${className} absolute inset-0 w-full h-full object-cover pointer-events-none z-[2] transition-opacity duration-500 ${videoStarted ? 'opacity-0' : 'opacity-100'}`}
+          referrerPolicy="no-referrer"
+        />
+      )}
       {showControls && hasLoaded && (
         <>
           <div className="absolute bottom-6 right-6 z-10 flex items-center gap-3">
