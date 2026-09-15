@@ -54,7 +54,7 @@ export const SaltLily = () => {
                 className="relative"
               >
                 <div className="aspect-square overflow-hidden shadow-2xl rounded-md">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/Gemini_Generated_Image_gx9357gx9357gx93_1.jpeg" 
                     className="w-full h-full object-cover rounded-md" 
                     alt={t.saltLily.altBrand} 
@@ -98,7 +98,7 @@ export const SaltLily = () => {
                     {item.isVideo ? (
                       <LazyVideo src={item.src} className="w-full h-full object-cover rounded-md" autoPlay loop muted playsInline />
                     ) : (
-                      <img src={item.src} className="w-full h-full object-cover rounded-md" alt={item.title} referrerPolicy="no-referrer" />
+                      <img loading="lazy" decoding="async" src={item.src} className="w-full h-full object-cover rounded-md" alt={item.title} referrerPolicy="no-referrer" />
                     )}
                   </div>
                   <div className="flex items-center gap-3">
@@ -123,7 +123,7 @@ export const SaltLily = () => {
                 className="order-2 lg:order-1"
               >
                 <div className="aspect-[4/5] overflow-hidden shadow-2xl rounded-md">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/FEMME_HER.png" 
                     className="w-full h-full object-cover rounded-md" 
                     alt={t.saltLily.altDetail} 
@@ -163,7 +163,7 @@ export const SaltLily = () => {
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <motion.div {...fadeInUp} className="space-y-6">
                 <div className="aspect-square overflow-hidden bg-white border border-[#EEEEEE] shadow-sm rounded-md">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/baae6b23-4f9e-49d9-8b07-9c5b8efbd951-aXWCm98I%20(1).jpg" 
                     className="w-full h-full object-cover rounded-md" 
                     alt={t.saltLily.altSourceStill} 
@@ -283,7 +283,7 @@ export const SaltLily = () => {
                 className="relative"
               >
                 <div className="aspect-square overflow-hidden rounded-md border-8 border-white shadow-2xl">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/AUTO_STACK.png" 
                     className="w-full h-full object-cover" 
                     alt={t.saltLily.altAutomationSystem} 
@@ -315,7 +315,7 @@ export const SaltLily = () => {
                     <span className="text-xs font-bold">saltlily_jewelry</span>
                   </div>
                   <div className="aspect-square overflow-hidden rounded-sm mb-4">
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/smiling_no_watermark.jpeg" 
                       className="w-full h-full object-cover" 
                       alt="Instagram Post Preview" 

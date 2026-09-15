@@ -20,7 +20,7 @@ const PEDRO_IMAGE = "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/
 const ImageWithFallback = ({ src, fallbackSrc, alt, className, ...props }: any) => {
   const [imgSrc, setImgSrc] = useState(src);
   return (
-    <img
+    <img loading="lazy" decoding="async"
       {...props}
       src={imgSrc}
       alt={alt}

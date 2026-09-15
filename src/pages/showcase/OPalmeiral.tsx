@@ -50,7 +50,7 @@ export const OPalmeiral = () => {
                 className="order-2 lg:order-1"
               >
                 <div className="relative border border-black/5 shadow-2xl overflow-hidden rounded-md">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-daniel.webp" 
                     alt={t.palmeiral.altDaniel} 
                     className="w-full h-auto block" 
@@ -126,7 +126,7 @@ export const OPalmeiral = () => {
                 className="relative"
               >
                 <div className="relative border border-black/5 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] overflow-hidden bg-white rounded-md">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-content.png" 
                     alt={t.palmeiral.altContentLibrary} 
                     className="w-full h-auto block" 
@@ -208,7 +208,7 @@ export const OPalmeiral = () => {
                 transition={{ duration: 0.8 }}
               >
                 <div className="relative border border-black/5 shadow-2xl overflow-hidden rounded-md bg-white">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-growth.png" 
                     alt={t.palmeiral.altInstagramGrowth} 
                     className="w-full h-auto block" 
@@ -271,7 +271,7 @@ export const OPalmeiral = () => {
                 transition={{ duration: 0.8 }}
               >
                 <div className="relative border border-black/5 shadow-2xl overflow-hidden rounded-md">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-posting-logic.png" 
                     alt={t.palmeiral.altPostingLogic} 
                     className="w-full h-auto block" 
@@ -317,7 +317,7 @@ export const OPalmeiral = () => {
                 className="order-1 lg:order-2"
               >
                 <div className="relative border border-black/5 shadow-2xl overflow-hidden rounded-md">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-human-checkpoint.png" 
                     alt={t.palmeiral.altHumanCheckpoint} 
                     className="w-full h-auto block" 
@@ -360,7 +360,7 @@ export const OPalmeiral = () => {
                 transition={{ duration: 0.8 }}
               >
                 <div className="relative border border-black/5 shadow-2xl overflow-hidden rounded-md">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-informed.png" 
                     alt={t.palmeiral.altAlwaysInformed} 
                     className="w-full h-auto block" 
@@ -433,7 +433,7 @@ export const OPalmeiral = () => {
                 transition={{ duration: 0.8 }}
               >
                 <div className="relative border border-white/10 shadow-2xl overflow-hidden rounded-md">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-social-post.jpeg" 
                     alt={t.palmeiral.altFinalSocialPost} 
                     className="w-full h-auto block" 

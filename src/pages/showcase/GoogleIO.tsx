@@ -527,7 +527,7 @@ export const GoogleIO = () => {
                     {/* Center image workspace canvas */}
                     <div className="col-span-8 bg-black p-4 relative overflow-hidden flex items-center justify-center">
                       <div className="relative aspect-video w-full border border-white/5 bg-neutral-900">
-                        <img 
+                        <img loading="lazy" decoding="async" 
                           src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/GOOGLE_IO/opener/change_the_background_of_the_202605071145.jpeg" 
                           alt="NULAABS canvas render view" 
                           className="w-full h-full object-cover opacity-80"
@@ -629,7 +629,7 @@ export const GoogleIO = () => {
                   {...fadeInUp}
                   className="aspect-video relative overflow-hidden bg-white border border-black/5 group shadow-lg rounded-md"
                 >
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src={img.url} 
                     alt={img.title}
                     className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-700 cursor-pointer rounded-md"

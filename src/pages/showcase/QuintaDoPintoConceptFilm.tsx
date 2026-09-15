@@ -135,7 +135,7 @@ export const QuintaDoPintoConceptFilm = () => {
                 transition={{ duration: 0.8 }}
               >
                 <div className="aspect-[4/5] overflow-hidden shadow-2xl rounded-md">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={getAssetUrl(ASSETS.heritageWinery, 800)}
                     className="w-full h-full object-cover rounded-md"
                     alt={t.quintaConceptFilm.discoverTitle}
@@ -159,7 +159,7 @@ export const QuintaDoPintoConceptFilm = () => {
                 className="order-2 lg:order-1"
               >
                 <div className="aspect-[4/5] overflow-hidden shadow-2xl rounded-md">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={getAssetUrl(ASSETS.detailInkDrop, 800)}
                     className="w-full h-full object-cover rounded-md"
                     alt={t.quintaConceptFilm.altInkDrop}
@@ -198,7 +198,7 @@ export const QuintaDoPintoConceptFilm = () => {
             <div className="grid md:grid-cols-2 gap-4">
               <motion.div {...fadeInUp} className="relative">
                 <div className="aspect-square overflow-hidden rounded-md border border-[#EEEEEE]">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={getAssetUrl(ASSETS.conceptSketch, 800)}
                     className="w-full h-full object-cover rounded-md"
                     alt={t.quintaConceptFilm.conceptSketchTag}
@@ -211,7 +211,7 @@ export const QuintaDoPintoConceptFilm = () => {
               </motion.div>
               <motion.div {...fadeInUp} className="relative">
                 <div className="aspect-square overflow-hidden rounded-md border border-[#EEEEEE]">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={getAssetUrl(ASSETS.finalPiece, 800)}
                     className="w-full h-full object-cover rounded-md"
                     alt={t.quintaConceptFilm.finalPieceTag}
@@ -256,7 +256,7 @@ export const QuintaDoPintoConceptFilm = () => {
                   transition={{ delay: i * 0.08 }}
                   className={`relative aspect-[4/3] overflow-hidden rounded-md ${item.featured ? 'border-2 border-primary' : 'border border-[#EEEEEE]'}`}
                 >
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={getAssetUrl(item.src, 400)}
                     className="w-full h-full object-cover rounded-md"
                     alt=""
@@ -284,7 +284,7 @@ export const QuintaDoPintoConceptFilm = () => {
                 transition={{ duration: 0.8 }}
               >
                 <div className="aspect-square overflow-hidden rounded-md shadow-2xl">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={getAssetUrl(ASSETS.reveal, 800)}
                     className="w-full h-full object-cover rounded-md"
                     alt={t.quintaConceptFilm.altReveal}

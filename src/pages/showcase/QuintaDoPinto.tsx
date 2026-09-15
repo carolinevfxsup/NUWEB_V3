@@ -65,7 +65,7 @@ export const QuintaDoPinto = () => {
                 className="relative"
               >
                 <div className="aspect-[4/5] overflow-hidden shadow-2xl rounded-md">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src={getAssetUrl('quinta-moodboard.jpg')} 
                     className="w-full h-full object-cover rounded-md" 
                     alt={t.quinta.altMoodboard} 
@@ -133,7 +133,7 @@ export const QuintaDoPinto = () => {
                 className="order-2 lg:order-1"
               >
                 <div className="aspect-[4/6] overflow-hidden shadow-2xl rounded-md">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src={getAssetUrl('quinta-the-idea.gif')} 
                     className="w-full h-full object-cover rounded-md" 
                     alt={t.quinta.altTheIdea} 
@@ -171,7 +171,7 @@ export const QuintaDoPinto = () => {
             <div className="grid md:grid-cols-2 gap-16">
               <motion.div {...fadeInUp} className="space-y-8">
                 <div className="aspect-[4/6] overflow-hidden bg-white border border-[#EEEEEE] rounded-md shadow-sm">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src={getAssetUrl('quinta-before.png')} 
                     className="w-full h-full object-contain p-12 rounded-md" 
                     alt={t.quinta.altBefore} 
@@ -182,7 +182,7 @@ export const QuintaDoPinto = () => {
               </motion.div>
               <motion.div {...fadeInUp} className="space-y-8">
                 <div className="aspect-[4/6] overflow-hidden bg-white border border-[#EEEEEE] shadow-xl rounded-md">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src={getAssetUrl('quinta-after.png')} 
                     className="w-full h-full object-cover rounded-md" 
                     alt={t.quinta.altAfter} 
@@ -293,7 +293,7 @@ export const QuintaDoPinto = () => {
                 className="order-2 lg:order-1"
               >
                 <div className="aspect-square overflow-hidden rounded-md shadow-2xl">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src={getAssetUrl('quinta-wine-brands.png')} 
                     className="w-full h-full object-cover rounded-md" 
                     alt={t.quinta.altWhyItWorks} 

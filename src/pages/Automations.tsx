@@ -161,7 +161,7 @@ export const Automations = () => {
                 className="group bg-neutral border border-border rounded-md overflow-hidden hover:shadow-2xl transition-all duration-500"
               >
                 <div className="aspect-video relative overflow-hidden">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/2Artboard%201.png" 
                     alt="O Palmeiral" 
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
@@ -193,7 +193,7 @@ export const Automations = () => {
                 className="group bg-neutral border border-border rounded-md overflow-hidden hover:shadow-2xl transition-all duration-500"
               >
                 <div className="aspect-video relative overflow-hidden">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/necklace_and_hoops.png" 
                     alt="Salt Lily" 
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
@@ -253,7 +253,7 @@ export const Automations = () => {
                 transition={{ duration: 0.8 }}
                 className="w-full"
               >
-                <img 
+                <img loading="lazy" decoding="async" 
                   src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Gemini_Generated_Image_mhi8qvmhi8qvmhi8%20(1).png"
                   alt="Margin Protector"
                   className="w-full h-auto rounded-md shadow-2xl"

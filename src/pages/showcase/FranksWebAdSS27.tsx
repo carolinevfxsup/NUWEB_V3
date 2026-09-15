@@ -76,13 +76,13 @@ export const FranksWebAdSS27 = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="aspect-[9/16] overflow-hidden shadow-lg border border-black/5 rounded-md">
-                <img src={getAssetUrl('franks/Eccom_1.png')} className="w-full h-full object-cover rounded-md" alt="Asset 1" referrerPolicy="no-referrer" />
+                <img loading="lazy" decoding="async" src={getAssetUrl('franks/Eccom_1.png')} className="w-full h-full object-cover rounded-md" alt="Asset 1" referrerPolicy="no-referrer" />
               </div>
               <div className="aspect-[9/16] overflow-hidden shadow-lg border border-black/5 rounded-md">
-                <img src={getAssetUrl('franks/ECOM_FRONT.png')} className="w-full h-full object-cover rounded-md" alt="Asset 2" referrerPolicy="no-referrer" />
+                <img loading="lazy" decoding="async" src={getAssetUrl('franks/ECOM_FRONT.png')} className="w-full h-full object-cover rounded-md" alt="Asset 2" referrerPolicy="no-referrer" />
               </div>
               <div className="aspect-[9/16] overflow-hidden shadow-lg border border-black/5 rounded-md">
-                <img src={getAssetUrl('franks/1_SOCIAL_FRANKS.png')} className="w-full h-full object-cover rounded-md" alt="Asset 3" referrerPolicy="no-referrer" />
+                <img loading="lazy" decoding="async" src={getAssetUrl('franks/1_SOCIAL_FRANKS.png')} className="w-full h-full object-cover rounded-md" alt="Asset 3" referrerPolicy="no-referrer" />
               </div>
             </div>
           </div>

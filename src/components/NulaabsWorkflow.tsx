@@ -255,7 +255,7 @@ export const NulaabsWorkflow: React.FC = () => {
                         <span className="text-[#DC2626]">94.2% FIT</span>
                       </div>
                       <div className="flex-1 relative rounded-md overflow-hidden bg-black/40">
-                        <img 
+                        <img loading="lazy" decoding="async" 
                           src={assets.moodboard} 
                           alt="Concept Moodboard" 
                           className="w-full h-full object-cover opacity-80 filter saturate-75"
@@ -275,7 +275,7 @@ export const NulaabsWorkflow: React.FC = () => {
                         <span className="text-green-400">CAST READY</span>
                       </div>
                       <div className="flex-1 relative rounded-md overflow-hidden bg-black/40">
-                        <img 
+                        <img loading="lazy" decoding="async" 
                           src={assets.roster} 
                           alt="Model Roster" 
                           className="w-full h-full object-cover filter contrast-[1.05]"
@@ -327,7 +327,7 @@ export const NulaabsWorkflow: React.FC = () => {
                         </span>
                       </div>
                       <div className="flex-1 relative rounded-md overflow-hidden bg-black/40">
-                        <img 
+                        <img loading="lazy" decoding="async" 
                           src={assets.swimwear} 
                           alt="Product Swimwear" 
                           className="w-full h-full object-cover filter saturate-50"
@@ -348,7 +348,7 @@ export const NulaabsWorkflow: React.FC = () => {
                         </span>
                       </div>
                       <div className="flex-1 relative rounded-md overflow-hidden bg-black/40">
-                        <img 
+                        <img loading="lazy" decoding="async" 
                           src={assets.jewellery} 
                           alt="Jewellery library" 
                           className="w-full h-full object-cover filter contrast-[1.1] brightness-[0.9]"
@@ -397,7 +397,7 @@ export const NulaabsWorkflow: React.FC = () => {
                         <span className="text-[#DC2626] tracking-widest">SELECTED</span>
                       </div>
                       <div className="flex-1 relative rounded-md overflow-hidden bg-black/40">
-                        <img 
+                        <img loading="lazy" decoding="async" 
                           src={assets.preset} 
                           alt="Luxurypreset" 
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -419,7 +419,7 @@ export const NulaabsWorkflow: React.FC = () => {
                         <span className="text-white/20">PREVIEW</span>
                       </div>
                       <div className="flex-1 relative rounded-md overflow-hidden bg-black/40">
-                        <img 
+                        <img loading="lazy" decoding="async" 
                           src={assets.portuguesePreset} 
                           alt="Portuguese courtyard" 
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -456,7 +456,7 @@ export const NulaabsWorkflow: React.FC = () => {
                       onMouseEnter={() => setHoveredImage('floral-model')}
                       onMouseLeave={() => setHoveredImage(null)}
                     >
-                      <img 
+                      <img loading="lazy" decoding="async" 
                         src={assets.heroModel} 
                         alt="Campaign lookbook model" 
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -477,7 +477,7 @@ export const NulaabsWorkflow: React.FC = () => {
                               <h4 className="text-white text-xs font-bold font-sans">Raw Product Swimwear</h4>
                             </div>
                             <div className="w-full h-1/2 overflow-hidden rounded border border-white/15 bg-white/5 relative">
-                              <img 
+                              <img loading="lazy" decoding="async" 
                                 src={assets.rawSwimwear} 
                                 alt="Raw Swimwear" 
                                 className="w-full h-full object-cover filter saturate-50 brightness-90"
@@ -506,7 +506,7 @@ export const NulaabsWorkflow: React.FC = () => {
                       id="item-commercial-wine"
                       className="col-span-4 row-span-6 relative overflow-hidden rounded-md border border-white/10 bg-zinc-950 group flex flex-col justify-end"
                     >
-                      <img 
+                      <img loading="lazy" decoding="async" 
                         src={assets.wineCommercial} 
                         alt="Ecom commercial wine" 
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -531,7 +531,7 @@ export const NulaabsWorkflow: React.FC = () => {
                       onMouseEnter={() => setHoveredImage('jewellery-social')}
                       onMouseLeave={() => setHoveredImage(null)}
                     >
-                      <img 
+                      <img loading="lazy" decoding="async" 
                         src={assets.jewellerySocial} 
                         alt="Jewelry flatlay social output" 
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -552,7 +552,7 @@ export const NulaabsWorkflow: React.FC = () => {
                               <h4 className="text-white text-[10px] font-sans">Chain Flatlay Ingest</h4>
                             </div>
                             <div className="w-full h-2/5 overflow-hidden rounded border border-white/15">
-                              <img 
+                              <img loading="lazy" decoding="async" 
                                 src={assets.rawJewellery} 
                                 alt="Raw Jewelry" 
                                 className="w-full h-full object-cover filter contrast-[1.1] grayscale"

@@ -51,7 +51,7 @@ const Slideshow = ({ images, interval = 4000 }: { images: string[], interval?: n
   return (
     <div className="relative w-full aspect-[4/5] bg-neutral-100 rounded-sm overflow-hidden flex border border-black/5">
       {currentImage && (
-        <img
+        <img loading="lazy" decoding="async"
           key={currentImage}
           src={currentImage}
           onError={() => handleImageError(currentImage)}
@@ -430,10 +430,10 @@ export const Nulaabs = () => {
               <div className="p-8 md:p-10 border border-[#EEEEEE] bg-[#F9F9F7] rounded-md flex flex-col justify-between hover:border-[#DC2626]/30 transition-all duration-500">
                 <div className="relative w-full aspect-[4/5] bg-neutral-100 rounded-sm overflow-hidden border border-black/5 mb-8">
                   <div className="grid grid-cols-2 gap-0 w-full h-full">
-                    <img src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/LW_Uploads/one%20model%20every%20shot1.png" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-                    <img src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/LW_Uploads/one%20model%20every%20shot2.png" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-                    <img src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/LW_Uploads/one%20model%20every%20shot3.png" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-                    <img src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/LW_Uploads/one%20model%20every%20shot4.png" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img loading="lazy" decoding="async" src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/LW_Uploads/one%20model%20every%20shot1.png" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img loading="lazy" decoding="async" src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/LW_Uploads/one%20model%20every%20shot2.png" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img loading="lazy" decoding="async" src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/LW_Uploads/one%20model%20every%20shot3.png" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img loading="lazy" decoding="async" src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/LW_Uploads/one%20model%20every%20shot4.png" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </div>
                 </div>
                 <div>
@@ -534,7 +534,7 @@ export const Nulaabs = () => {
                           ) : isSpecialFeature ? (
                             <SmallSlideshow images={[feature.mainImage, feature.thumbImage]} interval={1000} />
                           ) : (
-                            <img 
+                            <img loading="lazy" decoding="async" 
                               src={feature.mainImage} 
                               alt={feature.title}
                               className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 rounded-none ${feature.id === 'out-painting' ? 'scale-115' : ''}`}
@@ -546,7 +546,7 @@ export const Nulaabs = () => {
                           {!isSpecialFeature && !['model-creator', 'client-approval', 'repose'].includes(feature.id) && feature.thumbImage && (
                             <div className="absolute bottom-3 left-3 w-24 h-32 bg-black/95 backdrop-blur-sm p-1.5 rounded border border-white/10 shadow-[0_4px_12px_rgba(0,0,0,0.15)] flex flex-col justify-between overflow-hidden z-10 transition-transform duration-300 group-hover:scale-105">
                               <div className="flex-1 w-full overflow-hidden rounded-sm bg-neutral-50">
-                                <img 
+                                <img loading="lazy" decoding="async" 
                                   src={feature.thumbImage} 
                                   alt="Input thumbnail"
                                   className="w-full h-full object-cover rounded-none"
@@ -627,7 +627,7 @@ export const Nulaabs = () => {
                         playsInline
                       />
                     ) : (
-                      <img 
+                      <img loading="lazy" decoding="async" 
                         src={getWebpUrl(image.link)} 
                         alt={image.name} 
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 rounded-none"
@@ -669,7 +669,7 @@ export const Nulaabs = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <div className="aspect-[4/5] bg-neutral-100 rounded-md overflow-hidden relative border border-black/5">
-                      <img 
+                      <img loading="lazy" decoding="async" 
                         src={assets.rawSwimwear} 
                         alt="Raw Shorts"
                         className="w-full h-full object-cover filter saturate-50"
@@ -682,7 +682,7 @@ export const Nulaabs = () => {
                   </div>
                   <div className="space-y-2">
                     <div className="aspect-[4/5] bg-neutral-100 rounded-md overflow-hidden relative border border-black/5">
-                      <img 
+                      <img loading="lazy" decoding="async" 
                         src={assets.heroModel} 
                         alt="Lookbook output"
                         className="w-full h-full object-cover"
@@ -705,7 +705,7 @@ export const Nulaabs = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <div className="aspect-[4/5] bg-neutral-100 rounded-md overflow-hidden relative border border-black/5">
-                      <img 
+                      <img loading="lazy" decoding="async" 
                         src={assets.rawJewellery} 
                         alt="Raw necklace"
                         className="w-full h-full object-cover"
@@ -718,7 +718,7 @@ export const Nulaabs = () => {
                   </div>
                   <div className="space-y-2">
                     <div className="aspect-[4/5] bg-neutral-100 rounded-md overflow-hidden relative border border-black/5">
-                      <img 
+                      <img loading="lazy" decoding="async" 
                         src={assets.jewellerySocial} 
                         alt="Fine jewelry output"
                         className="w-full h-full object-cover"

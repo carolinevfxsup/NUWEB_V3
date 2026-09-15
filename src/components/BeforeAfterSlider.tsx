@@ -35,7 +35,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps & { className?: 
       onTouchMove={handleMove}
     >
       <div className="relative w-full h-full">
-        <img src={afterImage} alt="After" className="w-full h-full object-cover block rounded-md" referrerPolicy="no-referrer" />
+        <img loading="lazy" decoding="async" src={afterImage} alt="After" className="w-full h-full object-cover block rounded-md" referrerPolicy="no-referrer" />
         <div className="absolute bottom-4 right-4 bg-black/50 backdrop-blur-sm text-white px-3 py-1 text-xs font-bold uppercase tracking-widest border border-white/20 z-20 rounded-full">
           {afterLabel}
         </div>
@@ -44,7 +44,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps & { className?: 
         className="absolute inset-0"
         style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
       >
-        <img src={beforeImage} alt="Before" className="w-full h-full object-cover block rounded-md" referrerPolicy="no-referrer" />
+        <img loading="lazy" decoding="async" src={beforeImage} alt="Before" className="w-full h-full object-cover block rounded-md" referrerPolicy="no-referrer" />
         <div className="absolute bottom-4 left-4 bg-black/50 backdrop-blur-sm text-white px-3 py-1 text-xs font-bold uppercase tracking-widest border border-white/20 z-20 rounded-full">
           {beforeLabel}
         </div>

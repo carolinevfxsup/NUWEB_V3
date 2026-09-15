@@ -76,7 +76,7 @@ export const About = () => {
               <FadeIn key={i} delay={0.5 + (i * 0.1)}>
                 <div className="flex flex-col md:flex-row gap-6">
                   <div className="bg-white border border-border rounded-none p-6 md:p-8 shadow-sm aspect-square overflow-hidden border border-border flex-shrink-0 md:w-[48%]">
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src={founder.image || `https://picsum.photos/seed/founder${i}/1200/1200`}
                       alt={founder.name}
                       className="w-full h-full object-cover hover:scale-105 transition-all duration-700"

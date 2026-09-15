@@ -100,13 +100,13 @@ export const FranksAustralia = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="aspect-[9/16] overflow-hidden shadow-lg border border-black/5 rounded-md">
-                <img src={getAssetUrl('franks/Eccom_1.png')} className="w-full h-full object-cover rounded-md" alt="E-comm 1" referrerPolicy="no-referrer" />
+                <img loading="lazy" decoding="async" src={getAssetUrl('franks/Eccom_1.png')} className="w-full h-full object-cover rounded-md" alt="E-comm 1" referrerPolicy="no-referrer" />
               </div>
               <div className="aspect-[9/16] overflow-hidden shadow-lg border border-black/5 rounded-md">
-                <img src={getAssetUrl('franks/ECOM_FRONT.png')} className="w-full h-full object-cover rounded-md" alt="E-comm 2" referrerPolicy="no-referrer" />
+                <img loading="lazy" decoding="async" src={getAssetUrl('franks/ECOM_FRONT.png')} className="w-full h-full object-cover rounded-md" alt="E-comm 2" referrerPolicy="no-referrer" />
               </div>
               <div className="aspect-[9/16] overflow-hidden shadow-lg border border-black/5 rounded-md">
-                <img src={getAssetUrl('franks/ECOM_BACK_1 (1).png')} className="w-full h-full object-cover rounded-md" alt="E-comm 3" referrerPolicy="no-referrer" />
+                <img loading="lazy" decoding="async" src={getAssetUrl('franks/ECOM_BACK_1 (1).png')} className="w-full h-full object-cover rounded-md" alt="E-comm 3" referrerPolicy="no-referrer" />
               </div>
             </div>
           </div>
@@ -137,7 +137,7 @@ export const FranksAustralia = () => {
             
             <div className="grid md:grid-cols-2 gap-12 items-start">
               <div className="aspect-[9/16] overflow-hidden shadow-2xl rounded-md">
-                <img src={getAssetUrl('franks/2Artboard 2.png')} className="w-full h-full object-cover rounded-md" alt="Lifestyle 1" referrerPolicy="no-referrer" />
+                <img loading="lazy" decoding="async" src={getAssetUrl('franks/2Artboard 2.png')} className="w-full h-full object-cover rounded-md" alt="Lifestyle 1" referrerPolicy="no-referrer" />
               </div>
               <div className="aspect-[9/16] overflow-hidden shadow-2xl max-w-sm mx-auto md:ml-auto rounded-md">
                 <LazyVideo 
@@ -178,7 +178,7 @@ export const FranksAustralia = () => {
                     <div className="text-xs font-bold">franksaustralia • <span className="text-primary">{t.common.follow}</span></div>
                   </div>
                   <div className="aspect-square overflow-hidden bg-gray-100">
-                    <img src={getAssetUrl(post.image)} className="w-full h-full object-cover" alt="Instagram post" referrerPolicy="no-referrer" />
+                    <img loading="lazy" decoding="async" src={getAssetUrl(post.image)} className="w-full h-full object-cover" alt="Instagram post" referrerPolicy="no-referrer" />
                   </div>
                   <div className="p-4">
                     <div className="flex justify-between mb-3">

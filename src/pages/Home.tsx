@@ -9,11 +9,19 @@ import { ShowreelModal } from '../components/ShowreelModal';
 import { useLanguage } from '../contexts/LanguageContext';
 import { LazyVideo } from '../components/LazyVideo';
 import { getWebpUrl } from '../lib/utils';
+import { getAssetUrl } from '../constants';
 import { portfolioImages } from '../data/portfolio';
 
 
 
 const CreativeAlternatingImage = () => {
+  // NOTE: this tile previously mounted an <img> for every single one of the
+  // ~228 portfolio images at once (only toggling opacity), each requested at
+  // full raw resolution with no format/width optimization. That meant this one
+  // small aspect-[3/4] tile alone fired ~228 simultaneous full-size PNG
+  // downloads on every page load. Fixed to only ever mount the current and
+  // previous image (for the crossfade), routed through getAssetUrl so they're
+  // served as properly sized, compressed WebP.
   const presetImages = useMemo(() => {
     const list = portfolioImages.map(item => item.link);
     // Shuffle randomly every time
@@ -21,11 +29,12 @@ const CreativeAlternatingImage = () => {
   }, []);
 
   const [currentIdx, setCurrentIdx] = useState(() => Math.floor(Math.random() * presetImages.length));
+  const [prevIdx, setPrevIdx] = useState<number | null>(null);
 
   useEffect(() => {
     // Randomized rotation interval between 3s and 5s
     const getRandomInterval = () => Math.floor(Math.random() * 2000) + 3000;
-    
+
     let timer: NodeJS.Timeout;
     const rotate = () => {
       setCurrentIdx((prev) => {
@@ -33,6 +42,7 @@ const CreativeAlternatingImage = () => {
         while (next === prev && presetImages.length > 1) {
           next = Math.floor(Math.random() * presetImages.length);
         }
+        setPrevIdx(prev);
         return next;
       });
       timer = setTimeout(rotate, getRandomInterval());
@@ -41,19 +51,23 @@ const CreativeAlternatingImage = () => {
     return () => clearTimeout(timer);
   }, [presetImages.length]);
 
+  const visibleIndices = prevIdx === null ? [currentIdx] : [prevIdx, currentIdx];
+
   return (
     <div className="relative w-full h-full overflow-hidden">
-      {presetImages.map((src, i) => (
+      {visibleIndices.map((i) => (
         <img
-          key={src}
-          src={src}
+          key={presetImages[i]}
+          src={getAssetUrl(presetImages[i], 800)}
           alt="Creative Direction Asset"
+          loading="eager"
+          decoding="async"
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 group-hover:scale-105 ${
             i === currentIdx ? 'opacity-100' : 'opacity-0'
           }`}
           referrerPolicy="no-referrer"
           onError={(e) => {
-            (e.target as HTMLImageElement).src = portfolioImages[0].link;
+            (e.target as HTMLImageElement).src = getAssetUrl(portfolioImages[0].link, 800);
           }}
         />
       ))}
@@ -322,7 +336,7 @@ export const Home = () => {
                           playsInline
                         />
                       ) : (
-                        <img 
+                        <img loading="lazy" decoding="async" 
                           src={getWebpUrl(imgUrl as string)} 
                           alt={item.title} 
                           className={`w-full h-full object-cover transition-transform duration-700 ${index === 1 ? 'scale-[1.36] group-hover:scale-[1.46]' : 'group-hover:scale-105'}`}
@@ -374,7 +388,7 @@ export const Home = () => {
             {/* Left Column: Product Synthesis Image */}
             <FadeIn delay={0.3} className="md:col-span-4 w-full">
               <div className="relative bg-white/5 aspect-[3/4] max-h-[420px] md:max-h-[480px] overflow-hidden mx-auto w-full">
-                <img 
+                <img loading="lazy" decoding="async" 
                   src={getWebpUrl(randomizedBannerImages[0].link)} 
                   alt={language === 'pt' ? 'sintese de produto' : 'product synthesis'}
                   className="w-full h-full object-cover"
@@ -405,7 +419,7 @@ export const Home = () => {
             {/* Right Column: Editorial Frame Image */}
             <FadeIn delay={0.5} className="md:col-span-4 w-full">
               <div className="relative bg-white/5 aspect-[3/4] max-h-[420px] md:max-h-[480px] overflow-hidden mx-auto w-full">
-                <img 
+                <img loading="lazy" decoding="async" 
                   src={getWebpUrl(randomizedBannerImages[1].link)} 
                   alt={language === 'pt' ? 'moldura editorial' : 'editorial frame'} 
                   className="w-full h-full object-cover"

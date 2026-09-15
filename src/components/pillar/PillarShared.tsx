@@ -89,7 +89,7 @@ export const Hero: FC<HeroProps> = ({
         </div>
       ) : imageBg ? (
         <div className="absolute inset-0">
-          <img
+          <img loading="lazy" decoding="async"
             src={imageBg}
             alt={headline}
             className="w-full h-full object-cover opacity-45"
@@ -182,7 +182,7 @@ export const CardItem: FC<{ card: PillarCard; bg: string }> = ({ card, bg }) => 
         ) : card.imgSrcs && card.imgSrcs.length > 0 ? (
           <div className="relative w-full h-full">
             {card.imgSrcs.map((src, idx) => (
-              <img
+              <img loading="lazy" decoding="async"
                 key={src}
                 src={src}
                 alt={`${card.title} ${idx}`}
@@ -194,7 +194,7 @@ export const CardItem: FC<{ card: PillarCard; bg: string }> = ({ card, bg }) => 
             ))}
           </div>
         ) : card.imgSrc ? (
-          <img
+          <img loading="lazy" decoding="async"
             src={card.imgSrc}
             alt={card.title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -381,7 +381,7 @@ export const PortfolioStrip: FC<{ items: PortfolioItem[] }> = ({ items }) => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                 ) : item.imgSrc ? (
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={item.imgSrc}
                     alt={item.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"

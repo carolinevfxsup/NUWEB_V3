@@ -84,9 +84,9 @@ export const ShowcaseHero = ({
           )
         ) : (
           imageSrc && (
-            <img 
-              src={getAssetUrl(imageSrc, 1920)} 
-              alt={title} 
+            <img loading="eager" fetchPriority="high" decoding="async"
+              src={getAssetUrl(imageSrc, 1920)}
+              alt={title}
               className="w-full h-full object-cover opacity-40 grayscale rounded-none" 
               style={{ objectPosition: imagePosition }}
               referrerPolicy="no-referrer"

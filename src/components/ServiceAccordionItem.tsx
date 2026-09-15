@@ -62,7 +62,7 @@ export const ServiceAccordionItem = ({ service, isOpen, onToggle, index }: Servi
                           playsInline
                         />
                       ) : (
-                        <img 
+                        <img loading="lazy" decoding="async" 
                           src={img.src} 
                           alt={img.caption} 
                           className="w-full h-full object-cover rounded-md"

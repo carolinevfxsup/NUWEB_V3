@@ -26,7 +26,7 @@ export const ProjectNavigation = ({ prevProject, nextProject }: ProjectNavigatio
             <Link to={getLanguagePath(prevProject.slug)} className="group flex items-center gap-8 text-left">
               <ArrowLeft className="w-8 h-8 group-hover:-translate-x-2 transition-transform" />
               <div className="w-24 h-24 overflow-hidden shrink-0 bg-gray-50 rounded-md">
-                <img 
+                <img loading="lazy" decoding="async" 
                   src={prevProject.thumbnail} 
                   alt={prevProject.title} 
                   className="w-full h-full object-cover transition-all rounded-md"
@@ -54,7 +54,7 @@ export const ProjectNavigation = ({ prevProject, nextProject }: ProjectNavigatio
               </h3>
             </div>
             <div className="w-24 h-24 overflow-hidden shrink-0 bg-gray-50 rounded-md">
-              <img 
+              <img loading="lazy" decoding="async" 
                 src={nextProject.thumbnail} 
                 alt={nextProject.title} 
                 className="w-full h-full object-cover transition-all rounded-md"

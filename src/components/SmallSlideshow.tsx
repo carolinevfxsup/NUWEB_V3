@@ -12,7 +12,7 @@ export const SmallSlideshow = ({ images, interval = 3000 }: { images: string[], 
   }, [images, interval]);
 
   return (
-    <img
+    <img loading="lazy" decoding="async"
       src={images[index]}
       className="absolute inset-0 w-full h-full object-cover"
       referrerPolicy="no-referrer"

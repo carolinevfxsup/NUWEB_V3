@@ -61,7 +61,7 @@ export const LogoScroll = () => {
                     : "h-9 w-28 md:w-36"
                 }`}
               >
-                <img 
+                <img loading="lazy" decoding="async" 
                   src={`${SUPABASE_ASSET_BASE}${logo}`}
                   alt="Partner Logo" 
                   className={`h-full w-full object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity ${

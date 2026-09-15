@@ -149,18 +149,18 @@ export const Creative = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <div className="aspect-[3/4] border border-bg/20 overflow-hidden rounded-md">
-                    <img src={getAssetUrl('Salt_lily_FEMME_product.png')} className="w-full h-full object-cover rounded-md" alt="Consistency 1" referrerPolicy="no-referrer" />
+                    <img loading="lazy" decoding="async" src={getAssetUrl('Salt_lily_FEMME_product.png')} className="w-full h-full object-cover rounded-md" alt="Consistency 1" referrerPolicy="no-referrer" />
                   </div>
                   <div className="aspect-square border border-bg/20 overflow-hidden rounded-md">
-                    <img src={getAssetUrl('necklace_and_hoops.png')} className="w-full h-full object-cover rounded-md" alt="Consistency 2" referrerPolicy="no-referrer" />
+                    <img loading="lazy" decoding="async" src={getAssetUrl('necklace_and_hoops.png')} className="w-full h-full object-cover rounded-md" alt="Consistency 2" referrerPolicy="no-referrer" />
                   </div>
                 </div>
                 <div className="space-y-4 pt-12">
                   <div className="aspect-square border border-bg/20 overflow-hidden rounded-md">
-                    <img src={getAssetUrl('palmeiral-main-CLPIiVbL.png')} className="w-full h-full object-cover rounded-md" alt="Consistency 3" referrerPolicy="no-referrer" />
+                    <img loading="lazy" decoding="async" src={getAssetUrl('palmeiral-main-CLPIiVbL.png')} className="w-full h-full object-cover rounded-md" alt="Consistency 3" referrerPolicy="no-referrer" />
                   </div>
                   <div className="aspect-[3/4] border border-bg/20 overflow-hidden rounded-md">
-                    <img src={getAssetUrl('smiling_no_watermark.jpeg')} className="w-full h-full object-cover rounded-md" alt="Consistency 4" referrerPolicy="no-referrer" />
+                    <img loading="lazy" decoding="async" src={getAssetUrl('smiling_no_watermark.jpeg')} className="w-full h-full object-cover rounded-md" alt="Consistency 4" referrerPolicy="no-referrer" />
                   </div>
                 </div>
               </div>
@@ -210,7 +210,7 @@ export const Creative = () => {
                     className="w-full h-full object-cover rounded-md"
                   />
                 ) : (
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src={item.src} 
                     className="w-full h-full object-cover rounded-md"
                     alt={`Gallery ${i}`}

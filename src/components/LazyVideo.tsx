@@ -89,7 +89,7 @@ export const LazyVideo = ({ src, className, showControls, controlsColor, poster,
         {...props}
       />
       {!hasIntersected && poster && (
-        <img
+        <img loading="lazy" decoding="async"
           src={poster}
           alt="Video poster"
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
