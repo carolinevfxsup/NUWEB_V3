@@ -16,6 +16,7 @@ export const ResultsPageBento = () => {
                 <>
                   <LazyVideo
                     src={project.videoSrc}
+                    poster={project.videoPoster}
                     className="hidden sm:block w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     autoPlay
                     loop
@@ -24,6 +25,7 @@ export const ResultsPageBento = () => {
                   />
                   <LazyVideo
                     src={project.mobileVideoSrc}
+                    poster={project.videoPoster}
                     className="block sm:hidden w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     autoPlay
                     loop
@@ -34,6 +36,7 @@ export const ResultsPageBento = () => {
               ) : (
                 <LazyVideo
                   src={project.videoSrc}
+                  poster={project.videoPoster}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   autoPlay
                   loop

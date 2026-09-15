@@ -29,7 +29,7 @@ const CARDS_EN: PillarCard[] = [
     line: 'Broadcast-grade, without the broadcast budget.',
     more: 'Photorealistic AI-driven ads and full animated spots, concept to final grade, native 4K pipeline.',
     videoSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/0803_CP_WEB.mp4',
-    videoPoster: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/2Artboard%201-20.jpg',
+    videoPoster: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/0803_CP_WEB.jpg',
     overlayButtonText: 'watch showreel',
   },
   {
@@ -68,7 +68,7 @@ const CARDS_PT: PillarCard[] = [
     line: 'Qualidade broadcast, sem o orçamento tradicional.',
     more: 'Anúncios hiper-realistas orientados por IA e spots de animação completos, do conceito à gradação final num pipeline nativo 4K.',
     videoSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/0803_CP_WEB.mp4',
-    videoPoster: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/2Artboard%201-20.jpg',
+    videoPoster: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/0803_CP_WEB.jpg',
     overlayButtonText: 'ver showreel',
   },
   {
