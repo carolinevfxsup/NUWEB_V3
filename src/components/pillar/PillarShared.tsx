@@ -26,6 +26,7 @@ export interface PillarCard {
   imgSrc?: string;
   imgSrcs?: string[];
   videoSrc?: string;
+  videoPoster?: string;
   overlayButtonText?: string;
   onOverlayClick?: () => void;
   overlayVideoUrl?: string;
@@ -168,6 +169,7 @@ export const CardItem: FC<{ card: PillarCard; bg: string }> = ({ card, bg }) => 
         {card.videoSrc ? (
           <LazyVideo
             src={card.videoSrc}
+            poster={card.videoPoster}
             autoPlay
             loop
             muted

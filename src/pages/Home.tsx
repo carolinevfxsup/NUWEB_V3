@@ -179,6 +179,10 @@ export const Home = () => {
               ? "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Header_Website_916.mp4"
               : "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Header_Website(6).mp4"
             }
+            poster={isMobilePortrait
+              ? "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Header_Website_916.jpg"
+              : "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Header_Website_Desktop_01.jpg"
+            }
             className="w-full h-full object-cover"
             autoPlay 
             loop 

@@ -290,6 +290,7 @@ export const Nulaabs = () => {
           <div className="w-full h-full md:absolute md:inset-0 max-w-md md:max-w-none mx-auto aspect-[9/16] md:aspect-auto">
             <video
               src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/NULAABS/header_nulaabs-_v3.mp4"
+              poster="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/NULAABS/Header%20NU%20Labs%20Desktop.jpg"
               autoPlay
               loop
               muted
