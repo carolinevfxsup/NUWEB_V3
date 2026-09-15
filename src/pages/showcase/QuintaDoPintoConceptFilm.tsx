@@ -79,7 +79,7 @@ export const QuintaDoPintoConceptFilm = () => {
             >
               <LazyVideo
                 src={DESKTOP_FILM_URL}
-                poster={getAssetUrl(ASSETS.poster)}
+                poster={getAssetUrl(ASSETS.poster, 800)}
                 className="w-full h-full object-cover rounded-md"
                 showControls
                 controlsColor="red-600"
@@ -100,7 +100,7 @@ export const QuintaDoPintoConceptFilm = () => {
             >
               <LazyVideo
                 src={MOBILE_FILM_URL}
-                poster={getAssetUrl(ASSETS.poster)}
+                poster={getAssetUrl(ASSETS.poster, 800)}
                 className="w-full h-full object-cover rounded-md"
                 showControls
                 controlsColor="red-600"
@@ -136,7 +136,7 @@ export const QuintaDoPintoConceptFilm = () => {
               >
                 <div className="aspect-[4/5] overflow-hidden shadow-2xl rounded-md">
                   <img
-                    src={getAssetUrl(ASSETS.heritageWinery)}
+                    src={getAssetUrl(ASSETS.heritageWinery, 800)}
                     className="w-full h-full object-cover rounded-md"
                     alt={t.quintaConceptFilm.discoverTitle}
                     referrerPolicy="no-referrer"
@@ -160,7 +160,7 @@ export const QuintaDoPintoConceptFilm = () => {
               >
                 <div className="aspect-[4/5] overflow-hidden shadow-2xl rounded-md">
                   <img
-                    src={getAssetUrl(ASSETS.detailInkDrop)}
+                    src={getAssetUrl(ASSETS.detailInkDrop, 800)}
                     className="w-full h-full object-cover rounded-md"
                     alt={t.quintaConceptFilm.altInkDrop}
                     referrerPolicy="no-referrer"
@@ -199,7 +199,7 @@ export const QuintaDoPintoConceptFilm = () => {
               <motion.div {...fadeInUp} className="relative">
                 <div className="aspect-square overflow-hidden rounded-md border border-[#EEEEEE]">
                   <img
-                    src={getAssetUrl(ASSETS.conceptSketch)}
+                    src={getAssetUrl(ASSETS.conceptSketch, 800)}
                     className="w-full h-full object-cover rounded-md"
                     alt={t.quintaConceptFilm.conceptSketchTag}
                     referrerPolicy="no-referrer"
@@ -212,7 +212,7 @@ export const QuintaDoPintoConceptFilm = () => {
               <motion.div {...fadeInUp} className="relative">
                 <div className="aspect-square overflow-hidden rounded-md border border-[#EEEEEE]">
                   <img
-                    src={getAssetUrl(ASSETS.finalPiece)}
+                    src={getAssetUrl(ASSETS.finalPiece, 800)}
                     className="w-full h-full object-cover rounded-md"
                     alt={t.quintaConceptFilm.finalPieceTag}
                     referrerPolicy="no-referrer"
@@ -257,7 +257,7 @@ export const QuintaDoPintoConceptFilm = () => {
                   className={`relative aspect-[4/3] overflow-hidden rounded-md ${item.featured ? 'border-2 border-primary' : 'border border-[#EEEEEE]'}`}
                 >
                   <img
-                    src={getAssetUrl(item.src)}
+                    src={getAssetUrl(item.src, 400)}
                     className="w-full h-full object-cover rounded-md"
                     alt=""
                     referrerPolicy="no-referrer"
@@ -285,7 +285,7 @@ export const QuintaDoPintoConceptFilm = () => {
               >
                 <div className="aspect-square overflow-hidden rounded-md shadow-2xl">
                   <img
-                    src={getAssetUrl(ASSETS.reveal)}
+                    src={getAssetUrl(ASSETS.reveal, 800)}
                     className="w-full h-full object-cover rounded-md"
                     alt={t.quintaConceptFilm.altReveal}
                     referrerPolicy="no-referrer"

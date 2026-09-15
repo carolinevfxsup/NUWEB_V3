@@ -45,7 +45,7 @@ const CARDS_EN: PillarCard[] = [
     title: 'High-End Hybrid VFX & AI',
     line: '20 years of VFX. AI-hybrid pipeline.',
     more: 'Our flagship offering: a bespoke 4K VFX pipeline fused with AI-native tools, directed by supervisors who know what real footage behaves like.',
-    imgSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/GOOGLE_IO/IO.gif',
+    imgSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/GOOGLE_IO/opener/IO2026_sh100_bg01_v02_0000.png_202608051934.jpeg',
   },
   {
     n: '04',
@@ -85,7 +85,7 @@ const CARDS_PT: PillarCard[] = [
     title: 'VFX Híbridos de Alto Nível & IA',
     line: '20 anos de VFX. Pipeline híbrido de IA.',
     more: 'A nossa oferta de topo: um pipeline VFX 4K personalizado com ferramentas de IA, dirigido por supervisores que entendem a física do vídeo real.',
-    imgSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/GOOGLE_IO/IO.gif',
+    imgSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/GOOGLE_IO/opener/IO2026_sh100_bg01_v02_0000.png_202608051934.jpeg',
   },
   {
     n: '04',
@@ -107,7 +107,7 @@ const PORTFOLIO: PortfolioItem[] = [
     name: 'Google I/O 2026 — TPU Film',
     cat: '01 / Nexus Studios',
     slug: '/googleio',
-    imgSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/GOOGLE_IO/IO.gif',
+    imgSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/GOOGLE_IO/opener/IO2026_sh100_bg01_v02_0000.png_202608051934.jpeg',
   },
   {
     name: 'Franks Australia',

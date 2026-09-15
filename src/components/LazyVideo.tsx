@@ -5,41 +5,53 @@ interface LazyVideoProps extends React.VideoHTMLAttributes<HTMLVideoElement> {
   src: string;
   showControls?: boolean;
   controlsColor?: string;
+  eager?: boolean;
 }
 
-export const LazyVideo = ({ src, className, showControls, controlsColor, poster, ...props }: LazyVideoProps) => {
+export const LazyVideo = ({ src, className, showControls, controlsColor, poster, eager, ...props }: LazyVideoProps) => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMuted, setIsMuted] = useState(props.muted !== false); // Default to muted unless explicitly false
   const [isPlaying, setIsPlaying] = useState(props.autoPlay !== false); // Default to playing unless explicitly false
+  const [hasIntersected, setHasIntersected] = useState(!!eager);
 
   useEffect(() => {
+    if (eager) {
+      setHasIntersected(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (!videoRef.current) return;
-        if (entry.isIntersecting && props.autoPlay) {
-          videoRef.current.play()
-            .then(() => setIsPlaying(true))
-            .catch(err => {
-              console.warn("Autoplay failed:", err);
-            });
-        } else {
-          videoRef.current.pause();
-          setIsPlaying(false);
+        if (entry.isIntersecting) {
+          setHasIntersected(true);
+          observer.disconnect();
         }
       },
-      { threshold: 0.05 }
+      { 
+        threshold: 0.01,
+        rootMargin: '200px' 
+      }
     );
 
-    if (videoRef.current) {
-      observer.observe(videoRef.current);
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
     }
 
     return () => {
-      if (videoRef.current) {
-        observer.unobserve(videoRef.current);
-      }
+      observer.disconnect();
     };
-  }, [src, props.autoPlay]);
+  }, [src, eager]);
+
+  useEffect(() => {
+    if (hasIntersected && videoRef.current && props.autoPlay) {
+      videoRef.current.play()
+        .then(() => setIsPlaying(true))
+        .catch(err => {
+          console.warn("Autoplay failed:", err);
+        });
+    }
+  }, [hasIntersected, props.autoPlay]);
 
   const toggleMute = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -65,18 +77,26 @@ export const LazyVideo = ({ src, className, showControls, controlsColor, poster,
   };
 
   return (
-    <div className={`relative group overflow-hidden ${className || ''}`}>
+    <div ref={containerRef} className={`relative group overflow-hidden ${className || ''}`}>
       <video
         ref={videoRef}
-        src={src}
+        src={hasIntersected ? src : undefined}
         className="w-full h-full object-cover"
         muted={isMuted}
         playsInline
         poster={poster}
-        preload="metadata"
+        preload="none"
         {...props}
       />
-      {showControls && (
+      {!hasIntersected && poster && (
+        <img
+          src={poster}
+          alt="Video poster"
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+          referrerPolicy="no-referrer"
+        />
+      )}
+      {showControls && hasIntersected && (
         <div className="absolute bottom-6 right-6 z-10 flex items-center gap-3">
           <button
             onClick={togglePlay}

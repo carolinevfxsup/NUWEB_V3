@@ -1,5 +1,4 @@
-export const getAssetUrl = (path: string) => {
-  console.log('getAssetUrl path:', path);
+export const getAssetUrl = (path: string, width?: number) => {
   if (!path) return '';
   
   let result = path;
@@ -17,15 +16,21 @@ export const getAssetUrl = (path: string) => {
     result = `https://${PROJECT_ID}.supabase.co/storage/v1/object/public/${BUCKET}/assets/${finalPath}`;
   }
 
-  // If it's a Supabase image URL, apply format=webp optimization
+  // If it's a Supabase image URL, apply Supabase Image Transformation API
   if (result.includes('supabase.co')) {
     const lowerPath = result.toLowerCase();
     const isImage = lowerPath.endsWith('.jpg') || lowerPath.endsWith('.jpeg') || lowerPath.endsWith('.png') || lowerPath.endsWith('.webp') || lowerPath.includes('.jpg') || lowerPath.includes('.jpeg') || lowerPath.includes('.png');
     const isGif = lowerPath.endsWith('.gif');
     const isVideo = lowerPath.endsWith('.mp4') || lowerPath.endsWith('.webm') || lowerPath.endsWith('.ogg');
     
-    if (isImage && !isGif && !isVideo && !result.includes('format=webp')) {
-      result = `${result}${result.includes('?') ? '&' : '?'}format=webp`;
+    if (isImage && !isGif && !isVideo) {
+      // 1. Change from /storage/v1/object/public/ to /storage/v1/render/image/public/
+      result = result.replace('/storage/v1/object/public/', '/storage/v1/render/image/public/');
+      
+      // 2. Append format, quality, and width parameters
+      const targetWidth = width || 800; // default to 800 if not specified
+      const separator = result.includes('?') ? '&' : '?';
+      result = `${result}${separator}format=webp&quality=75&width=${targetWidth}`;
     }
   }
 
@@ -52,7 +57,7 @@ export const showcases = [
   {
     title: 'Google I/O 2026',
     subtitle: 'TPU Film / VFX Comp',
-    imageSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/GOOGLE_IO/IO.gif',
+    imageSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/GOOGLE_IO/opener/IO2026_sh100_bg01_v02_0000.png_202608051934.jpeg',
     slug: '/googleio',
   },
   {

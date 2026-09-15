@@ -46,7 +46,7 @@ export const ResultsPageBento = () => {
               )
             ) : (
               <img
-                src={getAssetUrl(project.imageSrc || '')}
+                src={getAssetUrl(project.imageSrc || '', 800)}
                 alt={project.title}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 referrerPolicy="no-referrer"

@@ -85,7 +85,7 @@ export const ShowcaseHero = ({
         ) : (
           imageSrc && (
             <img 
-              src={getAssetUrl(imageSrc)} 
+              src={getAssetUrl(imageSrc, 1920)} 
               alt={title} 
               className="w-full h-full object-cover opacity-40 grayscale rounded-none" 
               style={{ objectPosition: imagePosition }}
