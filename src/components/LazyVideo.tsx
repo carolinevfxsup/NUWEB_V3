@@ -80,11 +80,11 @@ export const LazyVideo = ({ src, className, showControls, controlsColor, poster,
   };
 
   return (
-    <div className="relative w-full h-full group overflow-hidden">
+    <div className={`relative group overflow-hidden ${className || ''}`}>
       <video
         ref={videoRef}
         src={hasLoaded ? src : undefined}
-        className={className}
+        className="w-full h-full object-cover"
         muted={isMuted}
         playsInline
         onPlaying={() => setVideoStarted(true)}
@@ -100,7 +100,7 @@ export const LazyVideo = ({ src, className, showControls, controlsColor, poster,
         <img
           src={poster}
           alt="Video poster overlay"
-          className={`${className} absolute inset-0 w-full h-full object-cover pointer-events-none z-[2] transition-opacity duration-500 ${videoStarted ? 'opacity-0' : 'opacity-100'}`}
+          className={`absolute inset-0 w-full h-full object-cover pointer-events-none z-[2] transition-opacity duration-500 ${videoStarted ? 'opacity-0' : 'opacity-100'}`}
           referrerPolicy="no-referrer"
         />
       )}

@@ -47,7 +47,7 @@ export const showcases = [
     slug: '/showcase/quinta-do-pinto-concept-film',
     videoSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/QDP-FILM/WINE_CM_16_9_FULL.mp4',
     mobileVideoSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/QDP-FILM/WINE_9_16_Full.mp4',
-    videoPoster: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/0803_CP_WEB.jpg',
+    videoPoster: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/0803_CP_WEB_tiny.jpg',
   },
   {
     title: 'Google I/O 2026',

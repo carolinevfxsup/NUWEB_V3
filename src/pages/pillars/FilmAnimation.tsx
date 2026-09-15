@@ -29,7 +29,7 @@ const CARDS_EN: PillarCard[] = [
     line: 'Broadcast-grade, without the broadcast budget.',
     more: 'Photorealistic AI-driven ads and full animated spots, concept to final grade, native 4K pipeline.',
     videoSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/0803_CP_WEB.mp4',
-    videoPoster: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/0803_CP_WEB.jpg',
+    videoPoster: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/0803_CP_WEB_tiny.jpg',
     overlayButtonText: 'watch showreel',
   },
   {
@@ -37,7 +37,8 @@ const CARDS_EN: PillarCard[] = [
     title: 'TV Title Sequences',
     line: 'Craft and generative tooling, fused.',
     more: 'R&D-driven main title design for broadcast and streaming — traditional title craft blended with generative tools.',
-    videoSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/WhatsApp%20Video%202026-08-14%20at%2013.20.00.mp4',
+    videoSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/EXPAND_TITLES%20916_Fixed_Compressed.mp4',
+    videoPoster: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/EXPAND_TITLES%20916-copy.jpg',
   },
   {
     n: '03',
@@ -68,7 +69,7 @@ const CARDS_PT: PillarCard[] = [
     line: 'Qualidade broadcast, sem o orçamento tradicional.',
     more: 'Anúncios hiper-realistas orientados por IA e spots de animação completos, do conceito à gradação final num pipeline nativo 4K.',
     videoSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/0803_CP_WEB.mp4',
-    videoPoster: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/0803_CP_WEB.jpg',
+    videoPoster: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/0803_CP_WEB_tiny.jpg',
     overlayButtonText: 'ver showreel',
   },
   {
@@ -76,7 +77,8 @@ const CARDS_PT: PillarCard[] = [
     title: 'Genéricos de TV e Séries',
     line: 'Artesanato e ferramentas generativas em fusão.',
     more: 'Design de títulos principais baseado em I&D para televisão e streaming — mestria tradicional combinada com ferramentas generativas.',
-    videoSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/WhatsApp%20Video%202026-08-14%20at%2013.20.00.mp4',
+    videoSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/EXPAND_TITLES%20916_Fixed_Compressed.mp4',
+    videoPoster: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/EXPAND_TITLES%20916-copy.jpg',
   },
   {
     n: '03',
@@ -134,7 +136,8 @@ export const FilmAnimation = () => {
         }
         ctaText={isPt ? 'Discuta a sua produção' : 'Discuss your production'}
         ctaLink="/onboarding"
-        videoBg="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/WhatsApp%20Video%202026-08-14%20at%2013.20.00.mp4"
+        videoBg="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/EXPAND_TITLES%20916_Fixed_Compressed.mp4"
+        videoBgPoster="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/EXPAND_TITLES%20916-copy.jpg"
       />
 
       <TheWorkGrid cards={cards} cardBgs={CARD_BGS} />

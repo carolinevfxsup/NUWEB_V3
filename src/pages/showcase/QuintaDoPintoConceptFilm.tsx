@@ -46,7 +46,7 @@ export const QuintaDoPintoConceptFilm = () => {
           description={t.quintaConceptFilm.heroDescription}
           videoSrc={DESKTOP_FILM_URL}
           mobileVideoSrc={MOBILE_FILM_URL}
-          videoPoster="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/0803_CP_WEB.jpg"
+          videoPoster="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/0803_CP_WEB_tiny.jpg"
           caseStudyNumber="Quinta do Pinto"
           sector={t.quintaConceptFilm.sector}
           deliverables={t.quintaConceptFilm.deliverables}

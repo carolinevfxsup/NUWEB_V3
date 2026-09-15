@@ -65,8 +65,8 @@ const AnimationAlternatingImage = () => {
   return (
     <div className="relative w-full h-full overflow-hidden bg-black">
       <LazyVideo
-        src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/WhatsApp%20Video%202026-08-14%20at%2013.20.00.mp4"
-        poster="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/0803_CP_WEB.jpg"
+        src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/EXPAND_TITLES%20916_Fixed_Compressed.mp4"
+        poster="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/EXPAND_TITLES%20916-copy.jpg"
         autoPlay
         loop
         muted

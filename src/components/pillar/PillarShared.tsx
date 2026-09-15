@@ -50,6 +50,7 @@ interface HeroProps {
   onCtaClick?: () => void;
   bg?: string;
   videoBg?: string;
+  videoBgPoster?: string;
   imageBg?: string;
   secondaryCtaText?: string;
   onSecondaryCtaClick?: () => void;
@@ -64,6 +65,7 @@ export const Hero: FC<HeroProps> = ({
   onCtaClick,
   bg = ph('#101820', '#1e3a3a'),
   videoBg,
+  videoBgPoster,
   imageBg,
   secondaryCtaText,
   onSecondaryCtaClick,
@@ -77,6 +79,7 @@ export const Hero: FC<HeroProps> = ({
         <div className="absolute inset-0">
           <video
             src={videoBg}
+            poster={videoBgPoster}
             autoPlay
             loop
             muted
