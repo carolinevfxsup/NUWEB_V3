@@ -7,6 +7,7 @@ import { Footer } from './components/Footer';
 import { Analytics } from '@vercel/analytics/react';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { Home } from './pages/Home';
+import { Wine } from './pages/Wine';
 
 // Helper with auto-retry and cache-buster reload for dynamic imports
 function lazyWithRetry<T extends Record<string, any>>(
@@ -140,6 +141,12 @@ export default function App() {
                   <Route path="/pt/onboarding" element={<Onboarding />} />
                   <Route path="/nulaabs" element={<Nulaabs />} />
                   <Route path="/pt/nulaabs" element={<Nulaabs />} />
+
+                  <Route path="/wine" element={<Wine />} />
+                  <Route path="/pt/wine" element={<Wine />} />
+                  <Route path="/wineries" element={<Wine />} />
+                  <Route path="/pt/wineries" element={<Wine />} />
+                  <Route path="/Wineries" element={<Wine />} />
                 </Routes>
               </Suspense>
             </ErrorBoundary>

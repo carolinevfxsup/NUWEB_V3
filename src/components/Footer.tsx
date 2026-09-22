@@ -83,7 +83,14 @@ export const Footer = () => {
               <h3 className="font-bold text-lg">Industries</h3>
               <ul className="space-y-2 text-sm">
                 {industries.map((industry) => (
-                  <li key={industry}><Link to={getLanguagePath('/industries')} className="hover:underline">{industry}</Link></li>
+                  <li key={industry}>
+                    <Link
+                      to={industry === 'Wineries' ? getLanguagePath('/wine') : getLanguagePath('/industries')}
+                      className="hover:underline"
+                    >
+                      {industry}
+                    </Link>
+                  </li>
                 ))}
               </ul>
             </div>

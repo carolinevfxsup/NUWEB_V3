@@ -1,9 +1,12 @@
+import { Link } from 'react-router-dom';
 import { FadeIn } from '../components/FadeIn';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const industryData = [
   {
     title: "Wineries",
-    desc: "Capturing the heritage and textural depth of your vintage through HILT-guided visuals that evoke specific terroir, sun-drenched landscapes, and premium bottle details that anchor your luxury status."
+    desc: "Capturing the heritage and textural depth of your vintage through HILT-guided visuals that evoke specific terroir, sun-drenched landscapes, and premium bottle details that anchor your luxury status.",
+    link: "/wine"
   },
   {
     title: "Restaurants & Hospitality",
@@ -28,6 +31,8 @@ const industryData = [
 ];
 
 export const Industries = () => {
+  const { getLanguagePath } = useLanguage();
+
   return (
     <div className="pt-32 px-6 max-w-7xl mx-auto">
       <FadeIn delay={0.1}>
@@ -36,17 +41,31 @@ export const Industries = () => {
         </h1>
       </FadeIn>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {industryData.map((industry, i) => (
-          <FadeIn key={i} delay={0.2 + (i * 0.1)} className="h-full">
+        {industryData.map((industry, i) => {
+          const cardContent = (
             <div className="bg-neutral-100 p-8 flex flex-col justify-between hover:bg-black hover:text-white transition-colors group cursor-pointer h-full">
               <div>
                 <h3 className="text-2xl font-display font-bold uppercase tracking-tighter mb-4">{industry.title}</h3>
                 <p className="font-sans text-sm leading-relaxed opacity-80">{industry.desc}</p>
               </div>
-              <span className="font-mono text-xs opacity-50 group-hover:text-red-500 mt-8">+</span>
+              <span className="font-mono text-xs opacity-50 group-hover:text-red-500 mt-8">
+                {industry.link ? 'EXPLORE +' : '+'}
+              </span>
             </div>
-          </FadeIn>
-        ))}
+          );
+
+          return (
+            <FadeIn key={i} delay={0.2 + (i * 0.1)} className="h-full">
+              {industry.link ? (
+                <Link to={getLanguagePath(industry.link)} className="block h-full">
+                  {cardContent}
+                </Link>
+              ) : (
+                cardContent
+              )}
+            </FadeIn>
+          );
+        })}
       </div>
     </div>
   );
