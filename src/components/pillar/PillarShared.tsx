@@ -73,7 +73,7 @@ export const Hero: FC<HeroProps> = ({
   const { getLanguagePath } = useLanguage();
 
   return (
-    <header className="relative min-h-[75vh] md:min-h-[82vh] flex items-end px-6 md:px-[6vw] pb-16 pt-36 text-white overflow-hidden bg-black">
+    <header className="relative min-h-[75vh] md:min-h-[82vh] flex items-end text-white overflow-hidden bg-black">
       {/* Background Media */}
       {videoBg ? (
         <div className="absolute inset-0">
@@ -104,50 +104,54 @@ export const Hero: FC<HeroProps> = ({
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/30 pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-red-600 mb-4">
-            {eyebrow}
-          </div>
-          <h1 className="text-4xl sm:text-6xl md:text-8xl font-display font-bold uppercase tracking-tighter leading-[0.88] mb-6 text-white">
-            {headline}
-            <span className="text-red-600">.</span>
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-white/85 max-w-2xl font-sans font-light leading-relaxed mb-8">
-            {line}
-          </p>
+      <div className="relative z-10 w-full px-6 md:px-12 pb-16 pt-36">
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="max-w-4xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-red-600 mb-4">
+                {eyebrow}
+              </div>
+              <h1 className="text-4xl sm:text-6xl md:text-8xl font-display font-bold uppercase tracking-tighter leading-[0.88] mb-6 text-white">
+                {headline}
+                <span className="text-red-600">.</span>
+              </h1>
+              <p className="text-lg sm:text-xl md:text-2xl text-white/85 max-w-2xl font-sans font-light leading-relaxed mb-8">
+                {line}
+              </p>
 
-          <div className="flex flex-wrap gap-4 items-center">
-            {ctaLink ? (
-              <Link
-                to={getLanguagePath(ctaLink)}
-                className="inline-flex items-center gap-3 px-8 py-4 bg-red-600 text-white font-sans font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300"
-              >
-                {ctaText} <ArrowRight className="w-4 h-4" />
-              </Link>
-            ) : (
-              <button
-                onClick={onCtaClick}
-                className="inline-flex items-center gap-3 px-8 py-4 bg-red-600 text-white font-sans font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300 cursor-pointer"
-              >
-                {ctaText} <ArrowRight className="w-4 h-4" />
-              </button>
-            )}
+              <div className="flex flex-wrap gap-4 items-center">
+                {ctaLink ? (
+                  <Link
+                    to={getLanguagePath(ctaLink)}
+                    className="inline-flex items-center gap-3 px-8 py-4 bg-red-600 text-white font-sans font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300"
+                  >
+                    {ctaText} <ArrowRight className="w-4 h-4" />
+                  </Link>
+                ) : (
+                  <button
+                    onClick={onCtaClick}
+                    className="inline-flex items-center gap-3 px-8 py-4 bg-red-600 text-white font-sans font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300 cursor-pointer"
+                  >
+                    {ctaText} <ArrowRight className="w-4 h-4" />
+                  </button>
+                )}
 
-            {secondaryCtaText && onSecondaryCtaClick && (
-              <button
-                onClick={onSecondaryCtaClick}
-                className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 hover:bg-white text-white hover:text-black border border-white/20 font-sans font-bold text-xs uppercase tracking-widest transition-all duration-300 cursor-pointer"
-              >
-                <Play className="w-4 h-4 fill-current" /> {secondaryCtaText}
-              </button>
-            )}
+                {secondaryCtaText && onSecondaryCtaClick && (
+                  <button
+                    onClick={onSecondaryCtaClick}
+                    className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 hover:bg-white text-white hover:text-black border border-white/20 font-sans font-bold text-xs uppercase tracking-widest transition-all duration-300 cursor-pointer"
+                  >
+                    <Play className="w-4 h-4 fill-current" /> {secondaryCtaText}
+                  </button>
+                )}
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </header>
   );

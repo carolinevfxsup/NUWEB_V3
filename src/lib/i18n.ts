@@ -1066,7 +1066,7 @@ export const translations = {
           {
             number: '01',
             title: 'Direção criativa',
-            desc: "Não se pode pedir consistência num prompt. Cada geração de IA é um novo rolar de dados."
+            desc: "A inteligência artificial não compensa a falta de critério. O bom gosto não se gera com um clique."
           },
           {
             number: '02',
@@ -1076,12 +1076,12 @@ export const translations = {
           {
             number: '03',
             title: 'Filme & animação',
-            desc: "Não se pode pedir num prompt o que acontece entre fotogramas."
+            desc: "Gerar vídeo com IA exige saber de cinema. Sem noções de lentes, iluminação e ritmo, o resultado é só ruído."
           },
           {
             number: '04',
             title: 'Automações e Soluções de IA à Medida',
-            desc: "Não se pode pedir uma ideia para a existência num prompt. Alguém tem de a construir."
+            desc: "Automatize o repetitivo, crie o extraordinário: desenvolvemos soluções de IA à medida para simplificar os seus processos e devolver-lhe tempo."
           }
         ]
       },
@@ -1198,7 +1198,7 @@ export const translations = {
         output: 'A Produção de Conteúdo',
         onBrand: 'Fiel à Marca',
         automation: 'Produção em Automação',
-        quote: "O mundo está a mover-se à velocidade das máquinas. Não fique para trás porque estava demasiado ocupado a fazer as coisas à maneira antiga.",
+        quote: "O mundo está a mover-se à velocidade das máquinas. Não fique para trás porque estava a fazer as coisas à maneira antiga.",
       },
       ready: {
         title: 'Pronto para limpar a sua agenda?',

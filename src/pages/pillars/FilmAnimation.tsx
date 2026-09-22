@@ -131,7 +131,7 @@ export const FilmAnimation = () => {
         headline={isPt ? 'FILME & ANIMAÇÃO' : 'FILM & ANIMATION'}
         line={
           isPt
-            ? 'Não se pode pedir num prompt o que acontece entre fotogramas.'
+            ? 'Gerar vídeo com IA exige saber de cinema. Sem noções de lentes, iluminação e ritmo, o resultado é só ruído.'
             : "You can't prompt what happens between frames."
         }
         ctaText={isPt ? 'Discuta a sua produção' : 'Discuss your production'}

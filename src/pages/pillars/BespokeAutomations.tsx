@@ -133,7 +133,7 @@ export const BespokeAutomations = () => {
         headline={isPt ? 'AUTOMAÇÕES E SOLUÇÕES DE IA' : 'AI AUTOMATIONS & SOLUTIONS'}
         line={
           isPt
-             ? 'Não se pode pedir uma ideia para a existência num prompt. Alguém tem de a construir.'
+             ? 'Automatize o repetitivo, crie o extraordinário: desenvolvemos soluções de IA à medida para simplificar os seus processos e devolver-lhe tempo.'
              : "You can't prompt an idea into existence. Someone still has to build it."
         }
         ctaText={isPt ? 'Automatize o seu negócio' : 'Automate your business'}

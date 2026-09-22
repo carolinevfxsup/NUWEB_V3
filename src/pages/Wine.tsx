@@ -469,29 +469,29 @@ export const Wine = () => {
           </FadeIn>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
             <figure>
-              <img src="https://zccorgeihlvtpcsuuekp.supabase.co/storage/v1/object/public/assets/wine_images/ecommbase.jpg" alt="Base e-commerce product shot of the wine bottle" className="w-full h-40 object-cover rounded-md bg-black" loading="lazy" decoding="async" />
+              <img src="https://zccorgeihlvtpcsuuekp.supabase.co/storage/v1/object/public/assets/wine_images/ecommbase.jpg" alt="Base e-commerce product shot of the wine bottle" className="w-full aspect-[9/16] object-cover rounded-md bg-black" loading="lazy" decoding="async" />
               <figcaption className="text-[10px] uppercase tracking-wider text-black/50 mt-2">{wt.caseStudyDeliver.captions.ecommbase}</figcaption>
             </figure>
             <figure>
-              <img src="https://zccorgeihlvtpcsuuekp.supabase.co/storage/v1/object/public/assets/wine_images/world1.jpg" alt="Wine bottle styled against cracked concrete" className="w-full h-40 object-cover rounded-md" loading="lazy" decoding="async" />
+              <img src="https://zccorgeihlvtpcsuuekp.supabase.co/storage/v1/object/public/assets/wine_images/world1.jpg" alt="Wine bottle styled against cracked concrete" className="w-full aspect-[9/16] object-cover rounded-md" loading="lazy" decoding="async" />
               <figcaption className="text-[10px] uppercase tracking-wider text-black/50 mt-2">{wt.caseStudyDeliver.captions.world1}</figcaption>
             </figure>
             <figure>
-              <img src="https://zccorgeihlvtpcsuuekp.supabase.co/storage/v1/object/public/assets/wine_images/world2.jpg" alt="Wine bottle styled with dramatic lighting" className="w-full h-40 object-cover rounded-md" loading="lazy" decoding="async" />
+              <img src="https://zccorgeihlvtpcsuuekp.supabase.co/storage/v1/object/public/assets/wine_images/world2.jpg" alt="Wine bottle styled with dramatic lighting" className="w-full aspect-[9/16] object-cover rounded-md" loading="lazy" decoding="async" />
               <figcaption className="text-[10px] uppercase tracking-wider text-black/50 mt-2">{wt.caseStudyDeliver.captions.world2}</figcaption>
             </figure>
             <figure>
-              <img src="https://zccorgeihlvtpcsuuekp.supabase.co/storage/v1/object/public/assets/wine_images/world3.jpg" alt="Hand holding the wine bottle" className="w-full h-40 object-cover rounded-md" loading="lazy" decoding="async" />
+              <img src="https://zccorgeihlvtpcsuuekp.supabase.co/storage/v1/object/public/assets/wine_images/world3.jpg" alt="Hand holding the wine bottle" className="w-full aspect-[9/16] object-cover rounded-md" loading="lazy" decoding="async" />
               <figcaption className="text-[10px] uppercase tracking-wider text-black/50 mt-2">{wt.caseStudyDeliver.captions.world3}</figcaption>
             </figure>
           </div>
 
           <h3 className="text-xl md:text-2xl font-display font-bold uppercase tracking-tighter mb-4">{wt.caseStudyDeliver.worldLived.title}<span className="text-red-600">.</span></h3>
           <p className="text-sm text-black/70 max-w-2xl mb-8">{wt.caseStudyDeliver.worldLived.desc}</p>
-          <div className="flex flex-wrap gap-4">
-            <img src="https://zccorgeihlvtpcsuuekp.supabase.co/storage/v1/object/public/assets/wine_images/life1.jpg" alt="Man standing in a vineyard holding a wine bottle" className="flex-1 min-w-[260px] h-64 object-cover rounded-md" loading="lazy" decoding="async" />
-            <img src="https://zccorgeihlvtpcsuuekp.supabase.co/storage/v1/object/public/assets/wine_images/life2.jpg" alt="Two men tasting wine in a vineyard" className="flex-1 min-w-[260px] h-64 object-cover rounded-md" loading="lazy" decoding="async" />
-            <img src="https://zccorgeihlvtpcsuuekp.supabase.co/storage/v1/object/public/assets/wine_images/life3.jpg" alt="Woman tasting wine in a cellar" className="flex-1 min-w-[260px] h-64 object-cover rounded-md" loading="lazy" decoding="async" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <img src="https://zccorgeihlvtpcsuuekp.supabase.co/storage/v1/object/public/assets/wine_images/life1.jpg" alt="Man standing in a vineyard holding a wine bottle" className="w-full aspect-[3/4] object-cover rounded-md" loading="lazy" decoding="async" />
+            <img src="https://zccorgeihlvtpcsuuekp.supabase.co/storage/v1/object/public/assets/wine_images/life2.jpg" alt="Two men tasting wine in a vineyard" className="w-full aspect-[3/4] object-cover rounded-md" loading="lazy" decoding="async" />
+            <img src="https://zccorgeihlvtpcsuuekp.supabase.co/storage/v1/object/public/assets/wine_images/life3.jpg" alt="Woman tasting wine in a cellar" className="w-full aspect-[3/4] object-cover rounded-md" loading="lazy" decoding="async" />
           </div>
         </section>
 

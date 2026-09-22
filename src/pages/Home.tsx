@@ -405,12 +405,12 @@ export const Home = () => {
                 </span>
                 <p className="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-white mb-4 leading-tight max-w-xs">
                   {language === 'pt' 
-                    ? 'DIRIJA A ARTE COMO UM PROFISSIONAL.' 
+                    ? 'DIREÇÃO DE ARTE PROFESSIONAL' 
                     : 'ART DIRECT LIKE A PRO.'}
                 </p>
                 <p className="text-[11px] text-white/50 leading-relaxed font-sans font-light max-w-[260px]">
                   {language === 'pt'
-                    ? 'O nosso workflow proprietário de estúdio que encapsula produtos de marcas, elenco de modelos e ambientes de luz em editoriais de campanhas prontos para produção, sem pegada física.'
+                    ? 'Cria campanhas editoriais de alto impacto para a tua marca, 100% digitais e sem produção física.'
                     : 'Our proprietary studio workflow sandboxes raw brand products, facial modeling roster, and curated lighting environments into production-ready campaign editorials with zero physical footprint.'}
                 </p>
               </div>

@@ -145,7 +145,7 @@ export const CreativeDirection = () => {
         headline={isPt ? 'DIREÇÃO CRIATIVA' : 'CREATIVE DIRECTION'}
         line={
           isPt
-            ? 'Não se pode pedir consistência num prompt. Cada geração de IA é um novo rolar de dados.'
+            ? 'A inteligência artificial não compensa a falta de critério. O bom gosto não se gera com um clique.'
             : "You can't prompt consistency. Every AI generation is a fresh roll of the dice."
         }
         ctaText={isPt ? 'Fale connosco sobre a sua marca' : 'Talk to us about your brand'}
