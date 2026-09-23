@@ -2,6 +2,11 @@ import { Header } from '../components/Header';
 import { FadeIn } from '../components/FadeIn';
 import { ExternalLink } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { LazyVideo } from '../components/LazyVideo';
+
+const DESKTOP_FILM_URL = 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/QDP-FILM/WINE_CM_16_9_FULL.mp4';
+const MOBILE_FILM_URL = 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/QDP-FILM/WINE_9_16_Full.mp4';
+const VIDEO_POSTER = 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/QDP-FILM/Saved_frame_from_WINE_CM(2)_2K_202609070948.jpeg';
 
 const wineTranslations = {
   en: {
@@ -453,6 +458,37 @@ export const Wine = () => {
                 <figcaption className="text-[10px] uppercase tracking-wider text-black/50 mt-2">{wt.caseStudyConcept.captions.leafmacro}</figcaption>
               </figure>
             </div>
+
+            {/* Quinta do Pinto Concept Film Video Players */}
+            {/* Desktop 16:9 Player */}
+            <div className="hidden md:block aspect-video w-full overflow-hidden rounded-md border border-black/10 mt-12 bg-black">
+              <LazyVideo
+                src={DESKTOP_FILM_URL}
+                poster={VIDEO_POSTER}
+                className="w-full h-full object-cover rounded-md"
+                showControls
+                controlsColor="red-600"
+                autoPlay={false}
+                muted={false}
+                loop={false}
+                playsInline
+              />
+            </div>
+
+            {/* Mobile 9:16 Player */}
+            <div className="block md:hidden max-w-sm mx-auto aspect-[9/16] w-full overflow-hidden rounded-md border border-black/10 mt-12 bg-black">
+              <LazyVideo
+                src={MOBILE_FILM_URL}
+                poster={VIDEO_POSTER}
+                className="w-full h-full object-cover rounded-md"
+                showControls
+                controlsColor="red-600"
+                autoPlay={false}
+                muted={false}
+                loop={false}
+                playsInline
+              />
+            </div>
           </div>
         </section>
 
@@ -477,11 +513,29 @@ export const Wine = () => {
               <figcaption className="text-[10px] uppercase tracking-wider text-black/50 mt-2">{wt.caseStudyDeliver.captions.world1}</figcaption>
             </figure>
             <figure>
-              <img src="https://zccorgeihlvtpcsuuekp.supabase.co/storage/v1/object/public/assets/wine_images/world2.jpg" alt="Wine bottle styled with dramatic lighting" className="w-full aspect-[9/16] object-cover rounded-md" loading="lazy" decoding="async" />
+              <div className="w-full aspect-[9/16] overflow-hidden rounded-md">
+                <LazyVideo
+                  src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/quinta-results-01.mp4"
+                  className="w-full h-full object-cover rounded-md"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
+              </div>
               <figcaption className="text-[10px] uppercase tracking-wider text-black/50 mt-2">{wt.caseStudyDeliver.captions.world2}</figcaption>
             </figure>
             <figure>
-              <img src="https://zccorgeihlvtpcsuuekp.supabase.co/storage/v1/object/public/assets/wine_images/world3.jpg" alt="Hand holding the wine bottle" className="w-full aspect-[9/16] object-cover rounded-md" loading="lazy" decoding="async" />
+              <div className="w-full aspect-[9/16] overflow-hidden rounded-md">
+                <LazyVideo
+                  src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/quinta-attention-to-detail.mp4"
+                  className="w-full h-full object-cover rounded-md"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
+              </div>
               <figcaption className="text-[10px] uppercase tracking-wider text-black/50 mt-2">{wt.caseStudyDeliver.captions.world3}</figcaption>
             </figure>
           </div>
