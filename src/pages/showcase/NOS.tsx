@@ -177,7 +177,25 @@ export const NOS = () => {
               </p>
               
               <div className="mt-8 text-xs font-black uppercase tracking-[0.4em] text-[#DC2626]">
-                Created by O Escritório x Bonzai
+                Created by{" "}
+                <a 
+                  href="https://oescritorio.net/work" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:underline"
+                >
+                  O Escritório
+                </a>{" "}
+                (Creative) and{" "}
+                <a 
+                  href="https://bonzi.pt/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:underline"
+                >
+                  Bonzi
+                </a>{" "}
+                (Production house)
               </div>
             </motion.div>
           </div>
@@ -521,7 +539,7 @@ export const NOS = () => {
                 </a>
               </motion.div>
 
-              {/* Card 3: Bonzai */}
+              {/* Card 3: Bonzi */}
               <motion.div 
                 {...fadeInUp}
                 className="p-8 rounded-md border border-[#EEEEEE] bg-[#F9F9F7] flex flex-col justify-between aspect-[4/3]"
@@ -530,7 +548,7 @@ export const NOS = () => {
                   <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center border border-neutral-100 shadow-sm mb-6">
                     <Cpu className="w-6 h-6 text-[#DC2626]" />
                   </div>
-                  <h3 className="text-xl font-bold uppercase tracking-tight mb-3">Bonzai</h3>
+                  <h3 className="text-xl font-bold uppercase tracking-tight mb-3">Bonzi</h3>
                   <p className="text-sm text-neutral-500 leading-relaxed font-sans mb-6">
                     {language === 'pt' 
                       ? "Uma produtora inovadora na vanguarda da união do cinema tradicional com tecnologia de inteligência artificial de última geração." 
@@ -543,7 +561,7 @@ export const NOS = () => {
                   rel="noopener noreferrer" 
                   className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#DC2626] hover:translate-x-1 transition-transform"
                 >
-                  Visit Bonzai <ExternalLink className="w-3.5 h-3.5" />
+                  Visit Bonzi <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               </motion.div>
             </div>
