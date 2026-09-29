@@ -40,6 +40,7 @@ export interface PortfolioItem {
   bg?: string;
   imgSrc?: string;
   videoSrc?: string;
+  videoPoster?: string;
 }
 
 interface HeroProps {
