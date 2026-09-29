@@ -164,6 +164,7 @@ export const OPalmeiral = () => {
             >
               <LazyVideo 
                 src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/OPalm_website_v2.mp4"
+                poster="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/2Artboard%201.png"
                 loop
                 playsInline
                 controls

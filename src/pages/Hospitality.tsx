@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Header } from '../components/Header';
 import { FadeIn } from '../components/FadeIn';
-import { Play, Clock, RefreshCw, UserX, ArrowRight } from 'lucide-react';
+import { Play, Clock, RefreshCw, UserX } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { LazyVideo } from '../components/LazyVideo';
 import { ShowreelModal } from '../components/ShowreelModal';
@@ -34,28 +34,79 @@ const hospitalityTranslations = {
         }
       ]
     },
+    whatsappCase: {
+      tag: "02 / WHATSAPP BOOKING BOT",
+      title: "BOOKED IN UNDER A MINUTE",
+      desc: "A guest messages, picks a date, time and party size, and gets a confirmation card back — all without leaving the chat thread. No app to download, no forms, no hold music."
+    },
     caseStudy: {
-      tag: "02 / CASE STUDY",
+      tag: "03 / CASE STUDY",
       title: "HOW WE SOLVE THIS — O PALMEIRAL",
-      desc: "We built a fully automated guest engagement and booking ecosystem for O Palmeiral, connecting their social media channels directly to their reservation book. Guest inquiries are answered instantly, tables are booked automatically, and staff only step in at the final human checkpoint.",
+      desc: "We turned O Palmeiral's Google Drive of random photos into an autonomous posting system that still maintained the restaurant's style. As asked by the owner, at different stages of posting there was a human checkpoint where Dan could check and change anything he wanted before it went to the posting queue.",
       cols: [
         {
-          title: "The Problem",
-          desc: "Managing massive booking spikes and answering late-night Instagram inquiries was eating hours of manual staff time."
+          title: "1. The Problem",
+          desc: "A lot of photos, no time to organize and post. We turned their Google Drive full of random photos into an autonomous posting system that still maintained the restaurant's style."
         },
         {
-          title: "The Build",
-          desc: "An intelligent reservation bridge and visual human review checkpoint keeping staff fully in control before bookings post."
+          title: "2. The Build",
+          desc: "We built an intelligent system that assigned categories, predefined hashtags, locations, alt-tags, and made the posting look human, featuring custom checkpoints for Dan to review."
         },
         {
-          title: "The Result",
-          desc: "Zero hours wasted on booking administration and 100% automated direct message guest conversion running silently."
+          title: "3. The Result",
+          desc: "15-20 mins a month from the client instead of many hours wasted, and daily posting to keep ahead of the game."
         }
       ],
       linkText: "Read the Full Case Study →"
     },
+    build: {
+      tag: "04 / WHAT WE BUILD",
+      title: "FROM YOUR BOOKING FLOW TO YOUR OUTBOUND LIST",
+      services: [
+        {
+          num: "01",
+          title: "SOCIAL MEDIA AUTOMATION",
+          desc: "Scheduled, on-brand content and community management, built for consistency without a full-time hire.",
+          link: "See the O Palmeiral case study →",
+          url: "/showcase/o-palmeiral",
+          imgSrc: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-automation-control.jpeg"
+        },
+        {
+          num: "02",
+          title: "BLOG & SEO",
+          desc: "Ongoing, search-optimised content that keeps a hospitality brand visible between campaigns.",
+          imgSrc: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Person_scrolling_jewelry_blog_202609041449.jpeg"
+        },
+        {
+          num: "03",
+          title: "WHATSAPP BOOKING BOTS",
+          desc: "Guests book, modify and confirm tables entirely inside WhatsApp — no app, no hold music.",
+          imgSrc: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automations/WhatsApp20Flows20220-20English.png"
+        },
+        {
+          num: "04",
+          title: "VOICE AGENTS",
+          desc: "Natural-sounding AI phone agents, built on ElevenLabs, that answer calls, take bookings and route real urgency to a human.",
+          imgSrc: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Mobile_phone_on_office_table_202609041503.jpeg"
+        },
+        {
+          num: "05",
+          title: "BESPOKE AUTOMATIONS",
+          desc: "Custom AI systems for any workflow — see the scale of what's possible in our NOS campaign work.",
+          link: "See the NOS AI campaign →",
+          url: "/showcase/nos-ai-campaign",
+          videoSrc: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Sequence%2001.mp4"
+        },
+        {
+          num: "06",
+          title: "AUTOMATED EMAIL OUTREACH",
+          desc: "Outbound campaigns to your existing client list — re-engagement, offers and seasonal pushes, sent on schedule.",
+          imgSrc: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automations/hologram.jpg"
+        }
+      ]
+    },
     team: {
-      tag: "03 / THE TEAM",
+      tag: "05 / THE TEAM",
       title: "TWO DECADES OF CRAFT. ONE CREATIVE VISION",
       members: [
         {
@@ -75,58 +126,8 @@ const hospitalityTranslations = {
         }
       ]
     },
-    build: {
-      tag: "04 / WHAT WE BUILD",
-      title: "FROM YOUR BOOKING FLOW TO YOUR OUTBOUND LIST",
-      services: [
-        {
-          num: "01",
-          title: "SOCIAL MEDIA AUTOMATION",
-          desc: "Scheduled, on-brand content and community management, built for consistency without a full-time hire.",
-          link: "See the O Palmeiral case study →",
-          url: "/showcase/o-palmeiral"
-        },
-        {
-          num: "02",
-          title: "BLOG & SEO",
-          desc: "Ongoing, search-optimised content that keeps a hospitality brand visible between campaigns."
-        },
-        {
-          num: "03",
-          title: "WHATSAPP BOOKING BOTS",
-          desc: "Guests book, modify and confirm tables entirely inside WhatsApp — no app, no hold music."
-        },
-        {
-          num: "04",
-          title: "VOICE AGENTS",
-          desc: "Natural-sounding AI phone agents, built on ElevenLabs, that answer calls, take bookings and route real urgency to a human."
-        },
-        {
-          num: "05",
-          title: "BESPOKE AUTOMATIONS",
-          desc: "Custom AI systems for any workflow — see the scale of what's possible in our NOS campaign work.",
-          link: "See the NOS AI campaign →",
-          url: "/showcase/nos-ai-campaign"
-        },
-        {
-          num: "06",
-          title: "AUTOMATED EMAIL OUTREACH",
-          desc: "Outbound campaigns to your existing client list — re-engagement, offers and seasonal pushes, sent on schedule."
-        },
-        {
-          num: "07",
-          title: "LEAD GENERATION",
-          desc: "Verified, segmented contact lists built for your market — ready to load into outreach from day one."
-        }
-      ],
-      whatsappCase: {
-        tag: "05 / CASE STUDY / WHATSAPP BOOKING BOT",
-        title: "BOOKED IN UNDER A MINUTE",
-        desc: "A guest messages, picks a date, time and party size, and gets a confirmation card back — all without leaving the chat thread. No app to download, no forms, no hold music."
-      }
-    },
     voiceCase: {
-      tag: "06 / CASE STUDY / VOICE AGENTS",
+      tag: "06 / VOICE AGENTS",
       title: "ANSWERS EVERY CALL, EVEN THE ONE AT 9:47PM",
       desc: "Built on ElevenLabs voice models and trained on your script, our voice agents take bookings, answer FAQs, and hand off anything that needs a human — logged and ready for your team each morning."
     },
@@ -198,28 +199,79 @@ const hospitalityTranslations = {
         }
       ]
     },
+    whatsappCase: {
+      tag: "02 / BOT DE RESERVAS NO WHATSAPP",
+      title: "RESERVADO EM MENOS DE UM MINUTO",
+      desc: "Um cliente envia uma mensagem, escolhe uma data, hora e número de pessoas, e recebe um cartão de confirmação — tudo sem sair do chat thread. Sem apps para descarregar, sem formulários, sem música de espera."
+    },
     caseStudy: {
-      tag: "02 / CASO DE ESTUDO",
+      tag: "03 / CASO DE ESTUDO",
       title: "COMO RESOLVEMOS ISTO — O PALMEIRAL",
-      desc: "Criámos um ecossistema de reservas e envolvimento de clientes 100% automatizado para o restaurante O Palmeiral, ligando os canais sociais diretamente ao livro de reservas. As dúvidas são respondidas instantaneamente, as mesas reservadas no momento e a equipa só intervém no ponto de controlo humano final.",
+      desc: "Transformámos o seu Google Drive repleto de fotografias aleatórias num sistema de publicação autónomo que preserva o estilo característico do restaurante. A pedido do proprietário, incluímos pontos de controlo humano em diferentes fases de publicação, onde o Dan pode rever e alterar o que desejar antes de enviar para a fila de agendamento.",
       cols: [
         {
-          title: "O Problema",
-          desc: "Gerir picos massivos de reservas e responder a mensagens tardias no Instagram consumia horas de trabalho manual da equipa."
+          title: "1. O Problema",
+          desc: "Muitas fotos, sem tempo para organizar e publicar. Transformámos o seu Google Drive repleto de fotografias aleatórias num sistema de publicação autónomo que mantém o estilo original do restaurante."
         },
         {
-          title: "A Solução",
-          desc: "Uma ponte de reserva inteligente e um ponto de controlo de revisão visual humana que mantém a equipa no comando."
+          title: "2. O Desenvolvimento",
+          desc: "Desenvolvemos um sistema inteligente que atribui categorias, hashtags predefinidas, localizações, alt-tags e confere um aspeto humano às publicações, com pontos de revisão para o Dan."
         },
         {
-          title: "O Resultado",
-          desc: "Zero horas gastas em administração de reservas e 100% de conversão automatizada de clientes por mensagens sociais."
+          title: "3. O Resultado",
+          desc: "Apenas 15-20 minutos por mês dedicados pelo cliente, em vez de muitas horas desperdiçadas, mantendo publicações diárias para liderar o mercado."
         }
       ],
       linkText: "Ver Caso de Estudo Completo →"
     },
+    build: {
+      tag: "04 / O QUE CONSTRUÍMOS",
+      title: "DO SEU FLUXO DE RESERVAS À SUA LISTA DE PROSPEÇÃO",
+      services: [
+        {
+          num: "01",
+          title: "AUTOMAÇÃO DE REDES SOCIAIS",
+          desc: "Conteúdo programado e gestão de comunidade, criados para consistência de marca sem contratar a tempo inteiro.",
+          link: "Ver o caso de estudo O Palmeiral →",
+          url: "/showcase/o-palmeiral",
+          imgSrc: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-automation-control.jpeg"
+        },
+        {
+          num: "02",
+          title: "BLOG & SEO",
+          desc: "Conteúdo otimizado contínuo que mantém a marca de restauração visível entre campanhas.",
+          imgSrc: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Person_scrolling_jewelry_blog_202609041449.jpeg"
+        },
+        {
+          num: "03",
+          title: "BOTS DE RESERVA NO WHATSAPP",
+          desc: "Clientes reservam, alteram e confirmam mesas inteiramente no WhatsApp — sem app, sem música de espera.",
+          imgSrc: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automations/WhatsApp20Flows20220-20English.png"
+        },
+        {
+          num: "04",
+          title: "AGENTES DE VOZ",
+          desc: "Agentes telefónicos de IA com som natural que atendem chamadas, fazem reservas e encaminham urgências reais.",
+          imgSrc: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Mobile_phone_on_office_table_202609041503.jpeg"
+        },
+        {
+          num: "05",
+          title: "AUTOMAÇÕES À MEDIDA",
+          desc: "Sistemas de IA customizados para qualquer fluxo operacional — veja o que é possível na nossa campanha NOS.",
+          link: "Ver a campanha de IA da NOS →",
+          url: "/showcase/nos-ai-campaign",
+          videoSrc: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Sequence%2001.mp4"
+        },
+        {
+          num: "06",
+          title: "PROSPEÇÃO DE EMAIL AUTOMATIZADA",
+          desc: "Campanhas outbound para a sua lista de clientes — re-envolvimento, ofertas e picos sazonais.",
+          imgSrc: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automations/hologram.jpg"
+        }
+      ]
+    },
     team: {
-      tag: "03 / A EQUIPA",
+      tag: "05 / A EQUIPA",
       title: "DUAS DÉCADAS DE OFÍCIO. UMA VISÃO CRIATIVA",
       members: [
         {
@@ -239,58 +291,8 @@ const hospitalityTranslations = {
         }
       ]
     },
-    build: {
-      tag: "04 / O QUE CONSTRUÍMOS",
-      title: "DO SEU FLUXO DE RESERVAS À SUA LISTA DE PROSPEÇÃO",
-      services: [
-        {
-          num: "01",
-          title: "AUTOMAÇÃO DE REDES SOCIAIS",
-          desc: "Conteúdo programado e gestão de comunidade, criados para consistência de marca sem contratar a tempo inteiro.",
-          link: "Ver o caso de estudo O Palmeiral →",
-          url: "/showcase/o-palmeiral"
-        },
-        {
-          num: "02",
-          title: "BLOG & SEO",
-          desc: "Conteúdo otimizado contínuo que mantém a marca de restauração visível entre campanhas."
-        },
-        {
-          num: "03",
-          title: "BOTS DE RESERVA NO WHATSAPP",
-          desc: "Clientes reservam, alteram e confirmam mesas inteiramente no WhatsApp — sem app, sem música de espera."
-        },
-        {
-          num: "04",
-          title: "AGENTES DE VOZ",
-          desc: "Agentes telefónicos de IA com som natural que atendem chamadas, fazem reservas e encaminham urgências reais."
-        },
-        {
-          num: "05",
-          title: "AUTOMAÇÕES À MEDIDA",
-          desc: "Sistemas de IA customizados para qualquer fluxo operacional — veja o que é possível na nossa campanha NOS.",
-          link: "Ver a campanha de IA da NOS →",
-          url: "/showcase/nos-ai-campaign"
-        },
-        {
-          num: "06",
-          title: "PROSPEÇÃO DE EMAIL AUTOMATIZADA",
-          desc: "Campanhas outbound para a sua lista de clientes — re-envolvimento, ofertas e picos sazonais."
-        },
-        {
-          num: "07",
-          title: "GERAÇÃO DE CONTACTOS",
-          desc: "Listas de contactos verificadas e segmentadas, prontas para iniciar prospeção desde o primeiro dia."
-        }
-      ],
-      whatsappCase: {
-        tag: "05 / CASO DE ESTUDO / BOT DE RESERVAS NO WHATSAPP",
-        title: "RESERVADO EM MENOS DE UM MINUTO",
-        desc: "Um cliente envia uma mensagem, escolhe uma data, hora e número de pessoas, e recebe um cartão de confirmação — tudo sem sair do chat thread. Sem apps para descarregar, sem formulários, sem música de espera."
-      }
-    },
     voiceCase: {
-      tag: "06 / CASO DE ESTUDO / AGENTES DE VOZ",
+      tag: "06 / AGENTES DE VOZ",
       title: "RESPONDE A TODAS AS CHAMADAS, ATÉ ÀS 21:47",
       desc: "Desenvolvidos com modelos de voz ElevenLabs e guiões personalizados, os nossos agentes atendem chamadas, tiram dúvidas frequentes e encaminham urgências, deixando tudo registado para a sua equipa de manhã."
     },
@@ -446,8 +448,42 @@ export const Hospitality = () => {
           </div>
         </section>
 
-        {/* 02 CASE STUDY: O PALMEIRAL */}
+        {/* 02 WHATSAPP BOOKING BOT */}
         <section className="py-24 md:py-32 px-6 md:px-12 bg-[#F9F9F7] border-y border-black/5">
+          <div className="max-w-7xl mx-auto">
+            <span className="text-xs font-sans font-bold uppercase tracking-[0.2em] text-red-600 mb-4 block">
+              {ht.whatsappCase.tag}
+            </span>
+            <h2 className="text-3xl md:text-5xl font-display font-bold uppercase tracking-tighter text-black mb-6 leading-none">
+              {ht.whatsappCase.title}<span className="text-red-600">.</span>
+            </h2>
+            <p className="text-base md:text-lg text-black/70 font-sans leading-relaxed mb-12 max-w-4xl">
+              {ht.whatsappCase.desc}
+            </p>
+
+            {/* Stretched Full Showcase Gallery - Uncropped, sitting flat with no gray borders */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automations/whatsapp_01%20(1).jpg",
+                "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automations/whatsapp_02%20(1).jpg",
+                "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automations/whatsapp_03%20(1).jpg"
+              ].map((src, i) => (
+                <div key={i} className="flex justify-center items-start">
+                  <img
+                    src={src}
+                    alt={`WhatsApp Step ${i + 1}`}
+                    className="w-full h-auto object-contain max-h-[600px] rounded-none"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 03 CASE STUDY: O PALMEIRAL */}
+        <section className="py-24 md:py-32 px-6 md:px-12 bg-white border-b border-black/5">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-12 gap-12 items-center mb-16">
               <div className="lg:col-span-6">
@@ -480,7 +516,7 @@ export const Hospitality = () => {
               </div>
             </div>
 
-            {/* Stretched 3-columns study breakdown underneath */}
+            {/* Stretched 3-columns study breakdown underneath with new copywriting */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 border-t border-black/5">
               {ht.caseStudy.cols.map((col, i) => {
                 const images = [
@@ -528,7 +564,78 @@ export const Hospitality = () => {
           </div>
         </section>
 
-        {/* 03 THE TEAM */}
+        {/* 04 WHAT WE BUILD */}
+        <section className="py-24 md:py-32 px-6 md:px-12 bg-[#F9F9F7] border-b border-black/5">
+          <div className="max-w-7xl mx-auto">
+            <div className="mb-16">
+              <span className="text-xs font-sans font-bold uppercase tracking-[0.2em] text-red-600 mb-4 block">
+                {ht.build.tag}
+              </span>
+              <h2 className="text-3xl md:text-5xl font-display font-bold uppercase tracking-tighter text-black mb-4 leading-none">
+                {ht.build.title}<span className="text-red-600">.</span>
+              </h2>
+            </div>
+
+            {/* Thumbnail-based 3 columns per row grid of services */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {ht.build.services.map((service, i) => (
+                <FadeIn key={i} delay={0.1 * i}>
+                  <div className="bg-white rounded-md border border-black/5 p-6 flex flex-col justify-between h-full group shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div>
+                      {/* Thumbnail Container: Rendering video loop or image */}
+                      <div className="overflow-hidden rounded-md border border-black/5 aspect-video mb-6 bg-neutral-100">
+                        {service.videoSrc ? (
+                          <video
+                            src={service.videoSrc}
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <img
+                            src={service.imgSrc}
+                            alt={service.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        )}
+                      </div>
+                      
+                      <div className="flex gap-3 items-start mb-3">
+                        <span className="font-mono text-xs font-bold text-red-600 pt-0.5">
+                          {service.num}
+                        </span>
+                        <h3 className="font-display font-bold uppercase text-lg text-black tracking-tight leading-snug">
+                          {service.title}
+                        </h3>
+                      </div>
+                      
+                      <p className="text-sm text-black/60 font-sans leading-relaxed mb-6">
+                        {service.desc}
+                      </p>
+                    </div>
+
+                    {service.link && (
+                      <div className="pt-4 border-t border-black/5">
+                        <a 
+                          href={getLanguagePath(service.url || '')}
+                          className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-red-600 hover:text-red-700 transition-colors"
+                        >
+                          {service.link}
+                        </a>
+                      </div>
+                    )}
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 05 THE TEAM */}
         <section className="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto">
           <FadeIn delay={0.1}>
             <span className="text-xs font-sans font-bold uppercase tracking-[0.2em] text-red-600 mb-4 block">
@@ -579,85 +686,7 @@ export const Hospitality = () => {
           </div>
         </section>
 
-        {/* 04 WHAT WE BUILD */}
-        <section className="py-24 md:py-32 px-6 md:px-12 bg-white border-t border-black/5">
-          <div className="max-w-7xl mx-auto">
-            <div className="mb-16">
-              <span className="text-xs font-sans font-bold uppercase tracking-[0.2em] text-red-600 mb-4 block">
-                {ht.build.tag}
-              </span>
-              <h2 className="text-3xl md:text-5xl font-display font-bold uppercase tracking-tighter text-black mb-4 leading-none">
-                {ht.build.title}<span className="text-red-600">.</span>
-              </h2>
-            </div>
-
-            {/* Stretched 7-services list block */}
-            <div className="border-t border-black/10 mb-24">
-              {ht.build.services.map((service, i) => (
-                <div key={i} className="flex flex-col md:flex-row gap-4 md:gap-8 py-8 border-b border-black/10 items-start justify-between">
-                  <div className="flex gap-4 md:gap-8 items-start">
-                    <span className="font-mono text-sm font-bold text-red-600 pt-1">
-                      {service.num}
-                    </span>
-                    <div>
-                      <h3 className="font-display font-bold uppercase text-xl text-black tracking-tight mb-2">
-                        {service.title}
-                      </h3>
-                      <p className="text-sm text-black/70 font-sans max-w-2xl leading-relaxed">
-                        {service.desc}
-                      </p>
-                    </div>
-                  </div>
-                  
-                  {service.link && (
-                    <a 
-                      href={getLanguagePath(service.url || '')}
-                      className="text-xs font-black uppercase tracking-widest text-black/50 hover:text-red-600 transition-colors flex-shrink-0 pt-1 flex items-center gap-2 group"
-                    >
-                      {service.link}
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                    </a>
-                  )}
-                </div>
-              ))}
-            </div>
-
-            {/* Page 6 Subsection: BOOKED IN UNDER A MINUTE (Using full scale, uncropped images!) */}
-            <div className="pt-16 border-t border-black/5">
-              <span className="text-xs font-sans font-bold uppercase tracking-[0.2em] text-red-600 mb-4 block">
-                {ht.build.whatsappCase.tag}
-              </span>
-              <h2 className="text-3xl md:text-5xl font-display font-bold uppercase tracking-tighter text-black mb-6 leading-none">
-                {ht.build.whatsappCase.title}<span className="text-red-600">.</span>
-              </h2>
-              <p className="text-base md:text-lg text-black/70 font-sans leading-relaxed mb-12 max-w-4xl">
-                {ht.build.whatsappCase.desc}
-              </p>
-
-              {/* Stretched Full Showcase Gallery - Uncropped, using absolute dimensions appropriately */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {[
-                  "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automations/Isolate_reservation_summary_screen_20260929125259.jpg",
-                  "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automations/Display_book_a_table_form_20260929125303.jpg",
-                  "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automations/Isolate_reservation_summary_screen_20260929125259.jpg"
-                ].map((src, i) => (
-                  <div key={i} className="flex justify-center items-start">
-                    <img
-                      src={src}
-                      alt={`Step ${i + 1}`}
-                      className="w-full h-auto object-contain max-h-[600px] rounded-none"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        {/* 06 CASE STUDY: VOICE AGENTS */}
+        {/* 06 VOICE AGENTS */}
         <section className="py-24 md:py-32 px-6 md:px-12 bg-[#F9F9F7] border-y border-black/5">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-12 gap-12 items-center">
@@ -679,7 +708,7 @@ export const Hospitality = () => {
                 <FadeIn delay={0.2}>
                   <div className="flex justify-center items-center">
                     <img
-                      src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Mobile_phone_on_office_table_202609041503.jpeg"
+                      src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automations/unnamed.jpg_20260929125405.jpg"
                       alt="Voice Agent Phone beside reservation book"
                       className="w-full h-auto object-contain max-h-[450px] rounded-none"
                       loading="lazy"
@@ -757,8 +786,8 @@ export const Hospitality = () => {
             
             <div className="relative overflow-hidden rounded-md shadow-2xl flex justify-center bg-black">
               <img
-                src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automations/unnamed.jpg_20260929125405.jpg"
-                alt="Elegantly plated signature restaurant dish"
+                src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automations/Gemini_Generated_Image_vpdryevpdryevpdr%20(2).png"
+                alt="Chic atmospheric empty restaurant dining setting"
                 className="w-full h-auto max-h-[400px] object-cover rounded-md opacity-90"
                 loading="lazy"
                 decoding="async"
