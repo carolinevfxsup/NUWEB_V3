@@ -26,6 +26,8 @@ const CARDS_EN: PillarCard[] = [
     line: 'Content and posting, on autopilot.',
     more: 'From an existing photo backlog to fully AI-generated content — images, video, captions — scheduled and published automatically.',
     imgSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AUTO_STACK.png',
+    overlayButtonText: 'Play',
+    overlayVideoUrl: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automation%20Final%20Video%20v3.mp4',
   },
   {
     n: '02',
@@ -68,6 +70,8 @@ const CARDS_PT: PillarCard[] = [
     line: 'Conteúdo e publicações, em piloto automático.',
     more: 'Desde o seu arquivo fotográfico existente até conteúdo 100% gerado por IA — imagens, vídeo, legendas — agendados e publicados automaticamente.',
     imgSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AUTO_STACK.png',
+    overlayButtonText: 'Reproduzir',
+    overlayVideoUrl: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automation%20Final%20Video%20v3.mp4',
   },
   {
     n: '02',
@@ -116,6 +120,12 @@ const PORTFOLIO: PortfolioItem[] = [
     slug: '/showcase/salt-lily',
     videoSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/salt-lily-zoom.mp4',
   },
+  {
+    name: 'NOS AI Campaign',
+    cat: '03 / Human-AI Collaboration',
+    slug: '/showcase/nos-ai-campaign',
+    imgSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/NOS/Header/youtube-thumbnail-o_t0w0LUUuY-maxresdefault.jpg',
+  },
 ];
 
 export const BespokeAutomations = () => {
@@ -159,7 +169,7 @@ export const BespokeAutomations = () => {
       <ShowreelModal 
         isOpen={explainerOpen} 
         onClose={() => setExplainerOpen(false)} 
-        videoUrl="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automation%20Final%20Video%20v3.mp4" 
+        videoUrl="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Remove_WaterMark(1).mp4" 
       />
     </div>
   );
