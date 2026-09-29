@@ -26,8 +26,8 @@ const CARDS_EN: PillarCard[] = [
     line: 'Content and posting, on autopilot.',
     more: 'From an existing photo backlog to fully AI-generated content — images, video, captions — scheduled and published automatically.',
     imgSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AUTO_STACK.png',
-    overlayButtonText: 'Play',
-    overlayVideoUrl: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automation%20Final%20Video%20v3.mp4',
+    overlayButtonText: 'View Case Study',
+    overlayLink: '/showcase/o-palmeiral',
   },
   {
     n: '02',
@@ -60,6 +60,8 @@ const CARDS_EN: PillarCard[] = [
     line: "Doesn't fit a template? We build it.",
     more: "Custom AI agents for any workflow that doesn't fit the above — get in touch and we'll find a way to make it work.",
     videoSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Sequence%2001.mp4',
+    overlayButtonText: 'View Showcase',
+    overlayLink: '/showcase/nos-ai-campaign',
   },
 ];
 
@@ -70,8 +72,8 @@ const CARDS_PT: PillarCard[] = [
     line: 'Conteúdo e publicações, em piloto automático.',
     more: 'Desde o seu arquivo fotográfico existente até conteúdo 100% gerado por IA — imagens, vídeo, legendas — agendados e publicados automaticamente.',
     imgSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AUTO_STACK.png',
-    overlayButtonText: 'Reproduzir',
-    overlayVideoUrl: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automation%20Final%20Video%20v3.mp4',
+    overlayButtonText: 'Ver Caso de Estudo',
+    overlayLink: '/showcase/o-palmeiral',
   },
   {
     n: '02',
@@ -104,6 +106,8 @@ const CARDS_PT: PillarCard[] = [
     line: 'Não cabe num template? Nós desenvolvemos.',
     more: 'Agentes de IA sob medida para qualquer fluxo operacional singular — entre em contacto e desenharemos a solução perfeita.',
     videoSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Sequence%2001.mp4',
+    overlayButtonText: 'Ver Showcase',
+    overlayLink: '/showcase/nos-ai-campaign',
   },
 ];
 

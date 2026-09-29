@@ -1,6 +1,104 @@
-import { ReactNode } from 'react';
+import { ReactNode, useState, useRef, useEffect, useLayoutEffect } from 'react';
 import { motion } from 'motion/react';
 import { getAssetUrl } from '../constants';
+
+const ShowcaseTitle = ({
+  title,
+  mobileTitle,
+  titleClassName,
+}: {
+  title: string;
+  mobileTitle?: string;
+  titleClassName?: string;
+}) => {
+  const containerRef = useRef<HTMLHeadingElement>(null);
+  const wordRefs = useRef<(HTMLSpanElement | null)[]>([]);
+  const [fontSize, setFontSize] = useState<string>('');
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const displayTitle = mobileTitle && isMobile ? mobileTitle : title;
+  const words = displayTitle.split(' ');
+
+  // Reset references array on every render pass to keep it in sync
+  wordRefs.current = [];
+
+  useLayoutEffect(() => {
+    const adjustFontSize = () => {
+      const container = containerRef.current;
+      if (!container) return;
+
+      const containerWidth = container.clientWidth;
+      if (containerWidth <= 0) return;
+
+      // Reset styles to defaults to allow accurate measurement of unscaled state
+      container.style.fontSize = '';
+
+      let maxWordWidth = 0;
+      wordRefs.current.forEach((wordSpan) => {
+        if (wordSpan) {
+          maxWordWidth = Math.max(maxWordWidth, wordSpan.offsetWidth);
+        }
+      });
+
+      if (maxWordWidth > containerWidth) {
+        const computedStyle = window.getComputedStyle(container);
+        const currentFontSizePx = parseFloat(computedStyle.fontSize);
+        
+        const scaleFactor = containerWidth / maxWordWidth;
+        const newFontSizePx = currentFontSizePx * scaleFactor * 0.95; // 0.95 safety factor
+
+        setFontSize(`${newFontSizePx}px`);
+      } else {
+        setFontSize('');
+      }
+    };
+
+    // Run adjustment initially
+    adjustFontSize();
+
+    const observer = new ResizeObserver(() => {
+      adjustFontSize();
+    });
+    observer.observe(containerRef.current!);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [displayTitle, isMobile]);
+
+  return (
+    <h1
+      ref={containerRef}
+      className={`font-display font-bold italic text-white leading-[0.85] tracking-tighter mb-8 flex flex-wrap gap-x-[0.2em] gap-y-1 ${
+        titleClassName || 'text-4xl sm:text-5xl md:text-[10vw] lg:text-[12vw]'
+      }`}
+      style={fontSize ? { fontSize } : undefined}
+    >
+      {words.map((word, index) => (
+        <span
+          key={index}
+          ref={(el) => {
+            if (el) {
+              wordRefs.current[index] = el;
+            }
+          }}
+          className="inline-block whitespace-nowrap"
+        >
+          {word}
+        </span>
+      ))}
+    </h1>
+  );
+};
 
 interface ShowcaseHeroProps {
   title: string;
@@ -111,10 +209,11 @@ export const ShowcaseHero = ({
               {customTitle ? (
                 customTitle
               ) : (
-                <h1 className={`font-display font-bold italic text-white leading-[0.85] tracking-tighter mb-8 break-words ${titleClassName || "text-4xl sm:text-5xl md:text-[10vw] lg:text-[12vw]"}`}>
-                  <span className={mobileTitle ? 'hidden md:inline' : ''}>{title}</span>
-                  {mobileTitle && <span className="md:hidden">{mobileTitle}</span>}
-                </h1>
+                <ShowcaseTitle
+                  title={title}
+                  mobileTitle={mobileTitle}
+                  titleClassName={titleClassName}
+                />
               )}
             </div>
             {subtitle && (

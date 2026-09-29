@@ -481,7 +481,51 @@ export const NOS = () => {
                 {t.nos.partnersTitle}<span className="text-[#DC2626]">.</span>
               </h2>
               <p className="text-xl text-neutral-600 leading-relaxed font-sans">
-                {t.nos.partnersText}
+                {language === 'pt' ? (
+                  <>
+                    Uma colaboração de alto impacto entre o maior grupo de telecomunicações de Portugal, a agência criativa{' '}
+                    <a 
+                      href="https://oescritorio.net/work" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-[#DC2626] hover:underline font-normal"
+                    >
+                      O Escritório
+                    </a>
+                    , a produtora{' '}
+                    <a 
+                      href="https://bonzi.pt/" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-[#DC2626] hover:underline font-normal"
+                    >
+                      Bonzi
+                    </a>{' '}
+                    e a NU Studios para criar uma experiência digital pioneira orientada por IA.
+                  </>
+                ) : (
+                  <>
+                    A high-impact collaboration between Portugal's largest telecom group, creative agency{' '}
+                    <a 
+                      href="https://oescritorio.net/work" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-[#DC2626] hover:underline font-normal"
+                    >
+                      O Escritório
+                    </a>
+                    , production company{' '}
+                    <a 
+                      href="https://bonzi.pt/" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-[#DC2626] hover:underline font-normal"
+                    >
+                      Bonzi
+                    </a>{' '}
+                    and NU Studios to craft a pioneering AI-driven digital experience.
+                  </>
+                )}
               </p>
             </motion.div>
 

@@ -30,6 +30,7 @@ export interface PillarCard {
   overlayButtonText?: string;
   onOverlayClick?: () => void;
   overlayVideoUrl?: string;
+  overlayLink?: string;
 }
 
 export interface PortfolioItem {
@@ -161,6 +162,7 @@ export const CardItem: FC<{ card: PillarCard; bg: string }> = ({ card, bg }) => 
   const [open, setOpen] = useState(false);
   const [showreelOpen, setShowreelOpen] = useState(false);
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
+  const { getLanguagePath } = useLanguage();
 
   useEffect(() => {
     if (!card.imgSrcs || card.imgSrcs.length <= 1) return;
@@ -211,18 +213,27 @@ export const CardItem: FC<{ card: PillarCard; bg: string }> = ({ card, bg }) => 
         {/* Hover Overlay with Button */}
         {card.overlayButtonText && (
           <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
-            <button
-              onClick={() => {
-                if (card.onOverlayClick) {
-                  card.onOverlayClick();
-                } else {
-                  setShowreelOpen(true);
-                }
-              }}
-              className="text-white text-xs font-sans font-bold uppercase tracking-widest border border-white px-6 py-3 flex items-center gap-2 hover:bg-white hover:text-black transition-all duration-300 cursor-pointer"
-            >
-              {card.overlayButtonText} <ExternalLink className="w-3.5 h-3.5" />
-            </button>
+            {card.overlayLink ? (
+              <Link
+                to={getLanguagePath(card.overlayLink)}
+                className="text-white text-xs font-sans font-bold uppercase tracking-widest border border-white px-6 py-3 flex items-center gap-2 hover:bg-white hover:text-black transition-all duration-300 cursor-pointer"
+              >
+                {card.overlayButtonText} <ExternalLink className="w-3.5 h-3.5" />
+              </Link>
+            ) : (
+              <button
+                onClick={() => {
+                  if (card.onOverlayClick) {
+                    card.onOverlayClick();
+                  } else {
+                    setShowreelOpen(true);
+                  }
+                }}
+                className="text-white text-xs font-sans font-bold uppercase tracking-widest border border-white px-6 py-3 flex items-center gap-2 hover:bg-white hover:text-black transition-all duration-300 cursor-pointer"
+              >
+                {card.overlayButtonText} <ExternalLink className="w-3.5 h-3.5" />
+              </button>
+            )}
           </div>
         )}
 
@@ -243,18 +254,27 @@ export const CardItem: FC<{ card: PillarCard; bg: string }> = ({ card, bg }) => 
 
         {card.overlayButtonText && (
           <div className="block md:hidden mb-6">
-            <button
-              onClick={() => {
-                if (card.onOverlayClick) {
-                  card.onOverlayClick();
-                } else {
-                  setShowreelOpen(true);
-                }
-              }}
-              className="w-full text-black text-xs font-sans font-bold uppercase tracking-widest border border-black/20 rounded px-6 py-3.5 flex items-center justify-center gap-2 hover:bg-black hover:text-white transition-all duration-300 cursor-pointer"
-            >
-              {card.overlayButtonText} <ExternalLink className="w-3.5 h-3.5" />
-            </button>
+            {card.overlayLink ? (
+              <Link
+                to={getLanguagePath(card.overlayLink)}
+                className="w-full text-black text-xs font-sans font-bold uppercase tracking-widest border border-black/20 rounded px-6 py-3.5 flex items-center justify-center gap-2 hover:bg-black hover:text-white transition-all duration-300 cursor-pointer"
+              >
+                {card.overlayButtonText} <ExternalLink className="w-3.5 h-3.5" />
+              </Link>
+            ) : (
+              <button
+                onClick={() => {
+                  if (card.onOverlayClick) {
+                    card.onOverlayClick();
+                  } else {
+                    setShowreelOpen(true);
+                  }
+                }}
+                className="w-full text-black text-xs font-sans font-bold uppercase tracking-widest border border-black/20 rounded px-6 py-3.5 flex items-center justify-center gap-2 hover:bg-black hover:text-white transition-all duration-300 cursor-pointer"
+              >
+                {card.overlayButtonText} <ExternalLink className="w-3.5 h-3.5" />
+              </button>
+            )}
           </div>
         )}
 
