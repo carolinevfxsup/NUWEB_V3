@@ -60,6 +60,7 @@ const GoogleIO = lazyWithRetry(() => import('./pages/showcase/GoogleIO'), 'Googl
 const NOS = lazyWithRetry(() => import('./pages/showcase/NOS'), 'NOS');
 const Onboarding = lazyWithRetry(() => import('./pages/Onboarding'), 'Onboarding');
 const Nulaabs = lazyWithRetry(() => import('./pages/Nulaabs'), 'Nulaabs');
+const Hospitality = lazyWithRetry(() => import('./pages/Hospitality'), 'Hospitality');
 
 // Loading spinner fallback component
 const PageLoader = () => (
@@ -147,6 +148,13 @@ export default function App() {
                   <Route path="/wineries" element={<Wine />} />
                   <Route path="/pt/wineries" element={<Wine />} />
                   <Route path="/Wineries" element={<Wine />} />
+
+                  <Route path="/hospitality" element={<Hospitality />} />
+                  <Route path="/pt/hospitality" element={<Hospitality />} />
+                  <Route path="/restaurants-hospitality" element={<Hospitality />} />
+                  <Route path="/pt/restaurants-hospitality" element={<Hospitality />} />
+                  <Route path="/Restaurants-Hospitality" element={<Hospitality />} />
+                  <Route path="/pt/Restaurants-Hospitality" element={<Hospitality />} />
                 </Routes>
               </Suspense>
             </ErrorBoundary>

@@ -10,7 +10,8 @@ const industryData = [
   },
   {
     title: "Restaurants & Hospitality",
-    desc: "Creating immersive architectural atmospheres and hyper-realistic culinary visuals that transport guests into your world, ensuring every social post and digital menu resonates with your venue's unique character."
+    desc: "Creating immersive architectural atmospheres and hyper-realistic culinary visuals that transport guests into your world, ensuring every social post and digital menu resonates with your venue's unique character.",
+    link: "/hospitality"
   },
   {
     title: "Ecommerce",
