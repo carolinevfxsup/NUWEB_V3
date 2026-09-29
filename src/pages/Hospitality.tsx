@@ -167,6 +167,28 @@ const hospitalityTranslations = {
         }
       ]
     },
+    threeWays: {
+      tag: "WHAT YOU GET",
+      title: "THREE WAYS TO START",
+      subtext: "Every project's different, so is the cost. Scopes and timelines are shaped around your brand — happy to talk specifics.",
+      cols: [
+        {
+          tag: "PROJECT",
+          title: "A SINGLE AUTOMATION",
+          desc: "A standalone custom AI solution built around your biggest operational bottleneck — whether that is your booking flow, customer FAQs, or menu integration."
+        },
+        {
+          tag: "RETAINER",
+          title: "FULL DEPLOYMENT",
+          desc: "An interconnected suite of automations running across your front of house, social media, and client communication — constantly optimized, updated, and maintained."
+        },
+        {
+          tag: "PARTNERSHIP",
+          title: "YOUR OUTSOURCED AI TEAM",
+          desc: "Continuous software development, bespoke workflows, automated client re-engagement, and priority support to keep your business ahead of the curve."
+        }
+      ]
+    },
     contact: {
       tag: "LET'S TALK",
       title: "WANT TO AUTOMATE YOUR FRONT OF HOUSE",
@@ -329,6 +351,28 @@ const hospitalityTranslations = {
           label: "06",
           name: "MANUTENÇÃO",
           desc: "Atualizações de software contínuas, custos de servidor, tráfego de IA e apoio técnico — suporte de longo prazo."
+        }
+      ]
+    },
+    threeWays: {
+      tag: "O QUE RECEBE",
+      title: "TRÊS MANEIRAS DE COMEÇAR",
+      subtext: "Cada projeto é diferente, o custo também. O âmbito e os prazos são adaptados ao seu negócio — teremos todo o gosto em falar sobre pormenores.",
+      cols: [
+        {
+          tag: "PROJETO",
+          title: "UMA ÚNICA AUTOMAÇÃO",
+          desc: "Uma solução de IA personalizada e isolada para resolver o seu maior estrangulamento operacional — quer seja o fluxo de reservas, perguntas de clientes ou integração de menus."
+        },
+        {
+          tag: "AVENÇA MENSAL",
+          title: "IMPLEMENTAÇÃO COMPLETA",
+          desc: "Um conjunto interligado de automações a correr na sua receção, redes sociais e contacto com o cliente — constantemente otimizado, atualizado e mantido."
+        },
+        {
+          tag: "PARCERIA",
+          title: "A SUA EQUIPA EXTERNIZADA DE IA",
+          desc: "Desenvolvimento de software contínuo, fluxos à medida, re-envolvimento automatizado de contactos e suporte prioritário para manter o seu negócio pioneiro."
         }
       ]
     },
@@ -690,7 +734,7 @@ export const Hospitality = () => {
         <section className="py-24 md:py-32 px-6 md:px-12 bg-[#F9F9F7] border-y border-black/5">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-12 gap-12 items-center">
-              <div className="lg:col-span-7">
+              <div className="lg:col-span-6">
                 <FadeIn delay={0.1}>
                   <span className="text-xs font-sans font-bold uppercase tracking-[0.2em] text-red-600 mb-4 block">
                     {ht.voiceCase.tag}
@@ -704,13 +748,13 @@ export const Hospitality = () => {
                 </FadeIn>
               </div>
 
-              <div className="lg:col-span-5">
+              <div className="lg:col-span-6">
                 <FadeIn delay={0.2}>
-                  <div className="flex justify-center items-center">
+                  <div className="relative aspect-video rounded-md overflow-hidden shadow-2xl border border-black/5">
                     <img
                       src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automations/unnamed.jpg_20260929125405.jpg"
                       alt="Voice Agent Phone beside reservation book"
-                      className="w-full h-auto object-contain max-h-[450px] rounded-none"
+                      className="w-full h-full object-cover"
                       loading="lazy"
                       decoding="async"
                     />
@@ -748,6 +792,46 @@ export const Hospitality = () => {
                 </p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* THREE WAYS TO START */}
+        <section className="py-24 md:py-32 px-6 md:px-12 bg-[#F9F9F7] border-y border-black/5">
+          <div className="max-w-7xl mx-auto">
+            <FadeIn delay={0.1}>
+              <span className="text-xs font-sans font-bold uppercase tracking-[0.2em] text-red-600 mb-4 block">
+                {ht.threeWays.tag}
+              </span>
+              <h2 className="text-3xl md:text-5xl font-display font-bold uppercase tracking-tighter mb-12 text-black leading-none">
+                {ht.threeWays.title}<span className="text-red-600">.</span>
+              </h2>
+            </FadeIn>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              {ht.threeWays.cols.map((col: any, i: number) => (
+                <FadeIn key={i} delay={0.1 * i}>
+                  <div className="bg-white rounded-md border border-[#EEEEEE] p-8 md:p-12 h-full flex flex-col justify-between shadow-sm">
+                    <div>
+                      <span className="text-xs font-sans font-bold uppercase tracking-[0.2em] text-red-600 mb-4 block">
+                        {col.tag}
+                      </span>
+                      <h3 className="font-display font-bold uppercase text-xl md:text-2xl text-black tracking-tight leading-snug mb-4">
+                        {col.title}
+                      </h3>
+                      <p className="text-sm text-black/60 font-sans leading-relaxed">
+                        {col.desc}
+                      </p>
+                    </div>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+
+            <FadeIn delay={0.4}>
+              <p className="text-xs text-black/50 font-sans leading-relaxed">
+                {ht.threeWays.subtext}
+              </p>
+            </FadeIn>
           </div>
         </section>
 
