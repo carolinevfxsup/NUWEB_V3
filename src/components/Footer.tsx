@@ -88,6 +88,8 @@ export const Footer = () => {
                     path = getLanguagePath('/wine');
                   } else if (industry === 'Restaurants & Hospitality') {
                     path = getLanguagePath('/hospitality');
+                  } else if (industry === 'VFX & Animation') {
+                    path = getLanguagePath('/vfx-animation');
                   }
                   return (
                     <li key={industry}>

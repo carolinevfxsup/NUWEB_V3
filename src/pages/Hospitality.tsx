@@ -885,31 +885,33 @@ export const Hospitality = () => {
         {/* 06 VOICE AGENTS */}
         <section className="py-24 md:py-32 px-6 md:px-12 bg-[#F9F9F7] border-y border-black/5">
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-12 gap-12 items-center">
-              <div className="lg:col-span-6">
-                <FadeIn delay={0.1}>
-                  <span className="text-xs font-sans font-bold uppercase tracking-[0.2em] text-red-600 mb-4 block">
-                    {ht.voiceCase.tag}
-                  </span>
-                  <h2 className="text-3xl md:text-5xl font-display font-bold uppercase tracking-tighter mb-6 text-black leading-none">
-                    {ht.voiceCase.title}<span className="text-red-600">.</span>
-                  </h2>
-                  <p className="text-base md:text-lg text-black/70 font-sans leading-relaxed mb-6">
-                    {ht.voiceCase.desc}
-                  </p>
+            <div className="grid lg:grid-cols-12 gap-12 items-stretch">
+              <div className="lg:col-span-6 flex">
+                <FadeIn delay={0.1} className="w-full h-full flex flex-col justify-between">
+                  <div>
+                    <span className="text-xs font-sans font-bold uppercase tracking-[0.2em] text-red-600 mb-4 block">
+                      {ht.voiceCase.tag}
+                    </span>
+                    <h2 className="text-3xl md:text-5xl font-display font-bold uppercase tracking-tighter mb-6 text-black leading-none">
+                      {ht.voiceCase.title}<span className="text-red-600">.</span>
+                    </h2>
+                    <p className="text-base md:text-lg text-black/70 font-sans leading-relaxed mb-6">
+                      {ht.voiceCase.desc}
+                    </p>
+                  </div>
                   
                   {/* Dedicated 3-track Booking Audio Player */}
                   <VoiceAgentAudioPlayer />
                 </FadeIn>
               </div>
 
-              <div className="lg:col-span-6">
-                <FadeIn delay={0.2}>
-                  <div className="relative aspect-video rounded-md overflow-hidden shadow-2xl border border-black/5">
+              <div className="lg:col-span-6 flex">
+                <FadeIn delay={0.2} className="w-full h-full flex flex-col">
+                  <div className="relative w-full h-[350px] lg:h-full rounded-md overflow-hidden shadow-2xl border border-black/5 flex-1">
                     <img
                       src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automations/unnamed.jpg_20260929125405.jpg"
                       alt="Voice Agent Phone beside reservation book"
-                      className="w-full h-full object-cover"
+                      className="absolute inset-0 w-full h-full object-cover"
                       loading="lazy"
                       decoding="async"
                     />

@@ -61,6 +61,7 @@ const NOS = lazyWithRetry(() => import('./pages/showcase/NOS'), 'NOS');
 const Onboarding = lazyWithRetry(() => import('./pages/Onboarding'), 'Onboarding');
 const Nulaabs = lazyWithRetry(() => import('./pages/Nulaabs'), 'Nulaabs');
 const Hospitality = lazyWithRetry(() => import('./pages/Hospitality'), 'Hospitality');
+const VfxAnimation = lazyWithRetry(() => import('./pages/VfxAnimation'), 'VfxAnimation');
 
 // Loading spinner fallback component
 const PageLoader = () => (
@@ -155,6 +156,8 @@ export default function App() {
                   <Route path="/pt/restaurants-hospitality" element={<Hospitality />} />
                   <Route path="/Restaurants-Hospitality" element={<Hospitality />} />
                   <Route path="/pt/Restaurants-Hospitality" element={<Hospitality />} />
+                  <Route path="/vfx-animation" element={<VfxAnimation />} />
+                  <Route path="/pt/vfx-animation" element={<VfxAnimation />} />
                 </Routes>
               </Suspense>
             </ErrorBoundary>

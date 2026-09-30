@@ -4,5 +4,5 @@ export const industries = [
   "Ecommerce",
   "Fashion",
   "Jewellery & Accessories",
-  "B2B"
+  "VFX & Animation"
 ];
