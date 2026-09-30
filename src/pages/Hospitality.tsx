@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Header } from '../components/Header';
 import { FadeIn } from '../components/FadeIn';
-import { Play, Clock, RefreshCw, UserX } from 'lucide-react';
+import { Play, Pause, Clock, RefreshCw, UserX } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { LazyVideo } from '../components/LazyVideo';
 import { ShowreelModal } from '../components/ShowreelModal';
@@ -385,6 +385,158 @@ const hospitalityTranslations = {
   }
 };
 
+const VoiceAgentAudioPlayer = () => {
+  const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [duration, setDuration] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const tracks = [
+    {
+      title: "USA Booking Bot",
+      desc: "Rachel (US) — AI assistant taking restaurant reservations",
+      url: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automations/SOUND/ElevenLabs_Restaurant_Voice_Bot_USA.mp3",
+      accent: "Rachel (USA)"
+    },
+    {
+      title: "UK Booking Bot",
+      desc: "Charlotte (UK) — Smooth British voice assisting customers",
+      url: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automations/SOUND/ElevenLabs_Restaurant_Voice_Bot_UK.mp3",
+      accent: "Charlotte (UK)"
+    },
+    {
+      title: "Portuguese Booking Bot",
+      desc: "Madalena (PT) — Fluent Portuguese FOH booking agent",
+      url: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automations/SOUND/ElevenLabs_Restaurant_Voice_Bot_PT.mp3",
+      accent: "Madalena (PT)"
+    }
+  ];
+
+  const currentTrack = tracks[currentTrackIndex];
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.load();
+      if (isPlaying) {
+        audioRef.current.play().catch(() => setIsPlaying(false));
+      }
+    }
+  }, [currentTrackIndex]);
+
+  const togglePlay = () => {
+    if (!audioRef.current) return;
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      audioRef.current.play().then(() => {
+        setIsPlaying(true);
+      }).catch(() => setIsPlaying(false));
+    }
+  };
+
+  const handleTimeUpdate = () => {
+    if (audioRef.current) {
+      setCurrentTime(audioRef.current.currentTime);
+    }
+  };
+
+  const handleLoadedMetadata = () => {
+    if (audioRef.current) {
+      setDuration(audioRef.current.duration);
+    }
+  };
+
+  const handleAudioEnded = () => {
+    setIsPlaying(false);
+    setCurrentTime(0);
+  };
+
+  const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const time = parseFloat(e.target.value);
+    setCurrentTime(time);
+    if (audioRef.current) {
+      audioRef.current.currentTime = time;
+    }
+  };
+
+  const formatTime = (time: number) => {
+    if (isNaN(time)) return "0:00";
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  };
+
+  return (
+    <div className="bg-white rounded-md border border-[#EEEEEE] p-6 shadow-sm mt-8">
+      <audio
+        ref={audioRef}
+        src={currentTrack.url}
+        onTimeUpdate={handleTimeUpdate}
+        onLoadedMetadata={handleLoadedMetadata}
+        onEnded={handleAudioEnded}
+      />
+      
+      {/* Track Selector Tabs */}
+      <div className="flex border-b border-black/5 pb-4 mb-4 gap-2 overflow-x-auto scrollbar-none">
+        {tracks.map((track, idx) => (
+          <button
+            key={track.title}
+            onClick={() => {
+              setCurrentTrackIndex(idx);
+            }}
+            className={`px-4 py-2 text-xs font-sans font-bold uppercase tracking-wider rounded transition-all cursor-pointer whitespace-nowrap ${
+              currentTrackIndex === idx
+                ? 'bg-red-600 text-white shadow-sm'
+                : 'bg-neutral-100 text-black/60 hover:bg-neutral-200'
+            }`}
+          >
+            {track.accent}
+          </button>
+        ))}
+      </div>
+
+      {/* Track Info */}
+      <div className="mb-4">
+        <h4 className="font-display font-bold uppercase text-base text-black tracking-tight mb-1">
+          {currentTrack.title}
+        </h4>
+        <p className="text-xs text-black/50 font-sans">
+          {currentTrack.desc}
+        </p>
+      </div>
+
+      {/* Controls & Progress bar */}
+      <div className="flex items-center gap-4">
+        <button
+          onClick={togglePlay}
+          className="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white shadow hover:scale-105 transition-transform cursor-pointer flex-shrink-0"
+          aria-label={isPlaying ? "Pause" : "Play"}
+        >
+          {isPlaying ? <Pause className="w-5 h-5 fill-current" /> : <Play className="w-5 h-5 fill-current ml-0.5" />}
+        </button>
+
+        <div className="flex-1">
+          {/* Progress Seekbar */}
+          <input
+            type="range"
+            min={0}
+            max={duration || 100}
+            value={currentTime}
+            onChange={handleSeek}
+            className="w-full accent-red-600 bg-neutral-200 h-1 rounded-lg cursor-pointer transition-all"
+          />
+          <div className="flex justify-between text-[10px] font-mono text-black/40 mt-1">
+            <span>{formatTime(currentTime)}</span>
+            <span>{formatTime(duration)}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Hospitality = () => {
   const { language, getLanguagePath } = useLanguage();
   const ht = hospitalityTranslations[language] || hospitalityTranslations.en;
@@ -742,9 +894,12 @@ export const Hospitality = () => {
                   <h2 className="text-3xl md:text-5xl font-display font-bold uppercase tracking-tighter mb-6 text-black leading-none">
                     {ht.voiceCase.title}<span className="text-red-600">.</span>
                   </h2>
-                  <p className="text-base md:text-lg text-black/70 font-sans leading-relaxed">
+                  <p className="text-base md:text-lg text-black/70 font-sans leading-relaxed mb-6">
                     {ht.voiceCase.desc}
                   </p>
+                  
+                  {/* Dedicated 3-track Booking Audio Player */}
+                  <VoiceAgentAudioPlayer />
                 </FadeIn>
               </div>
 
