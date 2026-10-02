@@ -213,7 +213,7 @@ export const Starling = () => {
               <p className="text-xl text-narrative-shadow/60 leading-relaxed font-sans">
                 {isPt
                   ? "A pesquisa por trás desta exploração: queríamos expandir isto num anúncio completo, elevando o realismo, testando movimentos de câmara complexos em ambientes naturais variados e ensaiando vozes narradoras com IA."
-                  : "The research behind this exploration: we wanted to push this into a full ad, pushing the realism, testing camera movement and different natural environments and ad narration with AI voices."}
+                  : "The research behind this exploration: we wanted to turn this into a full ad, pushing the realism, testing camera movements, different natural environments and ad narration with AI voices."}
               </p>
             </motion.div>
 
