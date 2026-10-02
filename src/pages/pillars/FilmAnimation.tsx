@@ -365,7 +365,7 @@ export const FilmAnimation = () => {
                   01 / R&D — CHARACTER & MOTION
                 </span>
                 <h3 className="text-base md:text-lg font-display font-bold tracking-tight uppercase text-white">
-                  NU Studios Starling
+                  Creative Risk by Design
                 </h3>
               </div>
             </Link>

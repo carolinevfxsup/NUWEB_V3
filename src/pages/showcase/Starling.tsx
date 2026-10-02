@@ -30,7 +30,7 @@ export const Starling = () => {
       <Header />
       <main>
         <ShowcaseHero
-          title={isPt ? "NU Studios Starling" : "NU Studios Starling"}
+          title={isPt ? "Creative Risk by Design" : "Creative Risk by Design"}
           subtitle={isPt ? "Investigação & Desenvolvimento — Personagens e Movimento" : "Research & Development — Character & Motion"}
           description={
             isPt
