@@ -58,6 +58,7 @@ const QuintaDoPintoConceptFilm = lazyWithRetry(() => import('./pages/showcase/Qu
 const OPalmeiral = lazyWithRetry(() => import('./pages/showcase/OPalmeiral'), 'OPalmeiral');
 const GoogleIO = lazyWithRetry(() => import('./pages/showcase/GoogleIO'), 'GoogleIO');
 const NOS = lazyWithRetry(() => import('./pages/showcase/NOS'), 'NOS');
+const Starling = lazyWithRetry(() => import('./pages/showcase/Starling'), 'Starling');
 const Onboarding = lazyWithRetry(() => import('./pages/Onboarding'), 'Onboarding');
 const Nulaabs = lazyWithRetry(() => import('./pages/Nulaabs'), 'Nulaabs');
 const Hospitality = lazyWithRetry(() => import('./pages/Hospitality'), 'Hospitality');
@@ -135,6 +136,8 @@ export default function App() {
                   <Route path="/pt/showcase/quinta-do-pinto-concept-film" element={<QuintaDoPintoConceptFilm />} />
                   <Route path="/showcase/o-palmeiral" element={<OPalmeiral />} />
                   <Route path="/pt/showcase/o-palmeiral" element={<OPalmeiral />} />
+                  <Route path="/showcase/starling" element={<Starling />} />
+                  <Route path="/pt/showcase/starling" element={<Starling />} />
                   <Route path="/showcase/nos-ai-campaign" element={<NOS />} />
                   <Route path="/pt/showcase/nos-ai-campaign" element={<NOS />} />
                   <Route path="/googleio" element={<GoogleIO />} />

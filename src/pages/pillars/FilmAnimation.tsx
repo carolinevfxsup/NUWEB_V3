@@ -283,6 +283,48 @@ export const FilmAnimation = () => {
         <LogoStrip label={isPt ? 'Os Modelos' : 'The Models'} items={MODELS} accent />
       </div>
 
+      {/* NU PLAY RESEARCH & DEVELOPMENT SECTION */}
+      <section className="bg-black text-white py-20 md:py-28 border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6 md:px-[6vw]">
+          <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+              <div className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-red-600 mb-2">
+                {isPt ? 'Investigação e Desenvolvimento' : 'Research and Development'}
+              </div>
+              <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tighter text-white">
+                NU Play<span className="text-red-600">.</span>
+              </h2>
+            </div>
+          </div>
+
+          {/* Project Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Link
+              to={getLanguagePath('/showcase/starling')}
+              className="group relative bg-white/5 aspect-[3/4] max-h-[420px] md:max-h-[480px] overflow-hidden block w-full border border-white/10"
+            >
+              <LazyVideo
+                src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/NU%20PLAY/STARLING/STAR_720.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <span className="text-[10px] font-mono tracking-widest text-red-500 uppercase block mb-1 font-bold">
+                  01 / R&D — CHARACTER & MOTION
+                </span>
+                <h3 className="text-base md:text-lg font-display font-bold tracking-tight uppercase text-white">
+                  NU Studios Starling
+                </h3>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <ClosingCTA
         headline={isPt ? 'Discuta a sua produção' : 'Discuss your production'}
         primaryBtnText={isPt ? 'Entrar em Contacto' : 'Get In Touch'}

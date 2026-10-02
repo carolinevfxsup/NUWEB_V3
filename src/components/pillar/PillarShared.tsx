@@ -441,12 +441,14 @@ export const ClosingCTA: FC<{
   secondaryBtnText?: string;
   primaryLink?: string;
   onSecondaryClick?: () => void;
+  secondaryLink?: string;
 }> = ({
   headline,
   primaryBtnText = 'Get In Touch',
   secondaryBtnText = 'Watch Showreel',
   primaryLink = '/contact',
   onSecondaryClick,
+  secondaryLink,
 }) => {
   const { getLanguagePath } = useLanguage();
   const [showreelOpen, setShowreelOpen] = useState(false);
@@ -466,12 +468,21 @@ export const ClosingCTA: FC<{
           >
             {primaryBtnText}
           </Link>
-          <button
-            onClick={onSecondaryClick || (() => setShowreelOpen(true))}
-            className="px-8 py-4 bg-red-600 text-white font-sans font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300 cursor-pointer"
-          >
-            {secondaryBtnText}
-          </button>
+          {secondaryLink ? (
+            <Link
+              to={getLanguagePath(secondaryLink)}
+              className="px-8 py-4 bg-red-600 text-white font-sans font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300"
+            >
+              {secondaryBtnText}
+            </Link>
+          ) : (
+            <button
+              onClick={onSecondaryClick || (() => setShowreelOpen(true))}
+              className="px-8 py-4 bg-red-600 text-white font-sans font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300 cursor-pointer"
+            >
+              {secondaryBtnText}
+            </button>
+          )}
         </div>
       </div>
 

@@ -9,7 +9,8 @@ import { LazyVideo } from '../../components/LazyVideo';
 import { Sparkles, Check, Zap, Camera, Play, ShoppingCart, Globe, ExternalLink, TrendingUp, Share2 } from 'lucide-react';
 
 export const SaltLily = () => {
-  const { t, getLanguagePath } = useLanguage();
+  const { t, language, getLanguagePath } = useLanguage();
+  const isPt = language === 'pt';
 
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -331,19 +332,26 @@ export const SaltLily = () => {
                 </div>
               </motion.div>
               <motion.div {...fadeInUp} className="order-1 lg:order-2">
-                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">07. THE INSTAGRAM ENGINE</span>
+                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">
+                  07. {isPt ? "O MOTOR DO INSTAGRAM" : "THE INSTAGRAM ENGINE"}
+                </span>
                 <h2 className="text-4xl md:text-7xl font-display mb-12 leading-[0.9] tracking-tighter uppercase text-black">
-                  THE INSTAGRAM ENGINE<span className="text-primary">.</span>
+                  {isPt ? "O MOTOR DO INSTAGRAM" : "THE INSTAGRAM ENGINE"}<span className="text-primary">.</span>
                 </h2>
                 <div className="space-y-8 text-xl text-narrative-shadow/80 leading-relaxed mb-12">
-                  <p>We built an autonomous content pipeline that pulls raw assets from a shared Google Drive, processes them through our AI visual DNA, and schedules them for daily publishing—all with zero manual intervention.</p>
+                  <p>
+                    {isPt 
+                      ? "Desenvolvemos um pipeline de conteúdo autónomo que recolhe ativos brutos de um Google Drive partilhado, processa-os através do nosso DNA visual de IA e agenda-os para publicação diária — tudo com zero intervenção manual."
+                      : "We built an autonomous content pipeline that pulls raw assets from a shared Google Drive, processes them through our AI visual DNA, and schedules them for daily publishing—all with zero manual intervention."
+                    }
+                  </p>
                 </div>
                 <div className="space-y-4">
                   {[
-                    "Automated Asset Retrieval",
-                    "AI-Powered Visual Enhancement",
-                    "Smart Caption & Hashtag Generation",
-                    "Autonomous Scheduling & Posting"
+                    isPt ? "Recolha de Ativos Automatizada" : "Automated Asset Retrieval",
+                    isPt ? "Melhoria Visual por IA" : "AI-Powered Visual Enhancement",
+                    isPt ? "Geração de Legendas e Hashtags Inteligentes" : "Smart Caption & Hashtag Generation",
+                    isPt ? "Agendamento e Publicação Autónoma" : "Autonomous Scheduling & Posting"
                   ].map((feature, i) => (
                     <div key={i} className="flex items-center gap-4">
                       <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
@@ -352,6 +360,43 @@ export const SaltLily = () => {
                       <span className="text-lg font-medium text-narrative-shadow/80">{feature}</span>
                     </div>
                   ))}
+                </div>
+
+                {/* Dual-column Links to Website and Instagram */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 pt-8 border-t border-black/5">
+                  <a 
+                    href="https://www.salt-lily.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-4 bg-[#F9F9F7] border border-[#EEEEEE] rounded-md hover:border-red-600/40 hover:bg-red-600/5 transition-all group"
+                  >
+                    <div>
+                      <span className="text-[10px] font-sans font-bold uppercase tracking-widest text-black/40 block mb-1">
+                        {isPt ? "VISITAR WEBSITE" : "VISIT WEBSITE"}
+                      </span>
+                      <span className="text-sm font-display font-bold uppercase text-black group-hover:text-red-600 transition-colors">
+                        salt-lily.com
+                      </span>
+                    </div>
+                    <ExternalLink className="w-4 h-4 text-black/30 group-hover:text-red-600 transition-colors" />
+                  </a>
+
+                  <a 
+                    href="https://www.instagram.com/salt_lily_store/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-4 bg-[#F9F9F7] border border-[#EEEEEE] rounded-md hover:border-red-600/40 hover:bg-red-600/5 transition-all group"
+                  >
+                    <div>
+                      <span className="text-[10px] font-sans font-bold uppercase tracking-widest text-black/40 block mb-1">
+                        {isPt ? "VISITAR INSTAGRAM" : "INSTAGRAM"}
+                      </span>
+                      <span className="text-sm font-display font-bold uppercase text-black group-hover:text-red-600 transition-colors">
+                        @salt_lily_store
+                      </span>
+                    </div>
+                    <ExternalLink className="w-4 h-4 text-black/30 group-hover:text-red-600 transition-colors" />
+                  </a>
                 </div>
               </motion.div>
             </div>

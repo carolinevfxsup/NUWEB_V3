@@ -357,9 +357,9 @@ export const BespokeAutomations = () => {
       <ClosingCTA
         headline={isPt ? 'Automatize o seu negócio' : 'Automate your business'}
         primaryBtnText={isPt ? 'Entrar em Contacto' : 'Get In Touch'}
-        secondaryBtnText={isPt ? 'Ver Showreel' : 'Watch Showreel'}
+        secondaryBtnText={isPt ? 'LISTA COMPLETA DE SERVIÇOS' : 'FULL LIST OF SERVICES'}
         primaryLink="/contact"
-        onSecondaryClick={() => setShowreelOpen(true)}
+        secondaryLink="/hospitality"
       />
 
       <ShowreelModal isOpen={showreelOpen} onClose={() => setShowreelOpen(false)} />

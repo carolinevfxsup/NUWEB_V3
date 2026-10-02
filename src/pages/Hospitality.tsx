@@ -75,6 +75,8 @@ const hospitalityTranslations = {
           num: "02",
           title: "BLOG & SEO",
           desc: "Ongoing, search-optimised content that keeps a hospitality brand visible between campaigns.",
+          link: "See the Salt Lily case study →",
+          url: "/showcase/salt-lily",
           imgSrc: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Person_scrolling_jewelry_blog_202609041449.jpeg"
         },
         {
@@ -200,7 +202,7 @@ const hospitalityTranslations = {
     hero: {
       tag: "PENSAMENTO DE AGÊNCIA. EXECUÇÃO DE IA.",
       title: "CONSTRUÍMOS OS SISTEMAS QUE GEREM A SUA RECEPÇÃO",
-      desc: "A NUstudios desenvolve automações de IA à medida para a restauração e além — robôs de reserva, agentes de voz, sistemas de conteúdo e prospeção que trabalham enquanto a sua equipa está na sala, não ao ecrã."
+      desc: "A NUstudios desenvolve automações de IA à medida para a restauração e além — bots de reserva, agentes de voz, sistemas de conteúdo e prospeção que trabalham enquanto a sua equipa está na sala, não ao ecrã."
     },
     problem: {
       tag: "01 / O PROBLEMA",
@@ -227,7 +229,7 @@ const hospitalityTranslations = {
       desc: "Um cliente envia uma mensagem, escolhe uma data, hora e número de pessoas, e recebe um cartão de confirmação — tudo sem sair do chat thread. Sem apps para descarregar, sem formulários, sem música de espera."
     },
     caseStudy: {
-      tag: "03 / CASO DE ESTUDO",
+      tag: "03 / ESTUDO DE CASO",
       title: "COMO RESOLVEMOS ISTO — O PALMEIRAL",
       desc: "Transformámos o seu Google Drive repleto de fotografias aleatórias num sistema de publicação autónomo que preserva o estilo característico do restaurante. A pedido do proprietário, incluímos pontos de controlo humano em diferentes fases de publicação, onde o Dan pode rever e alterar o que desejar antes de enviar para a fila de agendamento.",
       cols: [
@@ -244,7 +246,7 @@ const hospitalityTranslations = {
           desc: "Apenas 15-20 minutos por mês dedicados pelo cliente, em vez de muitas horas desperdiçadas, mantendo publicações diárias para liderar o mercado."
         }
       ],
-      linkText: "Ver Caso de Estudo Completo →"
+      linkText: "Ver Estudo de Caso Completo →"
     },
     build: {
       tag: "04 / O QUE CONSTRUÍMOS",
@@ -254,7 +256,7 @@ const hospitalityTranslations = {
           num: "01",
           title: "AUTOMAÇÃO DE REDES SOCIAIS",
           desc: "Conteúdo programado e gestão de comunidade, criados para consistência de marca sem contratar a tempo inteiro.",
-          link: "Ver o caso de estudo O Palmeiral →",
+          link: "Ver o estudo de caso O Palmeiral →",
           url: "/showcase/o-palmeiral",
           imgSrc: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-automation-control.jpeg"
         },
@@ -262,6 +264,8 @@ const hospitalityTranslations = {
           num: "02",
           title: "BLOG & SEO",
           desc: "Conteúdo otimizado contínuo que mantém a marca de restauração visível entre campanhas.",
+          link: "Ver o estudo de caso Salt Lily →",
+          url: "/showcase/salt-lily",
           imgSrc: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Person_scrolling_jewelry_blog_202609041449.jpeg"
         },
         {
