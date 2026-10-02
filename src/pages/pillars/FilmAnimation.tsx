@@ -5,7 +5,6 @@ import {
   Hero,
   TheWorkGrid,
   ClosingCTA,
-  LogoStrip,
   PillarCard,
   PortfolioItem,
   ph,
@@ -21,8 +20,7 @@ const CARD_BGS = [
   ph('#1d1d2c', '#2c2c3e', 120),
 ];
 
-const SOFTWARE = ['ComfyUI', 'Blender', 'Maya', 'Higgsfield', 'NULABS', 'Nuke'];
-const MODELS = ['Veo', 'OmniHuman', 'Runway', 'Flux'];
+
 
 const CARDS_EN: PillarCard[] = [
   {
@@ -278,10 +276,60 @@ export const FilmAnimation = () => {
         </div>
       </section>
 
-      <div className="py-12 bg-[#fafafa]">
-        <LogoStrip label={isPt ? 'O Pipeline — Software' : 'The Pipeline — Software'} items={SOFTWARE} />
-        <LogoStrip label={isPt ? 'Os Modelos' : 'The Models'} items={MODELS} accent />
-      </div>
+      {/* Section 04: The Pipeline */}
+      <section className="py-24 md:py-32 bg-[#F9F9F7] border-y border-black/5">
+        <div className="max-w-7xl mx-auto px-6 md:px-[6vw]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <div className="space-y-6">
+              <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-red-600 block">
+                {isPt ? 'O PIPELINE' : 'THE PIPELINE'}
+              </span>
+              <h2 className="text-3xl sm:text-5xl font-display font-bold uppercase tracking-tighter text-black leading-none">
+                {isPt ? 'PROCESSO DE IA / VFX' : 'AI / VFX PROCESS'}<span className="text-red-600">.</span>
+              </h2>
+              <p className="text-lg sm:text-xl text-neutral-600 leading-relaxed font-sans font-light">
+                {isPt ? (
+                  <>
+                    Cada produção corre num pipeline híbrido: o nosso conjunto de ferramentas proprietário,{' '}
+                    <a 
+                      href="https://nustudios.co.uk/nulaabs" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-red-600 font-bold hover:underline"
+                    >
+                      NULAABS
+                    </a>
+                    , fundido com vinte anos de experiência em efeitos visuais tradicionais e os mais recentes modelos de IA generativa — construídos e dirigidos artisticamente à mão, e nunca deixados sem supervisão, para gerar produções de IA fotorrealistas indistinguíveis das filmagens tradicionais.
+                  </>
+                ) : (
+                  <>
+                    Every production runs on a hybrid pipeline: our proprietary toolset,{' '}
+                    <a 
+                      href="https://nustudios.co.uk/nulaabs" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-red-600 font-bold hover:underline"
+                    >
+                      NULAABS
+                    </a>
+                    , fused with twenty years of traditional VFX craft and the latest generative AI models — built and art-directed by hand, not left to run unsupervised, to produce photorealistic AI productions indistinguishable from traditional shoots.
+                  </>
+                )}
+              </p>
+            </div>
+            <div className="aspect-[4/3] sm:aspect-video lg:aspect-[4/3] overflow-hidden bg-black">
+              <img 
+                loading="lazy" 
+                decoding="async"
+                src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/NU%20PLAY/STARLING/Creating_starling_character_sheet_20261002114801.jpg"
+                alt={isPt ? "Processo do pipeline de I&D" : "Pipeline process R&D"}
+                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* NU PLAY RESEARCH & DEVELOPMENT SECTION */}
       <section className="bg-black text-white py-20 md:py-28 border-t border-white/10">
