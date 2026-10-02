@@ -454,9 +454,9 @@ export const ClosingCTA: FC<{
   const [showreelOpen, setShowreelOpen] = useState(false);
 
   return (
-    <section className="bg-black text-white py-24 md:py-36 text-center border-t border-white/10">
+    <section className="bg-white text-black py-24 md:py-36 text-center border-t border-black/10">
       <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold uppercase tracking-tighter mb-10 text-white">
+        <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold uppercase tracking-tighter mb-10 text-black">
           {headline}
           <span className="text-red-600">.</span>
         </h2>
@@ -464,21 +464,21 @@ export const ClosingCTA: FC<{
         <div className="flex flex-wrap gap-4 justify-center">
           <Link
             to={getLanguagePath(primaryLink)}
-            className="px-8 py-4 bg-white text-black font-sans font-bold text-xs uppercase tracking-widest hover:bg-red-600 hover:text-white transition-all duration-300"
+            className="px-8 py-4 bg-black text-white font-sans font-bold text-xs uppercase tracking-widest hover:bg-red-600 hover:text-white transition-all duration-300"
           >
             {primaryBtnText}
           </Link>
           {secondaryLink ? (
             <Link
               to={getLanguagePath(secondaryLink)}
-              className="px-8 py-4 bg-red-600 text-white font-sans font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300"
+              className="px-8 py-4 bg-red-600 text-white font-sans font-bold text-xs uppercase tracking-widest hover:bg-black hover:text-white transition-all duration-300"
             >
               {secondaryBtnText}
             </Link>
           ) : (
             <button
               onClick={onSecondaryClick || (() => setShowreelOpen(true))}
-              className="px-8 py-4 bg-red-600 text-white font-sans font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300 cursor-pointer"
+              className="px-8 py-4 bg-red-600 text-white font-sans font-bold text-xs uppercase tracking-widest hover:bg-black hover:text-white transition-all duration-300 cursor-pointer"
             >
               {secondaryBtnText}
             </button>

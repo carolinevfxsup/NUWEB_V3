@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { FileText, Send, Loader2, Check, ExternalLink, ArrowRight } from 'lucide-react';
+import { FileText, Send, Loader2, Check, ExternalLink, ArrowRight, Mail, Phone } from 'lucide-react';
 import { LogoScroll } from '../components/LogoScroll';
 import { HomeResultsBento } from '../components/HomeResultsBento';
 import { Link, useNavigate } from 'react-router-dom';
@@ -566,6 +566,83 @@ export const Home = () => {
       </section>
 
 
+
+      {/* Section 5.7: Contact Details (Email, Phone, Locations) */}
+      <section className="py-24 md:py-32 bg-[#F9F9F7] text-black border-b border-border">
+        <div className="max-w-7xl mx-auto px-6 md:px-[60px]">
+          <FadeIn>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24">
+              {/* Left Column: Email or Call Us */}
+              <div className="space-y-8">
+                <div className="flex items-center gap-3">
+                  <Mail className="w-6 h-6 text-red-600 shrink-0" />
+                  <h3 className="text-2xl md:text-3xl font-display font-bold uppercase tracking-tighter text-black">
+                    {t.home.contact.emailTitle.replace('.', '')}<span className="text-red-600">.</span>
+                  </h3>
+                </div>
+                
+                <div className="space-y-4">
+                  <div>
+                    <span className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-black/40 block mb-1">
+                      {t.home.contact.emailLabel}
+                    </span>
+                    <a 
+                      href="mailto:hello@nustudios.co.uk" 
+                      className="text-lg md:text-xl font-sans font-bold text-black hover:text-red-600 transition-colors border-b border-black/10 pb-0.5"
+                    >
+                      hello@nustudios.co.uk
+                    </a>
+                  </div>
+                  
+                  <p className="text-base text-text/60 font-sans leading-relaxed max-w-md">
+                    {t.home.contact.emailDesc}
+                  </p>
+                </div>
+              </div>
+
+              {/* Right Column: Our Locations */}
+              <div className="space-y-8">
+                <div className="flex items-center gap-3">
+                  <Phone className="w-6 h-6 text-red-600 shrink-0" />
+                  <h3 className="text-2xl md:text-3xl font-display font-bold uppercase tracking-tighter text-black">
+                    {t.home.contact.locationsTitle.replace('.', '')}<span className="text-red-600">.</span>
+                  </h3>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-2">
+                  <div className="space-y-6">
+                    <div>
+                      <span className="text-[9px] font-sans font-bold uppercase tracking-[0.2em] text-black/40 block mb-1">
+                        MELBOURNE
+                      </span>
+                      <a 
+                        href="tel:+61431371024" 
+                        className="text-base font-sans font-bold text-black hover:text-red-600 transition-colors"
+                      >
+                        +61 431 371 024
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="space-y-6">
+                    <div>
+                      <span className="text-[9px] font-sans font-bold uppercase tracking-[0.2em] text-black/40 block mb-1">
+                        LISBON
+                      </span>
+                      <a 
+                        href="tel:+351939517942" 
+                        className="text-base font-sans font-bold text-black hover:text-red-600 transition-colors"
+                      >
+                        +351 939 517 942
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
 
       {/* Section: Contact Form */}
       <section id="contact-form" className="py-32 bg-black text-white">
