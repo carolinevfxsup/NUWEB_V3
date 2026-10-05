@@ -1705,7 +1705,7 @@ export const translations = {
       ctaButton: 'Marcar Chamada de Descoberta',
     },
     nos: {
-      heroTitle: 'NOS Campaign',
+      heroTitle: 'Campanha da NOS',
       heroSubtitle: 'Campanha Colaborativa de IA',
       heroDescription: 'Uma campanha de verão interativa para a NOS, onde a criatividade humana e a inteligência artificial colaboram para escrever e visualizar histórias de verão surreais.',
       sector: 'Telecomunicações',

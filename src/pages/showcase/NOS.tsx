@@ -137,7 +137,9 @@ export const NOS = () => {
                   <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center border border-neutral-200/60 shadow-sm text-[#DC2626]">
                     <Users className="w-5 h-5" />
                   </div>
-                  <h4 className="text-xs font-black uppercase tracking-widest text-black/80">3 Writers</h4>
+                  <h4 className="text-xs font-black uppercase tracking-widest text-black/80">
+                    {language === 'pt' ? '3 Escritores' : '3 Writers'}
+                  </h4>
                   <p className="text-sm text-neutral-500 font-sans leading-relaxed">
                     {language === 'pt' 
                       ? 'Três escritores talentosos desafiados a colaborar às cegas na mesma narrativa.' 
@@ -149,7 +151,9 @@ export const NOS = () => {
                   <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center border border-neutral-200/60 shadow-sm text-[#DC2626]">
                     <Cpu className="w-5 h-5" />
                   </div>
-                  <h4 className="text-xs font-black uppercase tracking-widest text-black/80">Collaborative Prompt</h4>
+                  <h4 className="text-xs font-black uppercase tracking-widest text-black/80">
+                    {language === 'pt' ? 'Prompt Colaborativo' : 'Collaborative Prompt'}
+                  </h4>
                   <p className="text-sm text-neutral-500 font-sans leading-relaxed">
                     {language === 'pt' 
                       ? 'Cada parágrafo gera prompts dinâmicos que dão forma ao próximo rumo da história.' 
@@ -161,7 +165,9 @@ export const NOS = () => {
                   <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center border border-neutral-200/60 shadow-sm text-[#DC2626]">
                     <Monitor className="w-5 h-5" />
                   </div>
-                  <h4 className="text-xs font-black uppercase tracking-widest text-black/80">AI Film Series</h4>
+                  <h4 className="text-xs font-black uppercase tracking-widest text-black/80">
+                    {language === 'pt' ? 'Série de Filmes de IA' : 'AI Film Series'}
+                  </h4>
                   <p className="text-sm text-neutral-500 font-sans leading-relaxed">
                     {language === 'pt' 
                       ? 'Uma websérie surreal de verão, produzindo um resultado imprevisível e incrivelmente divertido.' 
@@ -233,7 +239,7 @@ export const NOS = () => {
                         <span className={`text-xs font-bold tracking-widest ${
                           isSelected ? 'text-[#DC2626]' : 'text-white/40'
                         }`}>
-                          EPISODE 0{epNum}
+                          {language === 'pt' ? `EPISÓDIO 0${epNum}` : `EPISODE 0${epNum}`}
                         </span>
                         {isSelected && (
                           <span className="w-2 h-2 rounded-full bg-[#DC2626] animate-ping" />
@@ -313,7 +319,7 @@ export const NOS = () => {
                   {t.nos.appLabel}
                 </span>
                 <h2 className="text-4xl md:text-7xl font-display uppercase tracking-tighter mb-12 leading-[0.9] font-bold italic text-black">
-                  THE APP WE BUILT<span className="text-[#DC2626]">.</span>
+                  {language === 'pt' ? 'A APP' : 'THE APP WE BUILT'}<span className="text-[#DC2626]">.</span>
                 </h2>
                 <div className="space-y-8 text-lg text-neutral-600 leading-relaxed font-sans">
                   <p>{t.nos.appText}</p>

@@ -163,7 +163,8 @@ export const CardItem: FC<{ card: PillarCard; bg: string }> = ({ card, bg }) => 
   const [open, setOpen] = useState(false);
   const [showreelOpen, setShowreelOpen] = useState(false);
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
-  const { getLanguagePath } = useLanguage();
+  const { getLanguagePath, language } = useLanguage();
+  const isPt = language === 'pt';
 
   useEffect(() => {
     if (!card.imgSrcs || card.imgSrcs.length <= 1) return;
@@ -284,7 +285,7 @@ export const CardItem: FC<{ card: PillarCard; bg: string }> = ({ card, bg }) => 
             onClick={() => setOpen((o) => !o)}
             className="inline-flex items-center gap-2 text-xs font-sans font-bold uppercase tracking-wider text-black hover:text-red-600 border-b border-black hover:border-red-600 pb-0.5 transition-colors cursor-pointer"
           >
-            <span>{open ? 'Show less' : 'Learn more'}</span>
+            <span>{open ? (isPt ? 'Mostrar menos' : 'Show less') : (isPt ? 'Saber mais' : 'Learn more')}</span>
             {open ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
           </button>
 
@@ -315,15 +316,18 @@ export const TheWorkGrid: FC<{ cards: PillarCard[]; cardBgs: string[] }> = ({
   cards,
   cardBgs,
 }) => {
+  const { language } = useLanguage();
+  const isPt = language === 'pt';
+
   return (
     <section className="py-20 md:py-28 bg-[#fafafa]">
       <div className="max-w-7xl mx-auto px-6 md:px-[6vw]">
         <div className="mb-12">
           <div className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-neutral-500 mb-2">
-            What We Do
+            {isPt ? 'O Que Fazemos' : 'What We Do'}
           </div>
           <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tighter text-black">
-            THE WORK<span className="text-red-600">.</span>
+            {isPt ? 'O TRABALHO' : 'THE WORK'}<span className="text-red-600">.</span>
           </h2>
         </div>
 
@@ -366,7 +370,8 @@ export const LogoStrip: FC<{
 };
 
 export const PortfolioStrip: FC<{ items: PortfolioItem[] }> = ({ items }) => {
-  const { getLanguagePath } = useLanguage();
+  const { getLanguagePath, language } = useLanguage();
+  const isPt = language === 'pt';
 
   return (
     <section className="bg-black text-white py-20 md:py-28">
@@ -374,17 +379,17 @@ export const PortfolioStrip: FC<{ items: PortfolioItem[] }> = ({ items }) => {
         <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
             <div className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-red-600 mb-2">
-              Selected Work
+              {isPt ? 'Trabalhos Selecionados' : 'Selected Work'}
             </div>
             <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tighter text-white">
-              PORTFOLIO<span className="text-red-600">.</span>
+              {isPt ? 'PORTFÓLIO' : 'PORTFOLIO'}<span className="text-red-600">.</span>
             </h2>
           </div>
           <Link
             to={getLanguagePath('/results')}
             className="inline-flex items-center gap-2 text-xs font-sans font-bold uppercase tracking-widest text-white/70 hover:text-red-600 transition-colors"
           >
-            View All Projects <ArrowRight className="w-4 h-4" />
+            {isPt ? 'Ver Todos os Projetos' : 'View All Projects'} <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 
@@ -417,7 +422,7 @@ export const PortfolioStrip: FC<{ items: PortfolioItem[] }> = ({ items }) => {
                 )}
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <span className="text-white text-xs font-sans font-bold uppercase tracking-widest border border-white px-4 py-2 flex items-center gap-2">
-                    Case Study <ExternalLink className="w-3.5 h-3.5" />
+                    {isPt ? 'Caso de Estudo' : 'Case Study'} <ExternalLink className="w-3.5 h-3.5" />
                   </span>
                 </div>
               </div>

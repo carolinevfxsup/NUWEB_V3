@@ -168,6 +168,7 @@ export const OPalmeiral = () => {
                 loop
                 playsInline
                 controls
+                muted={false}
                 className="w-full h-full object-cover"
               />
             </motion.div>
