@@ -31,6 +31,7 @@ const CARDS_EN: PillarCard[] = [
     videoSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/0803_CP_WEB.mp4',
     videoPoster: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/0803_CP_WEB_tiny.jpg',
     overlayButtonText: 'watch showreel',
+    overlayVideoUrl: 'https://www.youtube.com/watch?v=ODjDJbBSkM0',
   },
   {
     n: '02',
@@ -71,6 +72,7 @@ const CARDS_PT: PillarCard[] = [
     videoSrc: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/0803_CP_WEB.mp4',
     videoPoster: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/ANIMATION/0803_CP_WEB_tiny.jpg',
     overlayButtonText: 'ver showreel',
+    overlayVideoUrl: 'https://www.youtube.com/watch?v=ODjDJbBSkM0',
   },
   {
     n: '02',

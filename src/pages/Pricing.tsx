@@ -44,11 +44,17 @@ export const Pricing = () => {
         setFormData({ firstName: '', lastName: '', phone: '', email: '', message: '' });
         setFile(null);
       } else {
-        const data = await response.json();
-        setSubmitError(data.error || 'Failed to send message. Please try again.');
+        let errorMsg = 'Failed to send message. Please try again.';
+        try {
+          const data = await response.json();
+          if (data?.error) errorMsg = data.error;
+        } catch {
+          // Fallback if response body is empty or non-JSON
+        }
+        setSubmitError(errorMsg);
       }
     } catch (error) {
-      console.error(error);
+      console.error('Pricing inquiry error:', error);
       setSubmitError('An error occurred. Please check your connection and try again.');
     } finally {
       setIsSubmitting(false);

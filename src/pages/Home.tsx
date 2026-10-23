@@ -156,21 +156,45 @@ export const Home = () => {
     setIsSubmitting(true);
     setSubmitError(null);
     try {
+      let attachment = null;
+      if (file) {
+        const reader = new FileReader();
+        const base64Promise = new Promise<string>((resolve) => {
+          reader.onload = () => {
+            const base64 = (reader.result as string).split(',')[1];
+            resolve(base64);
+          };
+        });
+        reader.readAsDataURL(file);
+        const base64Content = await base64Promise;
+        attachment = {
+          filename: file.name,
+          content: base64Content,
+        };
+      }
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, attachment }),
       });
+
       if (response.ok) {
         setIsSubmitted(true);
         setFormData({ firstName: '', lastName: '', phone: '', email: '', message: '' });
         setFile(null);
       } else {
-        const data = await response.json();
-        setSubmitError(data.error || 'Failed to send message. Please try again.');
+        let errorMsg = 'Failed to send message. Please try again.';
+        try {
+          const data = await response.json();
+          if (data?.error) errorMsg = data.error;
+        } catch {
+          // Gracefully fallback if response body is not JSON
+        }
+        setSubmitError(errorMsg);
       }
     } catch (error) {
-      console.error(error);
+      console.error('Contact form error:', error);
       setSubmitError('An error occurred. Please check your connection and try again.');
     } finally {
       setIsSubmitting(false);

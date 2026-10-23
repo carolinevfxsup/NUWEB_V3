@@ -65,11 +65,17 @@ export const Contact = () => {
         setFile(null);
         reset();
       } else {
-        const errorData = await response.json();
-        setSubmitError(errorData.error || 'Failed to send message. Please try again.');
+        let errorMsg = 'Failed to send message. Please try again.';
+        try {
+          const errorData = await response.json();
+          if (errorData?.error) errorMsg = errorData.error;
+        } catch {
+          // Fallback if response body is empty or non-JSON
+        }
+        setSubmitError(errorMsg);
       }
     } catch (error) {
-      console.error(error);
+      console.error('Contact form error:', error);
       setSubmitError('An error occurred. Please check your connection and try again.');
     } finally {
       setIsSubmitting(false);
